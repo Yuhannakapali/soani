@@ -1,0 +1,119 @@
+.iq-team:hover .iq-team-info {
+  bottom: 0;
+}
+.iq-team {
+  position: relative;
+  overflow: hidden;
+}
+.iq-team .iq-team-info {
+  padding: 10px 20px;
+  background: none;
+  position: absolute;
+  bottom: -84px;
+  background: #f2f2f2;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  -webkit-transition: all 0.5s ease-out 0s;
+  -moz-transition: all 0.5s ease-out 0s;
+  -ms-transition: all 0.5s ease-out 0s;
+  -o-transition: all 0.5s ease-out 0s;
+  transition: all 0.5s ease-out 0s;
+  border: 1px solid #f2f2f2;
+}
+.iq-team .iq-team-info span {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+}
+.iq-team .share {
+  background: none;
+  position: absolute;
+  left: -90px;
+  top: 12px;
+  width: 40px;
+  -webkit-transition: all 0.5s ease-out 0s;
+  -moz-transition: all 0.5s ease-out 0s;
+  -ms-transition: all 0.5s ease-out 0s;
+  -o-transition: all 0.5s ease-out 0s;
+  transition: all 0.5s ease-out 0s;
+}
+.iq-team:hover .share {
+  left: 1px;
+}
+.iq-team .share ul li {
+  margin: 1px 0;
+}
+.iq-team .share ul li a {
+  color: #ffffff;
+  width: 45px;
+  height: 45px;
+  line-height: 50px;
+  background: #ffffff;
+  color: #4122be;
+  border-radius: 90px;
+  text-align: center;
+  display: inline-block;
+}
+.iq-team .share ul li a:hover {
+  color: #ffffff;
+  background: #4a2ace;
+}
+.iq-team .iq-team-img {
+  position: relative;
+}
+.iq-team .iq-team-img img {
+  width: 100%;
+}
+.iq-team .iq-team-img:before {
+  content: "";
+  bottom: 0;
+  opacity: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(71, 38, 205, 0);
+  background: -moz-linear-gradient(
+    top,
+    rgba(71, 38, 205, 0) 0%,
+    rgba(71, 38, 205, 1) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    left bottom,
+    color-stop(0%, rgba(71, 38, 205, 0)),
+    color-stop(100%, rgba(71, 38, 205, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(71, 38, 205, 0) 0%,
+    rgba(71, 38, 205, 1) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(71, 38, 205, 0) 0%,
+    rgba(71, 38, 205, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(71, 38, 205, 0) 0%,
+    rgba(71, 38, 205, 1) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(71, 38, 205, 0) 0%,
+    rgba(71, 38, 205, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4122be', endColorstr='#4122be', GradientType=0);
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+.iq-team:hover .iq-team-img:before {
+  opacity: 1;
+}
+.iq-team .share ul {
+  list-style: none;
+}
