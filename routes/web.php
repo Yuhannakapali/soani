@@ -30,3 +30,4 @@ Route::get('/contact', 'pageroutingController@contact');
 
 //TODOS
 Route::resource('todos', 'TodoController');
+Route::resource('posts', 'postsController');
