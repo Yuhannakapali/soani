@@ -18,7 +18,7 @@
  
   @include('admin.layout.main')
 
- @include('admin.layout.cotrolsidebar')
+ @include('admin.layout.controlsidebar')
   @include('admin.layout.footer')
 </div>
 
