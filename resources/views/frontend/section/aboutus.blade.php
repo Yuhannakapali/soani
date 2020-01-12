@@ -6,7 +6,7 @@
                 <ul class="about-manu text-center">
                     <li class="d-inline"><a href="#values" class="active">Our Values</a></li>
                     <li class="d-inline"><a href="#team">Our Team</a></li>
-                    <li class="d-inline"><a href="#partners">Our Partners</a></li>
+                    <li class="d-inline"><a href="#partners">Our clients</a></li>
                 </ul>
                 <div class="about-content mt-5">
                     <div id="values" class="mb-0">
@@ -97,6 +97,97 @@
                         </div>
                     </div>
                 </div>
+                <div id="partners" class="d-block">
+                    <div class="row justify-content-md-center">
+                        <div class="col-lg-8 col-md-12 text-center">
+                            <div class="title-box">
+                                <h2 class="title text-dark"> Our <span>Clients</span></h2>
+                                <p class="mt-2">some of our satisfied clients</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
+                            <div class="clients-box text-center">
+                                <a href="#"><img class="img-fluid" src="images/clients/clients-img1.png"
+                                        alt="image" data-toggle="tooltip" title="HTML"> </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
+                            <div class="clients-box text-center">
+                                <a href="#"><img class="img-fluid" src="images/clients/clients-img2.png"
+                                        alt="image" data-toggle="tooltip" title="Wordpress"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
+                            <div class="clients-box text-center">
+                                <a href="#"><img class="img-fluid" src="images/clients/clients-img3.png"
+                                        alt="image" data-toggle="tooltip" title="Shopify"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
+                            <div class="clients-box text-center">
+                                <a href="#"><img class="img-fluid" src="images/clients/clients-img4.png"
+                                        alt="image" data-toggle="tooltip" title="CSS"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
+                            <div class="clients-box text-center">
+                                <a href="#"><img class="img-fluid" src="images/clients/clients-img5.png"
+                                        alt="image" data-toggle="tooltip" title="Jquery"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
+                            <div class="clients-box text-center">
+                                <a href="#"> <img class="img-fluid" src="images/clients/clients-img6.png"
+                                        alt="image" data-toggle="tooltip" title="Bootstrap"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
+                            <div class="clients-box text-center">
+                                <a href="#"><img class="img-fluid" src="images/clients/clients-img3.png"
+                                        alt="image" data-toggle="tooltip" title="Shopify"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
+                            <div class="clients-box text-center">
+                                <a href="#"><img class="img-fluid" src="images/clients/clients-img1.png"
+                                        alt="image" data-toggle="tooltip" title="HTML"> </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
+                            <div class="clients-box text-center">
+                                <a href="#"> <img class="img-fluid" src="images/clients/clients-img6.png"
+                                        alt="image" data-toggle="tooltip" title="Bootstrap"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
+                            <div class="clients-box text-center">
+                                <a href="#"><img class="img-fluid" src="images/clients/clients-img2.png"
+                                        alt="image" data-toggle="tooltip" title="Wordpress"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
+                            <div class="clients-box text-center">
+                                <a href="#"><img class="img-fluid" src="images/clients/clients-img5.png"
+                                        alt="image" data-toggle="tooltip" title="Jquery"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
+                            <div class="clients-box text-center">
+                                <a href="#"><img class="img-fluid" src="images/clients/clients-img4.png"
+                                        alt="image" data-toggle="tooltip" title="CSS"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
                     <div id="team" class="text-center">
                         <div class="row justify-content-md-center mt-5">
                             <div class="col-lg-8 col-md-12 text-center">
@@ -241,90 +332,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="partners" class="d-block">
-                        <div class="row justify-content-md-center">
-                            <div class="col-lg-8 col-md-12 text-center">
-                                <div class="title-box">
-                                    <h2 class="title text-dark">Meet Our <span>Partners</span></h2>
-                                    <p class="mt-2">our satisfied partners</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-                                <div class="clients-box text-center">
-                                    <a href="#"><img class="img-fluid" src="images/clients/clients-img1.png"
-                                            alt="image" data-toggle="tooltip" title="HTML"> </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-                                <div class="clients-box text-center">
-                                    <a href="#"><img class="img-fluid" src="images/clients/clients-img2.png"
-                                            alt="image" data-toggle="tooltip" title="Wordpress"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-                                <div class="clients-box text-center">
-                                    <a href="#"><img class="img-fluid" src="images/clients/clients-img3.png"
-                                            alt="image" data-toggle="tooltip" title="Shopify"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-                                <div class="clients-box text-center">
-                                    <a href="#"><img class="img-fluid" src="images/clients/clients-img4.png"
-                                            alt="image" data-toggle="tooltip" title="CSS"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-                                <div class="clients-box text-center">
-                                    <a href="#"><img class="img-fluid" src="images/clients/clients-img5.png"
-                                            alt="image" data-toggle="tooltip" title="Jquery"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-                                <div class="clients-box text-center">
-                                    <a href="#"> <img class="img-fluid" src="images/clients/clients-img6.png"
-                                            alt="image" data-toggle="tooltip" title="Bootstrap"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-                                <div class="clients-box text-center">
-                                    <a href="#"><img class="img-fluid" src="images/clients/clients-img3.png"
-                                            alt="image" data-toggle="tooltip" title="Shopify"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-                                <div class="clients-box text-center">
-                                    <a href="#"><img class="img-fluid" src="images/clients/clients-img1.png"
-                                            alt="image" data-toggle="tooltip" title="HTML"> </a>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-                                <div class="clients-box text-center">
-                                    <a href="#"> <img class="img-fluid" src="images/clients/clients-img6.png"
-                                            alt="image" data-toggle="tooltip" title="Bootstrap"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-                                <div class="clients-box text-center">
-                                    <a href="#"><img class="img-fluid" src="images/clients/clients-img2.png"
-                                            alt="image" data-toggle="tooltip" title="Wordpress"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-                                <div class="clients-box text-center">
-                                    <a href="#"><img class="img-fluid" src="images/clients/clients-img5.png"
-                                            alt="image" data-toggle="tooltip" title="Jquery"></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-                                <div class="clients-box text-center">
-                                    <a href="#"><img class="img-fluid" src="images/clients/clients-img4.png"
-                                            alt="image" data-toggle="tooltip" title="CSS"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>

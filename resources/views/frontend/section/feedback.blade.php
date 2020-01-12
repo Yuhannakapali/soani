@@ -11,17 +11,19 @@
                   <span class="timer" data-to="575" data-speed="5000"
                     >575</span
                   >
-                  Up Customer <span>Feedback</span>
+                    <span>Feedback</span>
                 </h2>
                 <p class="mt-4">
-                  It has roots in a piece of classical Latin literature from
-                  45 BC, making it over 2000 years old. Richard McClintock, a
-                  Latin professor at Hampden-Sydney College in Virginia.
+                  We were running out of the time when our system was down. We then made a contact with Soani Tech and
+                  they did data migration to different servers and our news portal site was up. We valued their hard work and dedication. 
+                  We surely recommend our clients to Soani Tech.
                 </p>
               </div>
             </div>
           </div>
         </div>
+
+        
         <div
           id="carouselExampleFade"
           class="carousel slide carousel-fade"
@@ -32,16 +34,15 @@
               <div class="row mt-5 align-items-center">
                 <div class="col-lg-6 col-md-12 col-sm-12">
                   <h5 class="title text-dark">
-                    <i
-                      >There are many variations of passages of Lorem Ipsum
-                      available, but the majority have suffered alteration in
-                      some form, by injected humour, or randomised words which
-                      don't look even slightly believable.</i
-                    >
+                    <i>
+                      We were running out of the time when our system was down. We then made a contact with Soani Tech and
+                  they did data migration to different servers and our news portal site was up. We valued their hard work and dedication. 
+                  We surely recommend our clients to Soani Tech.
+                    </i>
                   </h5>
                   <div class="name mt-5 ml-5">
-                    <h4 class="sub-title">Peter Deo</h4>
-                    <p>CEO-Vizion</p>
+                    <h4 class="sub-title">Krishna Bahadur Lama</h4>
+                    <p>Project Manager, Ennnepal.com</p>
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
@@ -58,15 +59,44 @@
                 <div class="col-lg-6 col-md-12 col-sm-12">
                   <h5 class="title text-dark">
                     <i
-                      >Variations of passages of Lorem Ipsum available, but
-                      the majority have suffered alteration in some form, by
-                      injected humour, or randomised words which don't look
-                      even slightly believable.</i
+                      >Soani Tech effectively Analyzed our data with great results in Mobile Apps as well as in Desktop Applications.
+                       They displayed our Survey Results so effectively for our clients and for our students. Great to Work with them!!!
+
+                      
+                     
+                     </i
                     >
                   </h5>
                   <div class="name mt-5 ml-5">
-                    <h4 class="sub-title">Rose Parker</h4>
-                    <p>CEO-Vizion</p>
+                    <h4 class="sub-title">Dr. Timothy Aryal</h4>
+                    <p>HOD, Trichandra College</p>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                  <img
+                    class="img-fluid"
+                    src="images/feedback/feedback-img2.png"
+                    alt="image"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item feedback-box">
+              <div class="row mt-5 align-items-center">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                  <h5 class="title text-dark">
+                    <i
+                      >Soani Tech effectively Analyzed our data with great results in Mobile Apps as well as in Desktop Applications.
+                       They displayed our Survey Results so effectively for our clients and for our students. Great to Work with them!!!
+
+                      
+                     
+                     </i
+                    >
+                  </h5>
+                  <div class="name mt-5 ml-5">
+                    <h4 class="sub-title">Dr. Timothy Aryal</h4>
+                    <p>HOD, Trichandra College</p>
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">

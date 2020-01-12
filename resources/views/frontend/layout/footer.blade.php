@@ -85,7 +85,7 @@
     </div>
 
     <div id="cookie_div" class="align-items-center">
-      We use cookies to give you tailored experiences on our website.
+      We use cookies to offer you a better website experience. To find out more about the cookies we use, see our Privacy Policy. By continuing to use this site, you consent to our use of cookies.
       <a class="button grey text-right ml-3" href="#" role="button" id="cookie">
         Accept
       </a>
