@@ -33,3 +33,7 @@ Route::get('/admin', 'pageroutingController@admin');
 //TODOS
 Route::resource('todos', 'TodoController');
 Route::resource('posts', 'postsController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
