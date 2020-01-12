@@ -19,6 +19,8 @@ Route::get('/services', 'pageroutingController@services');
 
 Route::get('/contact', 'pageroutingController@contact');
 
+Route::get('/admin', 'pageroutingController@admin');
+
 
 
 

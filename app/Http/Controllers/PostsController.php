@@ -13,8 +13,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $pagename = "posts";
-        return view('user.posts.index', compact('pagename'));
+         $post = post :: all();
+        return view('user.posts.index') -> with('post', $post) ;
     }
 
     /**
