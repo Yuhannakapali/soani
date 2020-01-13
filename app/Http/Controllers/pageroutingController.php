@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Ourteam;
 use Illuminate\Http\Request;
 
 class pageroutingController extends Controller
@@ -9,13 +9,17 @@ class pageroutingController extends Controller
     public function homepage(){
         return view('user.index');
     }
+
+    
     
     public function aboutus(){
-        return view('user.aboutus' , ['pagename'=>'About us']);
+        
+        $ourteams  =  Ourteam::all();
+        return view('user.aboutus' , ['pagename'=>'About us'] , compact('ourteams'));
     }
 
     public function services(){
-        return view('user.services', ['pagename'=>'Services']);
+        return view('user.services', ['pagename'=>'aboutus']);
     }
 
     public function contact(){

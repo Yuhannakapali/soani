@@ -107,6 +107,7 @@
                         </div>
                     </div>
                     <div class="row">
+                        
                         <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
                             <div class="clients-box text-center">
                                 <a href="#"><img class="img-fluid" src="images/clients/clients-img1.png"
@@ -198,138 +199,22 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="team-box mt-5">
-                                    <div class="team-img position-relative">
-                                        <img class="img-fluid team-1" src="{{asset('images/team/team-1.jpg')}}" alt="">
-                                        <img class="img-fluid team-2" src="{{asset('images/team/team-1hover.jpg')}}" alt="">
-                                    </div>
-                                    <div class="mt-3 text-center">
-                                        <h5 class="title">John Chhetri</h5>
-                                        <p>Managing Director</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="team-box mt-5">
-                                    <div class="team-img position-relative">
-                                        <img class="img-fluid team-1" src="{{asset('images/team/team-2.jpg')}}" alt="">
-                                        <img class="img-fluid team-2" src="{{asset('images/team/team-2hover')}}.jpg" alt="">
-                                    </div>
-                                    <div class="mt-3 text-center">
-                                        <h5 class="title">Bimala Shrestha</h5>
-                                        <p>Assistant to Director</p>
+                            @if (!empty($ourteams))
+                                @foreach ($ourteams as $ourteam)
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="team-box mt-5">
+                                        <div class="team-img position-relative">
+                                            <img class="img-fluid team-1" src="{{asset('images/upload/'.$ourteam->image_name)}}" alt="">
+                                            <img class="img-fluid team-2" src="{{asset('images/team/team-1hover.jpg')}}" alt="">
+                                        </div>
+                                        <div class="mt-3 text-center">
+                                            <h5 class="title">{{$ourteam->name}}</h5>
+                                            <p>{{$ourteam->designation}}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="team-box mt-5">
-                                    <div class="team-img position-relative">
-                                        <img class="img-fluid team-1" src="{{asset('images/team/team-3.jpg')}}" alt="">
-                                        <img class="img-fluid team-2" src="images/team/team-3hover.jpg" alt="">
-                                    </div>
-                                    <div class="mt-3 text-center">
-                                        <h5 class="title">Sujal shrestha</h5>
-                                        <p>Team lead</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="team-box mt-5">
-                                    <div class="team-img position-relative">
-                                        <img class="img-fluid team-1" src="images/team/team-4.jpg" alt="">
-                                        <img class="img-fluid team-2" src="images/team/team-4hover.jpg" alt="">
-                                    </div>
-                                    <div class="mt-3 text-center">
-                                        <h5 class="title">Sudip Maharjan</h5>
-                                        <p>Web developer </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="team-box mt-5">
-                                    <div class="team-img position-relative">
-                                        <img class="img-fluid team-1" src="images/team/team-3.jpg" alt="">
-                                        <img class="img-fluid team-2" src="images/team/team-3hover.jpg" alt="">
-                                    </div>
-                                    <div class="mt-3 text-center">
-                                        <h5 class="title">Pradim Shahi</h5>
-                                        <p>Web Developer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="team-box mt-5">
-                                    <div class="team-img position-relative">
-                                        <img class="img-fluid team-1" src="images/team/team-4.jpg" alt="">
-                                        <img class="img-fluid team-2" src="images/team/team-4hover.jpg" alt="">
-                                    </div>
-                                    <div class="mt-3 text-center">
-                                        <h5 class="title">Avigit</h5>
-                                        <p>php Developer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="team-box mt-5">
-                                    <div class="team-img position-relative">
-                                        <img class="img-fluid team-1" src="images/team/team-1.jpg" alt="">
-                                        <img class="img-fluid team-2" src="images/team/team-1hover.jpg" alt="">
-                                    </div>
-                                    <div class="mt-3 text-center">
-                                        <h5 class="title">Sanjay Prajapati</h5>
-                                        <p>Php Developer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="team-box mt-5">
-                                    <div class="team-img position-relative">
-                                        <img class="img-fluid team-1" src="images/team/team-2.jpg" alt="">
-                                        <img class="img-fluid team-2" src="images/team/team-2hover.jpg" alt="">
-                                    </div>
-                                    <div class="mt-3 text-center">
-                                        <h5 class="title">Habin Lama</h5>
-                                        <p>iOS Developer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="team-box mt-5">
-                                    <div class="team-img position-relative">
-                                        <img class="img-fluid team-1" src="images/team/team-2.jpg" alt="">
-                                        <img class="img-fluid team-2" src="images/team/team-2hover.jpg" alt="">
-                                    </div>
-                                    <div class="mt-3 text-center">
-                                        <h5 class="title">Habin Lama</h5>
-                                        <p>iOS Developer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="team-box mt-5">
-                                    <div class="team-img position-relative">
-                                        <img class="img-fluid team-1" src="images/team/team-2.jpg" alt="">
-                                        <img class="img-fluid team-2" src="images/team/team-2hover.jpg" alt="">
-                                    </div>
-                                    <div class="mt-3 text-center">
-                                        <h5 class="title">Swornim Shah</h5>
-                                        <p>Andriod Developer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="team-box mt-5">
-                                    <div class="team-img position-relative">
-                                        <img class="img-fluid team-1" src="images/team/team-2.jpg" alt="">
-                                        <img class="img-fluid team-2" src="images/team/team-2hover.jpg" alt="">
-                                    </div>
-                                    <div class="mt-3 text-center">
-                                        <h5 class="title"> Tulsi Lama</h5>
-                                        <p>Finance</p>
-                                    </div>
-                                </div>
-                            </div>
+                                @endforeach
+                            @endif 
                         </div>
                     </div>
                    

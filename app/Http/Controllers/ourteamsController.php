@@ -65,7 +65,7 @@ class ourteamsController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
