@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ourteam;
 
 class ourteamsController extends Controller
 {
@@ -13,7 +14,7 @@ class ourteamsController extends Controller
      */
     public function index()
     {
-        
+        return view('admin.layout.main');
     }
 
     /**
@@ -23,7 +24,7 @@ class ourteamsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.addteam.create');   
     }
 
     /**
@@ -34,7 +35,26 @@ class ourteamsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
+
+        $newteam = new Ourteam();
+        $newteam->name = $request->name;
+        $newteam->designation = $request->designation;
+        if ($request->hasfile('file')) {
+            $imagename = $request->file->getClientOriginalName();
+            $request->file->move(public_path('images/upload'), $imagename);
+            $newteam->image_name = $imagename;
+            $newteam->save();
+            session()->flash('message','Added Successfully');
+            return view('admin.addteam.create');
+        }
+        else{
+            session()->flash('message','file not selected');
+            return view('admin.addteam.create');
+        }
+        
+        
+
     }
 
     /**

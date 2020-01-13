@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-      <img src="./images/test.svg" alt="AdminLTE Logo" class=" img-circle elevation-3"
+      <img src="{{asset('./images/test.svg')}}" alt="AdminLTE Logo" class=" img-circle elevation-3"
            style="opacity: .8">
       
     </a>
@@ -12,7 +12,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="./img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="{{asset('./img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
@@ -28,13 +28,13 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                update pages 
+                    Update Pages 
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/addteam" class="nav-link active">
+                <a href="/ourteams/create" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>add our team </p>
                 </a>

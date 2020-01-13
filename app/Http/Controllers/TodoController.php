@@ -38,6 +38,7 @@ class TodoController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
+             
         ]);
 
         $todo = new Todo();

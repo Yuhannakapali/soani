@@ -37,11 +37,11 @@
 											<i class="fa fa-eye"></i>
 											edit
 										</a>
-				</td>
-			</tr>
-			@endforeach
-		</tbody>
-		</table>
+											</td>
+										</tr>
+										@endforeach
+									</tbody>
+							</table>
 		</div>
 		
 		

@@ -15,9 +15,9 @@
   @include('admin.layout.sidebar')
   
 
- 
-  @include('admin.layout.main')
-
+  @yield('content')
+      
+  
  @include('admin.layout.controlsidebar')
   @include('admin.layout.footer')
 </div>
