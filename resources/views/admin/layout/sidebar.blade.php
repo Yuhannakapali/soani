@@ -1,10 +1,10 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="./img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+    <a href="/" class="brand-link">
+      <img src="./images/test.svg" alt="AdminLTE Logo" class=" img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Brand name </span>
+      
     </a>
 
     <!-- Sidebar -->
@@ -28,15 +28,15 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Starter Pages
+                update pages 
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="/addteam" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
+                  <p>add our team </p>
                 </a>
               </li>
               <li class="nav-item">

@@ -21,7 +21,7 @@ class pageroutingController extends Controller
     public function contact(){
         return view('user.contact', ['pagename'=>'Contact us']);
     }
-    public function admin(){
+    public function addteam(){
         return view('admin.layout.master', ['pagename'=>'Contact us']);
     }
    
