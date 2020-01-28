@@ -36,7 +36,15 @@
 
     </div>
        
-
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox"  name="checker" value="1">
+        <label class="form-check-label" for="checker">Board memeber</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="checker1" value="1">
+        <label class="form-check-label" for="checker">Executive Team</label>
+      </div>
+      
     <span class="error-display">
         <i style="color: red;"> {!! $errors->first('image_name') !!} </i>
     </span>

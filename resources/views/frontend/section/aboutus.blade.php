@@ -209,7 +209,7 @@
                                         </div>
                                         <div class="mt-3 text-center">
                                             <h5 class="title">{{$ourteam->name}}</h5>
-                                            <p>{{$ourteam->designation}}</p>
+                                            <p>{{$ourteam->name}}</p>
                                         </div>
                                     </div>
                                 </div>

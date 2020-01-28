@@ -14,7 +14,8 @@ class ourteamsController extends Controller
      */
     public function index()
     {
-        return view('admin.layout.main');
+        $ourteams  =  Ourteam::all();
+        return view('admin.addteam.index', compact('ourteams'));
     }
 
     /**
@@ -40,6 +41,29 @@ class ourteamsController extends Controller
         $newteam = new Ourteam();
         $newteam->name = $request->name;
         $newteam->designation = $request->designation;
+        
+        $board = $request->checker;
+        $executive = $request->checker1;
+
+        if($board == '1'){
+                $newteam->board_of_director = 1;
+        }
+      
+        else{
+            $newteam->board_of_director = 0;
+        }
+        
+        if($executive == '1'){
+            $newteam->executive_team = 1;
+        }
+  
+        else{
+            $newteam->executive_team = 0;
+        }
+        if ($board != 1 && $executive != 1 ) {
+            session()->flash('message','Added Successfully');
+            return view('admin.addteam.create');
+        }
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
             $request->file->move(public_path('images/upload'), $imagename);

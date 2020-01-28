@@ -18,6 +18,8 @@ class CreateOurteamsTable extends Migration
             $table->String('name');
             $table->string('designation');
             $table->string('image_name');
+            $table->boolean('board_of_director');
+            $table->boolean('executive_team');
             $table->timestamps();
         });
     }

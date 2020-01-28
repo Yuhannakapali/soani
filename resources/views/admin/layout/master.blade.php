@@ -14,14 +14,18 @@
   @include('admin.layout.topnav')
   @include('admin.layout.sidebar')
   
-
-  @yield('content')
-      
+  <div class="content-wrapper">
+    <div class="content-header"> 
+      @yield('content')
+    </div>
+  </div>    
   
  @include('admin.layout.controlsidebar')
   @include('admin.layout.footer')
 </div>
-
+@if(session('message'))
+<span class="alert alert-success">{{ session('message') }}</span>
+@endif
 @include('admin.layout.js')
 </body>
 </html>
