@@ -13,9 +13,9 @@ class pageroutingController extends Controller
     
     
     public function aboutus(){
-        
-        $ourteams  =  Ourteam::all();
-        return view('user.aboutus' , ['pagename'=>'About us'] , compact('ourteams'));
+        $boards = Ourteam::where('board_of_director', 1)->get();
+        $executives = Ourteam::where('executive_team', 1)->get();
+        return view('user.aboutus' , ['pagename'=>'About us'] , compact('boards','executives'));
     }
 
     public function services(){

@@ -15,7 +15,7 @@ class ourteamsController extends Controller
     public function index()
     {
         $ourteams  =  Ourteam::all();
-        return view('admin.addteam.index', compact('ourteams'));
+        return view('admin.ourteam.index', compact('ourteams'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ourteamsController extends Controller
      */
     public function create()
     {
-        return view('admin.addteam.create');   
+        return view('admin.ourteam.create');   
     }
 
     /**
@@ -62,7 +62,7 @@ class ourteamsController extends Controller
         }
         if ($board != 1 && $executive != 1 ) {
             session()->flash('message','Added Successfully');
-            return view('admin.addteam.create');
+            return view('admin.ourteam.create');
         }
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
@@ -70,11 +70,11 @@ class ourteamsController extends Controller
             $newteam->image_name = $imagename;
             $newteam->save();
             session()->flash('message','Added Successfully');
-            return view('admin.addteam.create');
+            return view('admin.ourteam.create');
         }
         else{
             session()->flash('message','file not selected');
-            return view('admin.addteam.create');
+            return view('admin.ourteam.create');
         }
         
         
@@ -89,7 +89,8 @@ class ourteamsController extends Controller
      */
     public function show($id)
     {
-        
+        $member  =  ourteam::find($id);
+        return view('admin.ourteam.show',compact('member'));
     }
 
     /**
@@ -100,7 +101,8 @@ class ourteamsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $member = Ourteam::find($id);
+        return view ('admin.ourteam.edit', compact('member'));
     }
 
     /**
@@ -112,7 +114,45 @@ class ourteamsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ourteam= Ourteam::find($id);
+        $ourteam->name = $request->name;
+        $ourteam->designation = $request->designation;
+        $board = $request->checker;
+        $executive = $request->checker1;
+
+        if($board == '1'){
+                $ourteam->board_of_director = 1;
+        }
+      
+        else{
+            $ourteam->board_of_director = 0;
+        }
+        
+        if($executive == '1'){
+            $ourteam->executive_team = 1;
+        }
+  
+        else{
+            $ourteam->executive_team = 0;
+        }
+        if ($board != 1 && $executive != 1 ) {
+            session()->flash('message','Added Successfully');
+            return view('admin.ourteam.create');
+        }
+        if ($request->hasfile('file')) {
+            $imagename = $request->file->getClientOriginalName();
+            $request->file->move(public_path('images/upload'), $imagename);
+            $ourteam->image_name = $imagename;
+            $ourteam->save();
+            session()->flash('message','Added Successfully');
+            return redirect()->route('ourteams.index');
+        }
+        else{
+            session()->flash('message','file not selected');
+            return view('admin.ourteam.create');
+        }
+        
+
     }
 
     /**
@@ -123,6 +163,10 @@ class ourteamsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ourteam = ourteam::find($id);
+        $ourteam->delete();
+        session()->flash('message','Added Successfully');
+        return view('admin.ourteam.index');
+        
     }
 }

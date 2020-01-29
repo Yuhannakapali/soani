@@ -32,8 +32,12 @@ Route::get('/admin', 'pageroutingController@admin');
 
 //TODOS
 Route::resource('todos', 'TodoController');
+//post
 Route::resource('posts', 'postsController');
+//ourteam
 Route::resource('ourteams', 'ourteamsController');
+//clients
+Route::resource('clients', 'clientsController');
 
 Auth::routes();
 

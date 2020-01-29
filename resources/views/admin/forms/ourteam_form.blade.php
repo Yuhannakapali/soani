@@ -1,4 +1,4 @@
-<?php $newteam_available = isset($newteam) ? true :  false;?>
+<?php $member_available = isset($member) ? true :  false;?>
 {{ csrf_field() }}
 <div class="form-group">
     <div>
@@ -12,7 +12,7 @@
         data-rule-maxlength="50"
         data-rule-minlength="3"
         required=""
-        value="{{$newteam_available ?? '' ? $newteam->name : old('name')}}"
+        value="{{$member_available ?? '' ? $member->name : old('name')}}"
     />
     </div>
     <div>
@@ -26,12 +26,12 @@
             data-rule-maxlength="50"
             data-rule-minlength="3"
             required=""
-            value="{{$newteam_available ?? '' ? $newteam->designation: old('designation')}}"
+            value="{{$member_available ?? '' ? $member->designation: old('designation')}}"
         />
     </div>
    
     <div>
-        <label for="file">Choose a file</label>
+        <label for="file">Choose a file</label><br>
         <input type="file" name="file">
 
     </div>

@@ -13,9 +13,9 @@
                             class="form-validate"
                             method="post"
                             enctype="multipart/form-data"
-                            action="{{ route('ourteams.store') }}"
+                            action="{{ route('clients.store') }}"
                         >
-                            @include('admin.forms.addteam_form')
+                            @include('admin.forms.clients_form')
                             <div class="form-group">
                                 <div class="box-footer">
                                     <input

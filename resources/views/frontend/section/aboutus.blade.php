@@ -198,24 +198,64 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row justify-content-md-center mt-5">
+                                <div class="col-lg-8 col-md-12 text-center">
+                                    <div class="title-box">
+                                        <h3 class="title text-dark"><span>Board of Director</span></h3>
+                                     
+                                    </div>
+                                </div>
+                        </div>
                         <div class="row">
-                            @if (!empty($ourteams))
-                                @foreach ($ourteams as $ourteam)
+                            @if (!empty($boards))
+                                @foreach ($boards as $board)
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="team-box mt-5">
                                         <div class="team-img position-relative">
-                                            <img class="img-fluid team-1" src="{{asset('images/upload/'.$ourteam->image_name)}}" alt="">
-                                            <img class="img-fluid team-2" src="{{asset('images/team/team-1hover.jpg')}}" alt="">
+                                            <img class="img-fluid ot-image team-1" src="{{asset('images/upload/'.$board->image_name)}}" alt="">
+                                            {{-- this was for hover but not used but i am putting here  
+                                            <img class="img-fluid team-2" src="{{asset('images/team/hover.jpg')}}" alt="">
+                                             --}}
                                         </div>
                                         <div class="mt-3 text-center">
-                                            <h5 class="title">{{$ourteam->name}}</h5>
-                                            <p>{{$ourteam->name}}</p>
+                                            <h5 class="title">{{$board->name}}</h5>
+                                            <p>{{$board->designation}}</p>
                                         </div>
                                     </div>
                                 </div>
                                 @endforeach
                             @endif 
                         </div>
+                        <div id="team" class="text-center">
+                            <div class="row justify-content-md-center mt-5">
+                                <div class="col-lg-8 col-md-12 text-center">
+                                    <div class="title-box">
+                                        <h3 class="title text-dark"><span>Executive Team</span></h3>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+
+                        <div class="row">
+                            @if (!empty($executives))
+                                @foreach ($executives as $executive)
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="team-box mt-5">
+                                        <div class="team-img position-relative">
+                                            <img class="img-fluid ot-image team-1" src="{{asset('images/upload/'.$executive->image_name)}}" alt="">
+                                            {{-- <img class="img-fluid team-2" src="{{asset('images/team/team-1hover.jpg')}}" alt=""> --}}
+                                        </div>
+                                        <div class="mt-3 text-center">
+                                            <h5 class="title">{{$executive->name}}</h5>
+                                            <p>{{$executive->designation}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            @endif 
+                        </div>
+
                     </div>
                    
                 </div>
