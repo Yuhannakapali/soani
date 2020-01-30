@@ -49,7 +49,7 @@ class clientscontroller extends Controller
         }
         else{
             session()->flash('message','file not selected');
-            return view('admin.ourteam.create');
+            return view('admin.clients.create');
         }
         
     }
@@ -62,7 +62,8 @@ class clientscontroller extends Controller
      */
     public function show($id)
     {
-        //
+        $member  =  client::find($id);
+        return view('admin.clients.show',compact('member'));
     }
 
     /**
@@ -73,7 +74,8 @@ class clientscontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        $member = Client::find($id);
+        return view ('admin.clients.edit', compact('member'));
     }
 
     /**
@@ -85,7 +87,21 @@ class clientscontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $clients= client::find($id);
+        $clients->name = $request->name;
+        if ($request->hasfile('file')) {
+            $imagename = $request->file->getClientOriginalName();
+            $request->file->move(public_path('images/upload'), $imagename);
+            $clients->image_name = $imagename;
+            $clients->save();
+            session()->flash('message','image changed');
+            return redirect()->route('clients.index');
+        }
+        else{
+            $clients->save();
+            session()->flash('message','Updated');
+            return redirect()->route('clients.index');
+        }
     }
 
     /**
@@ -96,6 +112,9 @@ class clientscontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $client = client::find($id);
+        $client->delete();
+        session()->flash('message','delete Successfully');
+        return redirect()->route('clients.index');
     }
 }

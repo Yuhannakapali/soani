@@ -16,16 +16,16 @@
               />
             </a>
             <div class="link whitetext mt-2">
-              Design By <a href="https://yuhannakapali.com.np">KuroNeko</a>
+              Made By <a href="https://yuhannakapali.com.np">KuroNeko</a>
             </div>
           </div>
           <div class="col-lg-6 col-md-4 col-sm-12 text-center text-uppercase">
             <ul class="copyright">
               <li class="d-inline ml-4 mr-4">
-                <a href="#">privacy policy</a>
+                <a href="/privacy">privacy policy</a>
               </li>
               <li class="d-inline ml-4 mr-4">
-                <a href="#">Contact Us</a>
+                <a href="/contact">Contact Us</a>
               </li>
             </ul>
           </div>

@@ -34,7 +34,7 @@
           </li>
         </ul>
         <div class="p-3">
-          <a class="button grey mt-2" href="/servives" role="button"> Learn More</a>
+          <a class="button grey mt-2" href="/services" role="button"> Learn More</a>
         </div>
        
       </div>

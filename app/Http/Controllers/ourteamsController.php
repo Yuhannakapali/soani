@@ -135,21 +135,18 @@ class ourteamsController extends Controller
         else{
             $ourteam->executive_team = 0;
         }
-        if ($board != 1 && $executive != 1 ) {
-            session()->flash('message','Added Successfully');
-            return view('admin.ourteam.create');
-        }
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
             $request->file->move(public_path('images/upload'), $imagename);
             $ourteam->image_name = $imagename;
             $ourteam->save();
-            session()->flash('message','Added Successfully');
+            session()->flash('message','Updated');
             return redirect()->route('ourteams.index');
         }
         else{
-            session()->flash('message','file not selected');
-            return view('admin.ourteam.create');
+            $ourteam->save();
+            session()->flash('message','Updated');
+            return redirect()->route('ourteams.index');
         }
         
 
@@ -166,7 +163,7 @@ class ourteamsController extends Controller
         $ourteam = ourteam::find($id);
         $ourteam->delete();
         session()->flash('message','Added Successfully');
-        return view('admin.ourteam.index');
+        return redirect()->route('Ourteams.index');
         
     }
 }

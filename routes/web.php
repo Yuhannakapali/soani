@@ -21,7 +21,15 @@ Route::get('/contact', 'pageroutingController@contact');
 
 Route::get('/admin', 'pageroutingController@admin');
 
-Route::get('/admin', 'pageroutingController@admin');
+Route::get('/ARVR', 'pageroutingController@ARVR');
+
+Route::get('/Web', 'pageroutingController@Web');
+
+Route::get('/Seo', 'pageroutingController@Seo');
+
+Route::get('/Mobile', 'pageroutingController@Mobile');
+
+Route::get('/privacy', 'pageroutingController@privacy');
 
 
 

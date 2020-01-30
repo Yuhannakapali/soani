@@ -26,152 +26,25 @@
             data-items-mobile="2"
             data-items-mobile-sm="1"
           >
-            <div class="item">
-              <div class="clients-box text-center">
-                <a href="#"
-                  ><img
-                    class="img-fluid"
-                    src="images/clients/clients-img1.png"
-                    alt="image"
-                    data-toggle="tooltip"
-                    title="HTML"
-                  />
-                </a>
+          @if (!empty($clients))
+              @foreach ($clients as $client)
+              <div class="item">
+                <div class="clients-box text-center">
+                  <a href="#"
+                    ><img
+                      class="img-fluid"
+                      src="{{asset('images/upload/'.$client->image_name)}}"
+                      alt="{{$client->name}}"
+                      data-toggle="tooltip"
+                      title="{{$client->name}}"
+                    />
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="item">
-              <div class="clients-box text-center">
-                <a href="#"
-                  ><img
-                    class="img-fluid"
-                    src="images/clients/clients-img2.png"
-                    alt="image"
-                    data-toggle="tooltip"
-                    title="Wordpress"
-                /></a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="clients-box text-center">
-                <a href="#"
-                  ><img
-                    class="img-fluid"
-                    src="images/clients/clients-img3.png"
-                    alt="image"
-                    data-toggle="tooltip"
-                    title="Shopify"
-                /></a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="clients-box text-center">
-                <a href="#"
-                  ><img
-                    class="img-fluid"
-                    src="images/clients/clients-img4.png"
-                    alt="image"
-                    data-toggle="tooltip"
-                    title="CSS"
-                /></a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="clients-box text-center">
-                <a href="#"
-                  ><img
-                    class="img-fluid"
-                    src="images/clients/clients-img5.png"
-                    alt="image"
-                    data-toggle="tooltip"
-                    title="Jquery"
-                /></a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="clients-box text-center">
-                <a href="#">
-                  <img
-                    class="img-fluid"
-                    src="images/clients/clients-img6.png"
-                    alt="image"
-                    data-toggle="tooltip"
-                    title="Bootstrap"
-                /></a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="clients-box text-center">
-                <a href="#"
-                  ><img
-                    class="img-fluid"
-                    src="images/clients/clients-img1.png"
-                    alt="image"
-                    data-toggle="tooltip"
-                    title="HTML"
-                  />
-                </a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="clients-box text-center">
-                <a href="#"
-                  ><img
-                    class="img-fluid"
-                    src="images/clients/clients-img2.png"
-                    alt="image"
-                    data-toggle="tooltip"
-                    title="Wordpress"
-                /></a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="clients-box text-center">
-                <a href="#"
-                  ><img
-                    class="img-fluid"
-                    src="images/clients/clients-img3.png"
-                    alt="image"
-                    data-toggle="tooltip"
-                    title="Shopify"
-                /></a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="clients-box text-center">
-                <a href="#"
-                  ><img
-                    class="img-fluid"
-                    src="images/clients/clients-img4.png"
-                    alt="image"
-                    data-toggle="tooltip"
-                    title="CSS"
-                /></a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="clients-box text-center">
-                <a href="#"
-                  ><img
-                    class="img-fluid"
-                    src="images/clients/clients-img5.png"
-                    alt="image"
-                    data-toggle="tooltip"
-                    title="Jquery"
-                /></a>
-              </div>
-            </div>
-            <div class="item">
-              <div class="clients-box text-center">
-                <a href="#">
-                  <img
-                    class="img-fluid"
-                    src="images/clients/clients-img6.png"
-                    alt="image"
-                    data-toggle="tooltip"
-                    title="Bootstrap"
-                /></a>
-              </div>
-            </div>
+              @endforeach
+          @endif
+            
+            
           </div>
         </div>
       </section>
