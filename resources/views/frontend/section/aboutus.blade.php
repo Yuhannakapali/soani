@@ -112,7 +112,7 @@
                             @foreach ($clients as $client)
                             <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
                                 <div class="clients-box text-center">
-                                    <a href="#"><img class="img-fluid" src="{{asset('images/upload/'.$client->image_name)}}"
+                                <a href="{{'https://'.$client->url}}"><img class="img-fluid" src="{{asset('images/upload/'.$client->image_name)}}"
                                     alt="{{$client->name}}" data-toggle="tooltip" title="{{$client->name}}"> </a>
                                 </div>
                             </div>

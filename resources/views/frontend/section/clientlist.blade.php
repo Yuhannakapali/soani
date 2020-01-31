@@ -30,7 +30,7 @@
               @foreach ($clients as $client)
               <div class="item">
                 <div class="clients-box text-center">
-                  <a href="#"
+                  <a href="{{'https://'.$client->url}}"
                     ><img
                       class="img-fluid"
                       src="{{asset('images/upload/'.$client->image_name)}}"
