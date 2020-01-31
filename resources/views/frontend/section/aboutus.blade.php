@@ -119,10 +119,10 @@
                             @endforeach
                             
                         @endif
+                    </div>   
                         
-                        
-
-
+                </div>
+                <div class="container">
                     <div id="team" class="text-center">
                         <div class="row justify-content-md-center mt-5">
                             <div class="col-lg-8 col-md-12 text-center">
@@ -189,9 +189,8 @@
                                 @endforeach
                             @endif 
                         </div>
-
+                        </div>
                     </div>
-                   
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="p-3" >
-            <a href="{{route('clients.create')}}" class="btn btn-primary pull-right"> <i class="fa fa-plus"></i> Create</a>
+            <a href="{{route('ourteams.create')}}" class="btn btn-primary pull-right"> <i class="fa fa-plus"></i> Create</a>
         </div>
     </div>
 </div>
@@ -13,11 +13,11 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Designation</th>
-                            <th scope="col">Type of Member</th>
-                            <th scope="col">Action</th>
+                          <th scope="col">#</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Designation</th>
+                          <th scope="col">Type of Member</th>
+                          <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,17 +55,7 @@
                                         {{ method_field('DELETE') }}
                                         <input type="submit" class="btn btn-xs btn-danger" value="Delete">
                                     </form>
-                                    {{-- <a
-                                        class=""
-                                        style="margin-left:5px;"
-                                        href="{{ route('ourteams.destroy', $ourteam) }}"
-                                        
-                                    >
-                                        <i class="fa fa-eye"></i>
-                                        delete
-                                    </a> --}}
-                                </td>
-                            </tr>
+                                </tr>
                             @endforeach
                         @endif
                     </tbody>

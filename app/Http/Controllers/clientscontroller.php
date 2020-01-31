@@ -38,6 +38,8 @@ class clientscontroller extends Controller
     {
         $newclient = new client();
         $newclient->name = $request->name;
+        $newclient->url = $request->url;
+
         
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
