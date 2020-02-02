@@ -17,7 +17,12 @@ Route::get('/aboutus', 'pageroutingController@aboutus');
 
 Route::get('/services', 'pageroutingController@services');
 
-Route::get('/contact', 'pageroutingController@contact');
+Route::get('/contact', 'MessageController@create');
+Route::post('/contact', [
+    'uses'=>'MessageController@store',
+    'as' => 'contact.store'
+]);
+
 
 Route::get('/admin', 'pageroutingController@admin');
 
@@ -31,7 +36,7 @@ Route::get('/Mobile', 'pageroutingController@Mobile');
 
 Route::get('/privacy', 'pageroutingController@privacy');
 
-
+Route::post('/submit-contact', 'pageroutingController@submitContactForm');
 
 
 
@@ -43,9 +48,11 @@ Route::resource('todos', 'TodoController');
 //post
 Route::resource('posts', 'postsController');
 //ourteam
-Route::resource('ourteams', 'ourteamsController');
+Route::resource('ourteams', 'ourteamsController')->middleware('auth');
 //clients
-Route::resource('clients', 'clientsController');
+Route::resource('clients', 'clientsController')->middleware('auth');
+
+Route::resource('message', 'messageController');
 
 Auth::routes();
 

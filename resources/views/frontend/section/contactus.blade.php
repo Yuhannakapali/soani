@@ -4,77 +4,18 @@
         <div class="col-lg-6">
           <div class="contact-box">
             <h3>Get in Touch</h3>
-            <form class="p-0" id="contact">
+            <form 
+              class="form-validate"
+              method="post"
+              enctype="multipart/form-data"
+              action="{{ route('contact.store') }}"
+              class="p-0" 
+            >
+            {{ method_field('POST') }}
               <div class="contact-form mt-4">
                 <div class="row">
-                  <div class="col-lg-6 col-sm-12 mb-3">
-                    <div class="form-group">
-                      <label class="mb-2">Name</label>
-                      <input
-                        type="text"
-                        name="name"
-                        class="form-control"
-                        id="name"
-                        placeholder="Your Name"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-sm-12 mb-3">
-                    <div class="form-group">
-                      <label class="mb-2">Email</label>
-                      <input
-                        type="text"
-                        name="email"
-                        class="form-control"
-                        id="email"
-                        placeholder="Your Email"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-lg-12 col-sm-12 mb-3">
-                    <div class="form-group">
-                      <label class="mb-2">Phone</label>
-                      <input
-                        type="text"
-                        name="phone"
-                        class="form-control"
-                        id="phone"
-                        placeholder="Your Phone Number"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-lg-12 col-sm-12 mb-3">
-                    <div
-                      class="form-group section-field textarea wow fadeInUp"
-                      data-wow-duration="2.5s"
-                    >
-                      <label class="mb-2">Message</label>
-                      <textarea
-                        class="input-message w-100"
-                        name="message"
-                        id="message"
-                        placeholder="Type Your Message Here"
-                        rows="5"
-                      ></textarea>
-                    </div>
-                    <input type="hidden" name="action" value="sendEmail" />
-                    <div class="section-field iq-mt-20">
-                      <div
-                        class="g-recaptcha"
-                        data-sitekey="6LdA3mYUAAAAANpUuZTLbKM_s23tTHlcdJ7dYfgI"
-                      ></div>
-                    </div>
-                    <button
-                      id="submit"
-                      name="submit"
-                      type="submit"
-                      value="Send"
-                      class="button pull-right wow fadeInUp mt-3"
-                      data-wow-duration="1.0s"
-                    >
-                      Send Message
-                    </button>
-                  </div>
+                  @include('frontend.form.contactus_form')
+                 
                 </div>
               </div>
             </form>

@@ -9,7 +9,6 @@ class pageroutingController extends Controller
 {
     public function homepage(){
         $clients = Client::all();
-
         return view('user.index',compact('clients'));
     }
 
@@ -48,5 +47,22 @@ class pageroutingController extends Controller
     public function addteam(){
         return view('admin.layout.master', ['pagename'=>'Contact us']);
     }
+
+    public function submitContactForm(Request $request){
+        $this->validate($request,[
+            'name'=> 'required',
+            'phone'=> 'required',
+            'Email'=> 'required',
+            'message'=> 'required',
+            'g-recaptcha-response' => 'required|captcha',
+            
+           
+        ]);
+
+        //logic for sending message 
+
+        return redirect()->back();
+    }
+
    
 }
