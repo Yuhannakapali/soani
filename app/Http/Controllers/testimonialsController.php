@@ -109,12 +109,12 @@ class testimonialsController extends Controller
             $testimonial->image_name = $imagename;
             $testimonial->save();
             session()->flash('message','Updated');
-            return redirect()->route('Testimonial.index');
+            return redirect()->route('testimonial.index');
         }
         else{
             $testimonial->save();
             session()->flash('message','Updated');
-            return redirect()->route('Testimonial.index');
+            return redirect()->route('testimonial.index');
         }
         
         
@@ -131,6 +131,6 @@ class testimonialsController extends Controller
         $testimonial = Testimonial::find($id);
         $testimonial->delete();
         session()->flash('message','deleted Successfully');
-        return redirect()->route('Testimonial.index');
+        return redirect()->route('testimonial.index');
     }
 }

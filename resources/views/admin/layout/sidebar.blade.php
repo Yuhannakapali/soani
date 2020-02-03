@@ -29,7 +29,7 @@
               <li class="nav-item">
                 <a href="/ourteams" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p> our team </p>
+                  <p> Our team </p>
                 </a>
               </li>
               <li class="nav-item">
@@ -39,9 +39,15 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/Testimonial" class="nav-link">
+                <a href="/testimonial" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Testimonial</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/portfolio" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Portfolio</p>
                 </a>
               </li>
             </ul>

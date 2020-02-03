@@ -51,7 +51,11 @@ Route::resource('posts', 'postsController');
 Route::resource('ourteams', 'ourteamsController')->middleware('auth');
 
 //testimonials
-Route::resource('Testimonial', 'testimonialsController')->middleware('auth');
+Route::resource('testimonial', 'testimonialsController')->middleware('auth');
+
+//portfolio
+Route::resource('portfolio', 'testimonialsController')->middleware('auth');
+
 //clients
 Route::resource('clients', 'clientsController')->middleware('auth');
 //contact us message 

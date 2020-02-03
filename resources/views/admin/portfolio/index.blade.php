@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="p-3" >
-            <a href="{{route('testimonial.create')}}" class="btn btn-primary pull-right"> <i class="fa fa-plus"></i> Create</a>
+            <a href="{{route('portfolio.create')}}" class="btn btn-primary pull-right"> <i class="fa fa-plus"></i> Create</a>
         </div>
     </div>
 </div>
@@ -33,7 +33,7 @@
                                     <a
                                         class="btn btn-info btn-xs"
                                         style="margin-left:5px;"
-                                        href="{{ route('testimonial.edit', $data) }}"
+                                        href="{{ route('portfolio.edit', $data) }}"
                                     >
                                         <i class="fa fa-eye"></i>
                                         edit
@@ -41,7 +41,7 @@
 
                                     <form
                                     method="POST" 
-                                    action="{{ route('testimonial.destroy',$data)}}"
+                                    action="{{ route('portfolio.destroy',$data)}}"
                                     >
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
