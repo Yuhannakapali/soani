@@ -4,6 +4,6 @@
 
 @include('frontend.layout.breadcrums')
 
-
+@include('frontend.section.ARVR')
     
 @endsection

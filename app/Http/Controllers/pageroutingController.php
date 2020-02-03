@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 use App\Ourteam;
 use App\Client;
+use App\Testimonial;
 use Illuminate\Http\Request;
 
 class pageroutingController extends Controller
 {
     public function homepage(){
         $clients = Client::all();
-        return view('user.index',compact('clients'));
+        $testimonials=Testimonial::all();
+        return view('user.index',compact('clients','testimonials'));
     }
 
     
@@ -32,7 +34,8 @@ class pageroutingController extends Controller
         return view('user.services.Web', ['pagename'=>'Web']);
     }
     public function Seo(){
-        return view('user.services.Seo', ['pagename'=>'Seo']);
+        $clients = Client::all();
+        return view('user.services.Seo', ['pagename'=>'Seo'],compact('clients'));
     }
     public function Mobile(){
         return view('user.services.Mobile', ['pagename'=>'Mobile']);
@@ -48,21 +51,7 @@ class pageroutingController extends Controller
         return view('admin.layout.master', ['pagename'=>'Contact us']);
     }
 
-    public function submitContactForm(Request $request){
-        $this->validate($request,[
-            'name'=> 'required',
-            'phone'=> 'required',
-            'Email'=> 'required',
-            'message'=> 'required',
-            'g-recaptcha-response' => 'required|captcha',
-            
-           
-        ]);
-
-        //logic for sending message 
-
-        return redirect()->back();
-    }
+   
 
    
 }

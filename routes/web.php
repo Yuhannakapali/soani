@@ -49,9 +49,12 @@ Route::resource('todos', 'TodoController');
 Route::resource('posts', 'postsController');
 //ourteam
 Route::resource('ourteams', 'ourteamsController')->middleware('auth');
+
+//testimonials
+Route::resource('Testimonial', 'testimonialsController')->middleware('auth');
 //clients
 Route::resource('clients', 'clientsController')->middleware('auth');
-
+//contact us message 
 Route::resource('message', 'messageController');
 
 Auth::routes();

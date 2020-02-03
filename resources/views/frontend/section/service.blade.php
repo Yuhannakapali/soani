@@ -4,7 +4,7 @@
         <div class="col-lg-6 col-md-12 mt-5">
           <div class="title-box">
             <h2 class="title-light text-dark">
-               <span>Ar/Vr</span>Solution
+               <span>AR/VR</span> Solution
             </h2>
           </div>
           <p class="mt-4">
