@@ -54,7 +54,7 @@ Route::resource('ourteams', 'ourteamsController')->middleware('auth');
 Route::resource('testimonial', 'testimonialsController')->middleware('auth');
 
 //portfolio
-Route::resource('portfolio', 'testimonialsController')->middleware('auth');
+Route::resource('portfolio', 'portfoliosController')->middleware('auth');
 
 //clients
 Route::resource('clients', 'clientsController')->middleware('auth');
