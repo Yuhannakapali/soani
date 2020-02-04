@@ -11,6 +11,13 @@
     
 
     <!-- Right navbar links -->
-    
+    <ul class="navbar-nav ml-auto">
+      <!-- Messages Dropdown Menu -->
+      
+      <div class="p-3">
+        <a class="button grey mt-2" href="/logout" role="button"> logout</a>
+      </div>
+      <!-- Notifications Dropdown Menu -->
+     
   </nav>
   <!-- /.navbar -->

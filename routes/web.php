@@ -62,5 +62,7 @@ Route::resource('clients', 'clientsController')->middleware('auth');
 Route::resource('message', 'messageController');
 
 Auth::routes();
+//logout
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
