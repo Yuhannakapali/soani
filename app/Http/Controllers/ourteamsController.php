@@ -61,20 +61,23 @@ class ourteamsController extends Controller
             $newteam->executive_team = 0;
         }
         if ($board != 1 && $executive != 1 ) {
-            session()->flash('message','Added Successfully');
-            return view('admin.ourteam.create');
+            session()->flash('message','no check box selected');
+            Session()->flash('alert-class', 'alert-danger');
+            return redirect()->route('ourteams.create');
         }
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
             $request->file->move(public_path('images/upload'), $imagename);
             $newteam->image_name = $imagename;
             $newteam->save();
-            session()->flash('message','Added Successfully');
-            return view('admin.ourteam.create');
+            session()->flash('message','added sucessfully');
+            Session()->flash('alert-class', 'alert-success');
+            return redirect()->route('ourteams.create');
         }
         else{
             session()->flash('message','file not selected');
-            return view('admin.ourteam.create');
+            Session()->flash('alert-class', 'alert-danger');
+            return redirect()->route('ourteams.create');
         }
         
         
@@ -140,12 +143,14 @@ class ourteamsController extends Controller
             $request->file->move(public_path('images/upload'), $imagename);
             $ourteam->image_name = $imagename;
             $ourteam->save();
-            session()->flash('message','Updated');
+            session()->flash('message','Updated sucessfully');
+            Session()->flash('alert-class', 'alert-success'); 
             return redirect()->route('ourteams.index');
         }
         else{
             $ourteam->save();
-            session()->flash('message','Updated');
+            session()->flash('message','Updated sucessfully');
+            Session()->flash('alert-class', 'alert-success'); 
             return redirect()->route('ourteams.index');
         }
         
@@ -162,7 +167,8 @@ class ourteamsController extends Controller
     {
         $ourteam = ourteam::find($id);
         $ourteam->delete();
-        session()->flash('message','Added Successfully');
+        session()->flash('message','delete sucessfully');
+        Session()->flash('alert-class', 'alert-danger');
         return redirect()->route('Ourteams.index');
         
     }

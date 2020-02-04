@@ -2,7 +2,17 @@
 
 
 @section('content')
-
+<div class="container">
+    <div class="row" 
+        <div>
+            @if(Session::has('message'))   
+                <div class="alert {{ Session::get('alert-class', 'alert-info') }}"" role="alert">
+                    {{ Session::get('message') }}
+                  </div>
+                @endif
+          </div>
+    </div>
+</div>
 <div class="content-wrapper">
     <div class="content-header">  
         <div class="container-fluid">
@@ -15,7 +25,7 @@
                             enctype="multipart/form-data"
                             action="{{ route('portfolio.store') }}"
                         >
-                            @include('admin.forms.clients_form')
+                            @include('admin.forms.portfolio_form')
                             <div class="form-group">
                                 <div class="box-footer">
                                     <input

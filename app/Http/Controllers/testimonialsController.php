@@ -36,31 +36,38 @@ class testimonialsController extends Controller
     public function store(Request $request)
     {   
         
-        $request->validate([
-        'name' => 'required',
-        'designation' => 'required',
-        'message' => 'required',
-        'file' => 'required',
-        ]);
+            $newtestimonial = new Testimonial();
+            $newtestimonial->name = $request->name;
+            $newtestimonial->designation = $request->designation;
 
-        $newtestimonial = new Testimonial();
-        $newtestimonial->name = $request->name;
-        $newtestimonial->designation = $request->designation;
-        $newtestimonial->message = $request->message;
-        
+            if (!empty($request->message)) {
+                $newtestimonial->message = $request->message;
+            }
+            else {
+                session()->flash('message','message box empty');
+                Session()->flash('alert-class', 'alert-danger');
+                return redirect()->route('testimonial.create');
+            }
+            
+    
+            if ($request->hasfile('file')) {
+                $imagename = $request->file->getClientOriginalName();
+                $request->file->move(public_path('images/upload'), $imagename);
+                $newtestimonial->image_name = $imagename;
+                $newtestimonial->save();
+                session()->flash('message','added sucessfully');
+                Session()->flash('alert-class', 'alert-success');
+                return redirect()->route('testimonial.create');
+            }
+            else{
+                session()->flash('message','file not selected');
+                Session()->flash('alert-class', 'alert-danger');
+                return redirect()->route('testimonial.create');
+                
+            }
+                 
 
-        if ($request->hasfile('file')) {
-            $imagename = $request->file->getClientOriginalName();
-            $request->file->move(public_path('images/upload'), $imagename);
-            $newtestimonial->image_name = $imagename;
-            $newtestimonial->save();
-            session()->flash('message','Added Successfully');
-            return view('admin.testimonial.create');
-        }
-        else{
-            session()->flash('message','file not selected');
-            return view('admin.testimonial.create');
-        }
+    
 
         
     }
@@ -108,12 +115,14 @@ class testimonialsController extends Controller
             $request->file->move(public_path('images/upload'), $imagename);
             $testimonial->image_name = $imagename;
             $testimonial->save();
-            session()->flash('message','Updated');
+            session()->flash('message','updated sucessfully');
+            Session()->flash('alert-class', 'alert-success');
             return redirect()->route('testimonial.index');
         }
         else{
             $testimonial->save();
-            session()->flash('message','Updated');
+            session()->flash('message','Updated sucessfully');
+            Session()->flash('alert-class', 'alert-success');
             return redirect()->route('testimonial.index');
         }
         
@@ -130,7 +139,8 @@ class testimonialsController extends Controller
     {
         $testimonial = Testimonial::find($id);
         $testimonial->delete();
-        session()->flash('message','deleted Successfully');
+        session()->flash('message','deleted sucessfully');
+        Session()->flash('alert-class', 'alert-danger');
         return redirect()->route('testimonial.index');
     }
 }

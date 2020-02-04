@@ -36,10 +36,13 @@
          id="message"
          name="message"
          rows="4"
-         
+         required=""
          >
          {{$member_available ?? '' ? $member->message : old('messsage')}}
         </textarea>
+        @error('title')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     {{-- <input
         type="text"
         class="form-control"

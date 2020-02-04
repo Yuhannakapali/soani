@@ -14,8 +14,8 @@ class portfoliosController extends Controller
      */
     public function index()
     {
-        $data = Portfolio::all();
-        return view('admin.portfolio.index');
+        $datas = portfolio::all();
+        return view('admin.portfolio.index',compact('datas'));
     }
 
     /**
@@ -45,14 +45,15 @@ class portfoliosController extends Controller
     
             $newproject = new portfolio();
             $newproject->name = $request->name;
-            $newprojhect->url = $request->url;
+            $newproject->url = $request->url;
            
             if ($request->hasfile('file')) {
                 $imagename = $request->file->getClientOriginalName();
                 $request->file->move(public_path('images/upload'), $imagename);
                 $newproject->image_name = $imagename;
                 $newproject->save();
-                session()->flash('message','Added Successfully');
+                Session()->flash('message', 'added sucessfully'); 
+                Session()->flash('alert-class', 'alert-success');  
                 return view('admin.portfolio.create');
             }
             else{
@@ -95,21 +96,24 @@ class portfoliosController extends Controller
     {
        
     
-            $newproject = new portfolio();
+            $newproject = portfolio::find($id);
             $newproject->name = $request->name;
-            $newprojhect->url = $request->url;
+            $newproject->url = $request->url;
            
             if ($request->hasfile('file')) {
                 $imagename = $request->file->getClientOriginalName();
                 $request->file->move(public_path('images/upload'), $imagename);
                 $newproject->image_name = $imagename;
                 $newproject->save();
-                session()->flash('message','Added Successfully');
-                return view('admin.portfolio.create');
+                session()->flash('message','Updated sucessfully');
+                Session()->flash('alert-class', 'alert-success'); 
+                return redirect()->route('portfolio.index');
             }
             else{
                 $newproject->save();
-                return view('admin.portfolio.create');
+                session()->flash('message','Updated sucessfully');
+                Session()->flash('alert-class', 'alert-success'); 
+                return redirect()->route('portfolio.index');
             }
     }
 
@@ -124,6 +128,7 @@ class portfoliosController extends Controller
         $portfolio = Portfolio::find($id);
         $portfolio->delete();
         session()->flash('message','deleted Successfully');
+        Session()->flash('alert-class', 'alert-danger'); 
         return redirect()->route('portfolio.index');
     }
 }

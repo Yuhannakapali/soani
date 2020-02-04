@@ -2,9 +2,20 @@
 
 
 @section('content')
-@if(Session()->has('message'))
-<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-@endif
+
+{{-- alert block --}}
+<div class="container">
+    <div class="row" 
+        <div>
+            @if(Session::has('message'))   
+                <div class="alert {{ Session::get('alert-class', 'alert-info') }}"" role="alert">
+                    {{ Session::get('message') }}
+                  </div>
+                @endif
+          </div>
+    </div>
+</div>
+{{-- main content --}}
 <div class="content-wrapper">
     <div class="content-header">  
         <div class="container-fluid">
@@ -17,7 +28,7 @@
                             class="form-validate"
                             method="post"
                             enctype="multipart/form-data"
-                            action="{{ route('Testimonial.update',$member) }}"
+                            action="{{ route('testimonial.update',$member) }}"
                         >
                         {{ method_field('PATCH') }}
 

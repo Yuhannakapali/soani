@@ -1,5 +1,18 @@
 @extends('admin.layout.master') @section('content')
 
+{{-- alert block --}}
+<div class="container">
+    <div class="row" 
+        <div>
+            @if(Session::has('message'))   
+                <div class="alert {{ Session::get('alert-class', 'alert-info') }}"" role="alert">
+                    {{ Session::get('message') }}
+                  </div>
+                @endif
+          </div>
+    </div>
+</div>
+{{-- main content --}}
 <div class="container">
     <div class="row">
         <div class="p-3" >

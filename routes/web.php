@@ -36,7 +36,7 @@ Route::get('/Mobile', 'pageroutingController@Mobile');
 
 Route::get('/privacy', 'pageroutingController@privacy');
 
-Route::post('/submit-contact', 'pageroutingController@submitContactForm');
+Route::get('/Portfolio', 'pageroutingController@portfolio');
 
 
 

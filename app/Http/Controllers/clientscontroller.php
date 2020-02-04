@@ -46,12 +46,14 @@ class clientscontroller extends Controller
             $request->file->move(public_path('images/upload'), $imagename);
             $newclient->image_name = $imagename;
             $newclient->save();
-            session()->flash('message','Added Successfully');
-            return view('admin.clients.create');
+            session()->flash('message','added sucessfully');
+            Session()->flash('alert-class', 'alert-success');
+            return redirect()->route('clients.create');
         }
         else{
             session()->flash('message','file not selected');
-            return view('admin.clients.create');
+            Session()->flash('alert-class', 'alert-danger');
+            return redirect()->route('clients.create');
         }
         
     }
@@ -96,12 +98,14 @@ class clientscontroller extends Controller
             $request->file->move(public_path('images/upload'), $imagename);
             $clients->image_name = $imagename;
             $clients->save();
-            session()->flash('message','image changed');
+            session()->flash('message','updated sucessfully');
+            Session()->flash('alert-class', 'alert-success');
             return redirect()->route('clients.index');
         }
         else{
             $clients->save();
-            session()->flash('message','Updated');
+            session()->flash('message','updated sucessfully');
+            Session()->flash('alert-class', 'alert-success');
             return redirect()->route('clients.index');
         }
     }
@@ -116,7 +120,8 @@ class clientscontroller extends Controller
     {
         $client = client::find($id);
         $client->delete();
-        session()->flash('message','delete Successfully');
+        session()->flash('message','deleted sucessfully');
+        Session()->flash('alert-class', 'alert-danger');
         return redirect()->route('clients.index');
     }
 }

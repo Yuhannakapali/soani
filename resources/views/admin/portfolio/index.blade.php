@@ -1,5 +1,15 @@
 @extends('admin.layout.master') @section('content')
-
+<div class="container">
+    <div class="row" 
+        <div>
+            @if(Session::has('message'))   
+                <div class="alert {{ Session::get('alert-class', 'alert-info') }}"" role="alert">
+                    {{ Session::get('message') }}
+                  </div>
+                @endif
+          </div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="p-3" >
@@ -15,8 +25,8 @@
                         <tr>
                           <th scope="col">#</th>
                           <th scope="col">Name</th>
-                          <th scope="col">Designation</th>
-                          <th scope="col">message</th>
+                          <th scope="col">Url</th>
+                          
                           <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -27,8 +37,7 @@
                             <tr>
                                 <th scope="row">{{$loop->index+1}}</th>
                                 <td>{{$data->name}}</td>
-                                <td>{{$data->designation}}</td>
-                                <td>{{$data->message}}</td>
+                                <td>{{$data->url}}</td>
                                 <td>
                                     <a
                                         class="btn btn-info btn-xs"

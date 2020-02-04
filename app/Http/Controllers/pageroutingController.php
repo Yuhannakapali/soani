@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Ourteam;
 use App\Client;
 use App\Testimonial;
+use App\Portfolio;
 use Illuminate\Http\Request;
 
 class pageroutingController extends Controller
@@ -17,10 +18,10 @@ class pageroutingController extends Controller
     
     
     public function aboutus(){
-        $clients = Client::all();
+        $datas = portfolio::all();
         $boards = Ourteam::where('board_of_director', 1)->get();
         $executives = Ourteam::where('executive_team', 1)->get();
-        return view('user.aboutus' , ['pagename'=>'About us'] , compact('boards','executives','clients'));
+        return view('user.aboutus' , ['pagename'=>'About us'] , compact('boards','executives','datas'));
     }
 
     public function services(){
@@ -47,8 +48,10 @@ class pageroutingController extends Controller
     public function contact(){
         return view('user.contact', ['pagename'=>'Contact us']);
     }
-    public function addteam(){
-        return view('admin.layout.master', ['pagename'=>'Contact us']);
+    
+    public function portfolio(){
+        $datas = portfolio::all();
+        return view('user.portfolio', ['pagename'=>'Contact us'], compact('datas'));
     }
 
    

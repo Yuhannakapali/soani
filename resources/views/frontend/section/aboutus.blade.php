@@ -5,8 +5,9 @@
             <div class="col-sm-12">
                 <ul class="about-manu text-center">
                     <li class="d-inline"><a href="#values" class="active">Our Values</a></li>
+                    <li class="d-inline"><a href="#partners">Our Projects</a></li>
                     <li class="d-inline"><a href="#team">Our Team</a></li>
-                    <li class="d-inline"><a href="#partners">Our clients</a></li>
+                    
                 </ul>
                 <div class="about-content mt-5">
                     <div id="values" class="mb-0">
@@ -99,28 +100,16 @@
                 </div>
                 <div id="partners" class="d-block">
                     <div class="row justify-content-md-center">
-                        <div class="col-lg-8 col-md-12 text-center">
-                            <div class="title-box">
-                                <h2 class="title text-dark"> Our <span>Clients</span></h2>
-                                <p class="mt-2">some of our satisfied clients</p>
-                            </div>
-                        </div>
+                        @include('frontend.section.portfoliolist')
+                        <div class="p-3">
+                            <a class="button grey mt-2" href="/Portfolio" role="button"> View all </a>
+                          </div>
                     </div>
+                    
 
-                    <div class="row">
-                        @if (!empty($clients))
-                            @foreach ($clients as $client)
-                            <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-                                <div class="clients-box text-center">
-                                <a href="{{'https://'.$client->url}}"><img class="img-fluid" src="{{asset('images/upload/'.$client->image_name)}}"
-                                    alt="{{$client->name}}" data-toggle="tooltip" title="{{$client->name}}"> </a>
-                                </div>
-                            </div>
-                            @endforeach
-                            
-                        @endif
-                    </div>   
-                        
+
+
+                   
                 </div>
                 <div class="container">
                     <div id="team" class="text-center">

@@ -2,9 +2,17 @@
 
 
 @section('content')
-@if(Session()->has('message'))
-<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-@endif
+<div class="container">
+    <div class="row" 
+        <div>
+            @if(Session::has('message'))   
+                <div class="alert {{ Session::get('alert-class', 'alert-info') }}"" role="alert">
+                    {{ Session::get('message') }}
+                  </div>
+                @endif
+          </div>
+    </div>
+</div>
 <div class="content-wrapper">
     <div class="content-header">  
         <div class="container-fluid">
@@ -21,7 +29,7 @@
                         >
                         {{ method_field('PATCH') }}
 
-                            @include('admin.forms.testimonial_form')
+                            @include('admin.forms.portfolio_form')
                             <div class="form-group">
                                 <div class="box-footer">
                                     <input

@@ -4,11 +4,7 @@
             <div class="col-lg-12 col-sm-12 text-center">
               <div class="title-box">
                 <h3 class="title text-dark">
-                  Worldwide Our
-                  <span class="timer" data-to="6000" data-speed="5000"
-                    >6000 +</span
-                  >
-                  Satisfied Client Using Services
+                   Some Satisfied <span> Client </span> Using  our Services
                 </h3>
                 <p class="mt-2">List of Satisfied costumers</p>
               </div>
