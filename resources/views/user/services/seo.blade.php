@@ -3,6 +3,7 @@
 @section('content')
 
 @include('frontend.layout.breadcrums')
-@include('frontend.section.potfolio')
+
+@include('frontend.section.seo')
     
 @endsection

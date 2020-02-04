@@ -3,6 +3,6 @@
 @section('content')
 
 @include('frontend.layout.breadcrums')
-@include('frontend.section.service')
+@include('frontend.section.web')
     
 @endsection
