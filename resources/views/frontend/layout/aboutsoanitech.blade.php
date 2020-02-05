@@ -1,5 +1,5 @@
 <section class="iq-features">
-        <div class="bg"><img src="images/works/work-bg.png" alt="img" /></div>
+        <div class="bg"><img src="{{asset('images/works/work-bg.png')}}" alt="img" /></div>
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 text-center">
@@ -114,12 +114,12 @@
                 <div class="works-box">
                   <img
                     class="img-fluid top-bg"
-                    src="images/works/work-bg.png"
+                    src="{{asset('images/works/work-bg.png')}}"
                     alt="image"
                   />
                   <img
                     class="img-fluid works-img1"
-                    src="images/works/work-bg.png"
+                    src="{{asset('images/works/work-bg.png')}}"
                     alt="image"
                   />
                 </div>

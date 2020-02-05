@@ -1,4 +1,4 @@
-<link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" />
 
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
 

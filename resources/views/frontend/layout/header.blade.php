@@ -4,8 +4,8 @@
           <div class="col-lg-9">
             <nav class="navbar navbar-expand-lg navbar-light">
               <a class="navbar-brand" href="/">
-                <img class="logo" src="images/logo.svg" alt="image" />
-                <img class="logo-stiky" src="./images/test.svg" alt="logo-stiky"/>
+                <img class="logo" src="{{asset('images/logo.svg')}}" alt="image" />
+                <img class="logo-stiky" src="{{asset('./images/test.svg')}}" alt="logo-stiky"/>
               </a>
               <button
                 class="navbar-toggler"

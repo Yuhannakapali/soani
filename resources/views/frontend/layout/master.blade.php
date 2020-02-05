@@ -11,11 +11,12 @@
     
   </head>
   <body>
-    <div id="loading">
+    {{-- loading loader  --}}
+    {{-- <div id="loading">
       <div id="loading-center">
         <img src="images/loader.gif" alt="loder" />
       </div>
-    </div>
+    </div> --}}
 
    
 

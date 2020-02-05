@@ -1,6 +1,6 @@
 <section class="iq-about mt-1">
         <div class="bg">
-          <img src="images/works/work-bg.png" alt="img" />
+          <img src="{{asset('images/works/work-bg.png')}}" alt="img" />
         </div>
         <div class="container">
           <div class="row justify-content-md-center">

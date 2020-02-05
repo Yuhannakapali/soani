@@ -21,16 +21,16 @@
         </p>
         <ul class="mt-4">
           <li class="mt-2">
-            <i class="fas fa-check-circle"></i> AR, ER and VR Solutions
+            <i class="fas fa-check-circle"></i> AR\VR Solutions
           </li>
           <li class="mt-2">
-            <i class="fas fa-check-circle"></i> Mobile and Web application
+            <i class="fas fa-check-circle"></i> Web application
           </li>
           <li class="mt-2">
-            <i class="fas fa-check-circle"></i> Website Design
+            <i class="fas fa-check-circle"></i> Mobile Application
           </li>
           <li class="mt-2">
-            <i class="fas fa-check-circle"></i> Digital Marketing
+            <i class="fas fa-check-circle"></i> Seo 
           </li>
         </ul>
         <div class="p-3">
@@ -41,7 +41,7 @@
       <div class="col-lg-6 col-sm-12">
         <div class="works-box">
           <div
-            id="carouselExampleSlidesOnly"
+            id="carousel"
             class="carousel slide"
             data-ride="carousel"
           >
@@ -103,7 +103,7 @@
           Tech was established with the vision to digitalize what we have
           and to develop Software and e-Books for every person.
         </p>
-        <a class="button grey mt-2" href="./about-us.html" role="button"
+        <a class="button grey mt-2" href="./aboutus" role="button"
           >Read More</a
         >
       </div>
@@ -116,7 +116,7 @@
           />
           <img
             class="img-fluid works-img1"
-            src="images/works/work-bg.png"
+            src="images/works/works-img1.png"
             alt="image"
           />
         </div>

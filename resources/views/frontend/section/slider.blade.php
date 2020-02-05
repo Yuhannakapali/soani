@@ -54,7 +54,7 @@
             <div class="col-lg-7 col-md-12 col-sm-12 text-right">
               <img
                 class="img-fluid banner-img"
-                src="images/banner/banner-imgtest.png"
+                src="{{asset('images/banner/banner-imgtest.png')}}"
                 alt="image"
               />
             </div>

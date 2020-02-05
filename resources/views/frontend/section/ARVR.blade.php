@@ -22,7 +22,7 @@
             <div class="col-lg-6 col-md-12 mt-5">
                 <img
                     class="img-fluid top-img1 w-100"
-                    src="images/services/vr1.jpg"
+                    src="{{asset('images/services/vr1.jp')}}g"
                     alt="image"
                 />
             </div>
@@ -45,7 +45,7 @@
             <div class="col-lg-6 col-md-12 order-lg-1 order-2 mt-5 pt-5">
               <img
                 class="img-fluid top-img1 w-100"
-                src="images/services/web.png"
+                src="{{asset('images/services/web.png')}}"
                 alt="image"
               />
             </div>
