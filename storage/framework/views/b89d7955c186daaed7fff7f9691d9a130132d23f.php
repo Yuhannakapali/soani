@@ -22,7 +22,7 @@
             <div class="col-lg-6 col-md-12 mt-5">
                 <img
                     class="img-fluid top-img1 w-100"
-                    src="{{asset('images/services/vr1.jpg')}}"
+                    src="<?php echo e(asset('images/services/vr1.jpg')); ?>"
                     alt="image"
                 />
             </div>
@@ -45,10 +45,11 @@
             <div class="col-lg-6 col-md-12 order-lg-1 order-2 mt-5 pt-5">
               <img
                 class="img-fluid top-img1 w-100"
-                src="{{asset('images/services/web.png')}}"
+                src="<?php echo e(asset('images/services/web.png')); ?>"
                 alt="image"
               />
             </div>
           </div>
     </div>
 </section>
+<?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/frontend/section/web.blade.php ENDPATH**/ ?>

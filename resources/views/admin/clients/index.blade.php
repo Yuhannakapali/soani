@@ -28,6 +28,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
+                            <th scope="col">url</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -38,6 +39,7 @@
                             <tr>
                                 <th scope="row">{{$loop->index+1}}</th>
                                 <td>{{$client->name}}</td>
+                                <td>{{$client->url}}</td>
                                 <td>
                                     <a
                                         class="btn btn-info btn-xs"

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\client;
+use App\Client;
 use Illuminate\Http\Request;
 
 class clientscontroller extends Controller

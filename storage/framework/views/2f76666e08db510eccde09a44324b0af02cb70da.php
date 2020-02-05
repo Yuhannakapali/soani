@@ -1,0 +1,46 @@
+<section class="#partners">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-lg-12 col-sm-12 text-center">
+          <div class="title-box">
+            <h3 class="title text-dark">
+               Some of our finished <span> Projects </span> Using  our Services
+            </h3>
+            <p class="mt-2">Our products</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="owl-carousel mt-4"
+        data-autoplay="true"
+        data-loop="true"
+        data-nav="false"
+        data-dots="true"
+        data-items="5"
+        data-items-laptop="5"
+        data-items-tab="4"
+        data-items-mobile="2"
+        data-items-mobile-sm="1"
+      >
+      <?php if(!empty($datas)): ?>
+          <?php $__currentLoopData = $datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+          <div class="item">
+            <div class="clients-box text-center">
+              <a href="<?php echo e('https://'.$data->url); ?>"
+                ><img
+                  class="img-fluid"
+                  src="<?php echo e(asset('images/upload/'.$data->image_name)); ?>"
+                  alt="<?php echo e($data->name); ?>"
+                  data-toggle="tooltip"
+                  title="<?php echo e($data->name); ?>"
+                />
+              </a>
+            </div>
+          </div>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+      <?php endif; ?>
+        
+        
+      </div>
+    </div>
+  </section><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/frontend/section/portfoliolist.blade.php ENDPATH**/ ?>
