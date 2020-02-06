@@ -138,9 +138,16 @@ class testimonialsController extends Controller
     public function destroy($id)
     {
         $testimonial = Testimonial::find($id);
-        $testimonial->delete();
-        session()->flash('message','deleted sucessfully');
-        Session()->flash('alert-class', 'alert-danger');
-        return redirect()->route('testimonial.index');
+        if (!testimonial != null){
+            $testimonial->delete();
+            Session()->flash('message','delete sucessfully');
+            Session()->flash('alert-class', 'alert-danger');
+            return redirect()->route('testimonial.index');
+        }
+        else{
+            Session()->flash('message','Already deleted just reload');
+            Session()->flash('alert-class', 'alert-danger');
+            return redirect()->route('testimonial.index');
+        }
     }
 }

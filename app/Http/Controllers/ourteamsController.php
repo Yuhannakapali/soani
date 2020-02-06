@@ -166,10 +166,17 @@ class ourteamsController extends Controller
     public function destroy($id)
     {
         $ourteam = ourteam::find($id);
-        $ourteam->delete();
-        session()->flash('message','delete sucessfully');
-        Session()->flash('alert-class', 'alert-danger');
-        return redirect()->route('Ourteams.index');
+        if (!ourteam != null){
+            $ourteam->delete();
+            Session()->flash('message','delete sucessfully');
+            Session()->flash('alert-class', 'alert-danger');
+            return redirect()->route('ourteams.index');
+        }
+        else{
+            Session()->flash('message','Already deleted just reload');
+            Session()->flash('alert-class', 'alert-danger');
+            return redirect()->route('ourteams.index');
+        }
         
     }
 }

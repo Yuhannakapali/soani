@@ -126,9 +126,17 @@ class portfoliosController extends Controller
     public function destroy($id)
     {
         $portfolio = Portfolio::find($id);
-        $portfolio->delete();
-        session()->flash('message','deleted Successfully');
-        Session()->flash('alert-class', 'alert-danger'); 
-        return redirect()->route('portfolio.index');
+        if (!portfolio != null){
+            $portfolio->delete();
+            Session()->flash('message','delete sucessfully');
+            Session()->flash('alert-class', 'alert-danger');
+            return redirect()->route('portfolio.index');
+        }
+        else{
+            Session()->flash('message','Already deleted just reload');
+            Session()->flash('alert-class', 'alert-danger');
+            return redirect()->route('portfolio.index');
+        }
+        
     }
 }

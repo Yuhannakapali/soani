@@ -119,9 +119,16 @@ class clientscontroller extends Controller
     public function destroy($id)
     {
         $client = client::find($id);
-        $client->delete();
-        session()->flash('message','deleted sucessfully');
-        Session()->flash('alert-class', 'alert-danger');
-        return redirect()->route('clients.index');
+        if (!client != null){
+            $client->delete();
+            Session()->flash('message','delete sucessfully');
+            Session()->flash('alert-class', 'alert-danger');
+            return redirect()->route('clients.index');
+        }
+        else{
+            Session()->flash('message','Already deleted just reload');
+            Session()->flash('alert-class', 'alert-danger');
+            return redirect()->route('clients.index');
+        }
     }
 }
