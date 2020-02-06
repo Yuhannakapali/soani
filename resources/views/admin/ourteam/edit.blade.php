@@ -1,5 +1,8 @@
 @extends('admin.layout.master') 
 
+@section('content')
+    
+
 {{-- alert block --}}
 <div class="container">
     <div class="row" 
