@@ -22,26 +22,26 @@
             data-items-mobile="2"
             data-items-mobile-sm="1"
           >
-          @if (!empty($clients))
-              @foreach ($clients as $client)
+          <?php if(!empty($clients)): ?>
+              <?php $__currentLoopData = $clients; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $client): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
               <div class="item">
                 <div class="clients-box text-center">
-                  <a href="{{'https://'.$client->url}} target="_blank""
+                  <a href="<?php echo e('https://'.$client->url); ?> target="_blank""
                     ><img
                       class="img-fluid"
                       
-                      src="{{asset('images/upload/'.$client->image_name)}}"
-                      alt="{{$client->name}}"
+                      src="<?php echo e(asset('images/upload/'.$client->image_name)); ?>"
+                      alt="<?php echo e($client->name); ?>"
                       data-toggle="tooltip"
-                      title="{{$client->name}}"
+                      title="<?php echo e($client->name); ?>"
                     />
                   </a>
                 </div>
               </div>
-              @endforeach
-          @endif
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          <?php endif; ?>
             
             
           </div>
         </div>
-      </section>
+      </section><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/frontend/section/clientlist.blade.php ENDPATH**/ ?>

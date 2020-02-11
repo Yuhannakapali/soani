@@ -33,18 +33,8 @@
                                 <div class="col-lg-8 col-md-8 col-sm-12 ">
                                   <div class="aboutmapouter">
                                     <div class="gmap_canvas">
-                                      <iframe
-                                        width="100%"
-                                        height="100%"
-                                        id="gmap_canvas"
-                                        src="https://maps.google.com/maps?q=Soanitech&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                                        frameborder="0"
-                                        scrolling="no"
-                                        marginheight="0"
-                                        marginwidth="0"
-                                        padding="0"
-                                      >
-                                      </iframe>
+                                    <img src="<?php echo e(asset('images/services/stn.gif')); ?>" alt="">
+                                    
                                     </div>
                                   </div>
                                 </div>

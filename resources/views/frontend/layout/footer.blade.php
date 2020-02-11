@@ -7,7 +7,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-3 col-md-4 col-sm-12 re-center">
-            <a href="index.html">
+            <a href="/">
               <img
                 style=" border: 10px; border-style: fixed;"
                 class="img-fluid logo"
@@ -15,9 +15,7 @@
                 src="images/logo.svg"
               />
             </a>
-            <div class="link whitetext mt-2">
-              Made By <a href="https://yuhannakapali.com.np">KuroNeko</a>
-            </div>
+            
           </div>
           <div class="col-lg-6 col-md-4 col-sm-12 text-center text-uppercase">
             <ul class="copyright">
@@ -32,17 +30,18 @@
           <div class="col-lg-3 col-md-4 col-sm-12 text-right r-mt3">
             <ul class="media-box">
               <li>
-                <a href="https://twitter.com/soani_tech">
+                <a href="https://twitter.com/soani_tech" target="_blank">
                   <i class="fab fa-twitter"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/soanitech">
+                <a href="https://www.facebook.com/soanitech" target="_blank">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li>
-                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="" target="_blank">
+                  <i class="fab fa-instagram"></i></a>
               </li>
             </ul>
           </div>

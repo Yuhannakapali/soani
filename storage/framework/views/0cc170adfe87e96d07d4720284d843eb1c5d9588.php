@@ -79,3 +79,4 @@
   </div>
 </section>
 
+<?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/frontend/section/services&ourteam.blade.php ENDPATH**/ ?>

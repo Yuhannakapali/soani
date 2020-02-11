@@ -15,7 +15,7 @@
         @if (!empty($datas))
         @foreach ($datas as $data)
         <div class="col-lg-2 col-md-3 col-sm-4 mt-5">
-            <div class="clients-box text-center">
+            <div class="clients-box text-center" target="_blank">
             <a href="{{'https://'.$data->url}}"><img class="img-fluid" src="{{asset('images/upload/'.$data->image_name)}}"
                 alt="{{$data->name}}" data-toggle="tooltip" title="{{$data->name}}"> </a>
             </div>
