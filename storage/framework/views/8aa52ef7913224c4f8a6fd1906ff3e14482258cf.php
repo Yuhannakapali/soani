@@ -1,0 +1,1 @@
+<?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/vendor/blog/entry/partials/adsAside.blade.php ENDPATH**/ ?>

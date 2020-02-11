@@ -1,7 +1,7 @@
 <footer>
       <img
         class="img-fluid footer-before"
-        src="images/footer-before.png"
+        src="{{asset('images/footer-before.png')}}"
         alt="image"
       />
       <div class="container">
@@ -12,7 +12,7 @@
                 style=" border: 10px; border-style: fixed;"
                 class="img-fluid logo"
                 alt="logo"
-                src="images/logo.svg"
+                src="{{asset('images/logo.svg')}}"
               />
             </a>
             

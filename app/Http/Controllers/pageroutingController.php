@@ -53,6 +53,14 @@ class pageroutingController extends Controller
         $datas = portfolio::all();
         return view('user.portfolio', ['pagename'=>'Portfolio'], compact('datas'));
     }
+    public function blog(){
+        
+        return view('user.blog', ['pagename'=>'Blog']);
+    }
+    public function blogdetail(){
+        
+        return view('user.blogdetail', ['pagename'=>'blog']);
+    }
 
    
 

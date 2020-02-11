@@ -38,6 +38,11 @@ Route::get('/privacy', 'pageroutingController@privacy');
 
 Route::get('/Portfolio', 'pageroutingController@portfolio');
 
+Route::get('/blog', 'pageroutingController@blog');
+
+Route::get('/blog/detail', 'pageroutingController@blogdetail');
+
+
 
 
 

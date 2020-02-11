@@ -251,4 +251,4 @@
         </div>
       </div>
     </div>
-  </section>
+  </section><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/frontend/section/blogdetail.blade.php ENDPATH**/ ?>

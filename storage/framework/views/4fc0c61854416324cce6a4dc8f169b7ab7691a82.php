@@ -1,7 +1,7 @@
 <footer>
       <img
         class="img-fluid footer-before"
-        src="images/footer-before.png"
+        src="<?php echo e(asset('images/footer-before.png')); ?>"
         alt="image"
       />
       <div class="container">
@@ -12,7 +12,7 @@
                 style=" border: 10px; border-style: fixed;"
                 class="img-fluid logo"
                 alt="logo"
-                src="images/logo.svg"
+                src="<?php echo e(asset('images/logo.svg')); ?>"
               />
             </a>
             
@@ -30,17 +30,18 @@
           <div class="col-lg-3 col-md-4 col-sm-12 text-right r-mt3">
             <ul class="media-box">
               <li>
-                <a href="https://twitter.com/soani_tech">
+                <a href="https://twitter.com/soani_tech" target="_blank">
                   <i class="fab fa-twitter"></i>
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/soanitech">
+                <a href="https://www.facebook.com/soanitech" target="_blank">
                   <i class="fab fa-facebook-f"></i>
                 </a>
               </li>
               <li>
-                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="" target="_blank">
+                  <i class="fab fa-instagram"></i></a>
               </li>
             </ul>
           </div>
