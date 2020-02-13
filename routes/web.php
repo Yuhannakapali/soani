@@ -36,7 +36,7 @@ Route::get('/Mobile', 'pageroutingController@Mobile');
 
 Route::get('/privacy', 'pageroutingController@privacy');
 
-Route::get('/Portfolio', 'pageroutingController@portfolio');
+Route::get('/portfolio', 'pageroutingController@portfolio');
 
 Route::get('/blog', 'pageroutingController@blog');
 
@@ -59,15 +59,18 @@ Route::resource('ourteams', 'ourteamsController')->middleware('auth');
 Route::resource('testimonial', 'testimonialsController')->middleware('auth');
 
 //portfolio
-Route::resource('portfolio', 'portfoliosController')->middleware('auth');
+Route::resource('Portfolio', 'portfoliosController')->middleware('auth');
 
 //clients
 Route::resource('clients', 'clientsController')->middleware('auth');
 //contact us message 
 Route::resource('message', 'messageController');
 
+Route::resource('Blog', 'blogsController')->middleware('auth');
+
 Auth::routes();
 //logout
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
+

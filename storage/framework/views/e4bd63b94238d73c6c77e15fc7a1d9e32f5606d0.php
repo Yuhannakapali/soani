@@ -1,5 +1,6 @@
 <?php $member_available = isset($member) ? true :  false;?>
-{{ csrf_field() }}
+<?php echo e(csrf_field()); ?>
+
 <div class="form-group">
     <div>
         <label for="name"> Name</label>
@@ -12,7 +13,7 @@
         data-rule-maxlength="50"
         data-rule-minlength="3"
         required=""
-        value="{{$member_available ?? '' ? $member->name : old('name')}}"
+        value="<?php echo e($member_available ?? '' ? $member->name : old('name')); ?>"
     />
     </div>
     <div>
@@ -26,7 +27,7 @@
         data-rule-maxlength="50"
         data-rule-minlength="3"
         required=""
-        value="{{$member_available ?? '' ? $member->url : old('url')}}"
+        value="<?php echo e($member_available ?? '' ? $member->url : old('url')); ?>"
     />
     </div>
     
@@ -39,7 +40,7 @@
    
       
     <span class="error-display">
-        <i style="color: red;"> {!! $errors->first('image_name') !!} </i>
+        <i style="color: red;"> <?php echo $errors->first('image_name'); ?> </i>
     </span>
     
-</div>
+</div><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/forms/clients_form.blade.php ENDPATH**/ ?>

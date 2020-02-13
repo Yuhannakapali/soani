@@ -10,22 +10,20 @@
   
 </head>
 <body class="hold-transition sidebar-mini">
+  
 <div class="wrapper">
   @include('admin.layout.topnav')
   @include('admin.layout.sidebar')
-  
-  <div class="content-wrapper">
+    <div class="content-wrapper">
     <div class="content-header"> 
-      @yield('content')
+      <div class="shadow p-3 mb-5 bg-white rounded">
+        @yield('content')
+      </div>
     </div>
-  </div>    
-  
- @include('admin.layout.controlsidebar')
+  </div> 
   @include('admin.layout.footer')
+  @include('admin.layout.controlsidebar')  
 </div>
-@if(session('message'))
-<span class="alert alert-success">{{ session('message') }}</span>
-@endif
 @include('admin.layout.js')
 </body>
 </html>

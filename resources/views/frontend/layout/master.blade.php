@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Soanitech</title>
+    @yield('title')
     @include('frontend.layout.stylesheet')
     
   </head>
@@ -17,33 +17,9 @@
         <img src="images/loader.gif" alt="loder" />
       </div>
     </div> --}}
-
-   
-
-   
-
     @include('frontend.layout.header')
-    
-    
-
-
-
-
-
-      @yield('content')
-      
-
-
-
-    
-
-
-
-     
-
-      
+      @yield('content')      
     @include('frontend.layout.footer')  
-
     @include('frontend.layout.javascript')
   </body>
 </html>

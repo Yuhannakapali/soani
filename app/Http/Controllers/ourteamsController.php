@@ -166,7 +166,7 @@ class ourteamsController extends Controller
     public function destroy($id)
     {
         $ourteam = ourteam::find($id);
-        if (!ourteam != null){
+        if ($ourteam != null){
             $ourteam->delete();
             Session()->flash('message','delete sucessfully');
             Session()->flash('alert-class', 'alert-danger');
