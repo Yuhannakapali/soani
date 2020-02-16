@@ -544,6 +544,13 @@ function use(items) {
     }
     tinyMCEPopup.close();
   }
+  function useTinymce5(url) {
+    parent.postMessage({
+      mceAction: 'insert',
+      content: url
+    });
+    parent.postMessage({ mceAction: 'close' });
+    } 
 
   function useTinymce4AndColorbox(url) {
     if (!usingTinymce4AndColorbox()) { return; }

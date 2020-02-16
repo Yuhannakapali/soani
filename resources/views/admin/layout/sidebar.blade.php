@@ -28,9 +28,15 @@
             <ul class="nav nav-treeview">
               
               <li class="nav-item">
+                <a href="/Blog" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View All </p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="/Blog/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>create </p>
+                  <p>Create </p>
                 </a>
               </li>
             </ul>

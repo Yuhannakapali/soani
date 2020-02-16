@@ -5,6 +5,7 @@ use App\Ourteam;
 use App\Client;
 use App\Testimonial;
 use App\Portfolio;
+use App\Blog;
 use Illuminate\Http\Request;
 
 class pageroutingController extends Controller
@@ -54,8 +55,8 @@ class pageroutingController extends Controller
         return view('user.portfolio', ['pagename'=>'Portfolio'], compact('datas'));
     }
     public function blog(){
-        
-        return view('user.blog', ['pagename'=>'Blog']);
+        $datas = Blog::all();
+        return view('user.blog', ['pagename'=>'Blog'], Compact('datas'));
     }
     public function blogdetail(){
         

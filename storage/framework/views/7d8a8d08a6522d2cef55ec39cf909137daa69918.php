@@ -4,6 +4,15 @@
 <?php $__env->startSection('content'); ?>
 
 
+    
+<div>
+<?php if(Session::has('message')): ?>   
+    <div class="alert <?php echo e(Session::get('alert-class', 'alert-info')); ?>"" role="alert">
+        <?php echo e(Session::get('message')); ?>
+
+        </div>
+    <?php endif; ?>
+</div>
 <div class="container">
     <div class="center">
         <div class="col-sm-12 px-2 ">

@@ -4,6 +4,14 @@
 @section('content')
 
 
+    
+<div>
+@if(Session::has('message'))   
+    <div class="alert {{ Session::get('alert-class', 'alert-info') }}"" role="alert">
+        {{ Session::get('message') }}
+        </div>
+    @endif
+</div>
 <div class="container">
     <div class="center">
         <div class="col-sm-12 px-2 ">
