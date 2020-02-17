@@ -10,7 +10,6 @@
   
 </head>
 <body class="hold-transition sidebar-mini">
-  
 <div class="wrapper">
   <?php echo $__env->make('admin.layout.topnav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <?php echo $__env->make('admin.layout.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

@@ -38,7 +38,6 @@ class blogsController extends Controller
     {
         $newblog = new Blog();
         $newblog->title = $request->title;
-        $newblog->description = $request->description;
         $newblog->body = $request->body;
         $newblog->Author = "Admin";
         $newblog->tags = "test tags";
@@ -98,7 +97,6 @@ class blogsController extends Controller
     {
         $blog= Blog::find($id);
         $blog->title = $request->title;
-        $blog->description = $request->description;
         $blog->body = $request->body;
         $blog->Author = "Admin";
         $blog->tags = "test tags";

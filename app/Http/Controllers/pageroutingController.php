@@ -62,6 +62,10 @@ class pageroutingController extends Controller
         
         return view('user.blogdetail', ['pagename'=>'blog']);
     }
+    public function test(){
+        
+        return view('admin.layout.newdashboard.master', );
+    }
 
    
 

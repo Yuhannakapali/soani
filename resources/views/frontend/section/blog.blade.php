@@ -11,18 +11,18 @@
                   <div class="col-sm-6 iq-shadow">
                     <div class="content">
                       <h5 class="mb-2">
-                        <a href="{{ route('Blog.show', $data) }}"
-                      >{{$data->title}}</a
-                        >
+                        <a href="{{ route('Blog.show', $data) }}">
+                            {{$data->title}}
+                        </a>
                       </h5>
                       <ul>
                       <li><span>By:</span> <a href="#">{{$data->Author}}</a></li>
                         <li>{{$data->updated_at}}</li>
                       </ul>
-                      <p class="mt-4">
-                        {!! ucfirst(substr($data->description,0,150)) !!}
-                        {{strlen($data->description)>150 ? '...' : ''}}
-                      </p>
+                      {{-- <p class="mt-4">
+                        {!! ucfirst(substr($data->body,0,100)) !!}
+                        {{strlen($data->body)>100 ? '...' : ''}}
+                      </p> --}}
                       
                       <ul class="iq-tag mt-4">
                         <li><a href="#">Design</a></li>

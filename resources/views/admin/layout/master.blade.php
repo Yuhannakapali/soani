@@ -10,7 +10,6 @@
   
 </head>
 <body class="hold-transition sidebar-mini">
-  
 <div class="wrapper">
   @include('admin.layout.topnav')
   @include('admin.layout.sidebar')

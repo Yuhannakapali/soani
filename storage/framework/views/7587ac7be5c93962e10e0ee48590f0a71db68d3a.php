@@ -17,30 +17,12 @@
     />
     </div>
     <div>
-        <label for="name"> Description</label>
-        <textarea
-        type="text"
-        class="form-control"
-        placeholder="Enter description"
-        id="description"
-        name="description"
-        data-rule-maxlength="50"
-        data-rule-minlength="3"
-        rows="5"
-        required=""
-        >
-        <?php echo e($member_available ?? '' ? $member->description : old('description')); ?>
-
-        </textarea>
-    </div>
-    <div>
-        <label for="message"> Body</label>
+        <label for="body"> Body</label>
         <textarea 
         class="form-control"
          id="body"
          name="body"
          rows="20"
-         required=""
          >
          <?php echo e($member_available ?? '' ? $member->body : old('body')); ?>
 

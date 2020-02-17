@@ -11,20 +11,16 @@
                   <div class="col-sm-6 iq-shadow">
                     <div class="content">
                       <h5 class="mb-2">
-                        <a href="<?php echo e(route('Blog.show', $data)); ?>"
-                      ><?php echo e($data->title); ?></a
-                        >
+                        <a href="<?php echo e(route('Blog.show', $data)); ?>">
+                            <?php echo e($data->title); ?>
+
+                        </a>
                       </h5>
                       <ul>
                       <li><span>By:</span> <a href="#"><?php echo e($data->Author); ?></a></li>
                         <li><?php echo e($data->updated_at); ?></li>
                       </ul>
-                      <p class="mt-4">
-                        <?php echo ucfirst(substr($data->description,0,150)); ?>
-
-                        <?php echo e(strlen($data->description)>150 ? '...' : ''); ?>
-
-                      </p>
+                      
                       
                       <ul class="iq-tag mt-4">
                         <li><a href="#">Design</a></li>

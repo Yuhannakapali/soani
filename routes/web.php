@@ -41,6 +41,7 @@ Route::get('/portfolio', 'pageroutingController@portfolio');
 Route::get('/blog', 'pageroutingController@blog');
 
 Route::get('/blog/detail', 'pageroutingController@blogdetail');
+Route::get('/test', 'pageroutingController@test');
 
 
 
@@ -73,4 +74,6 @@ Auth::routes();
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 
