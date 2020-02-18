@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-    <img src="{{asset('images/logo.svg')}}"
+    <img src="<?php echo e(asset('images/logo.svg')); ?>"
            alt=" Logo"
            class="img-circle elevation-3"
            style="
@@ -325,4 +325,4 @@
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
-  </aside>
+  </aside><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/layout/newdashboard/mainsidebar.blade.php ENDPATH**/ ?>

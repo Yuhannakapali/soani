@@ -1,8 +1,3 @@
- 
-
-
-<?php $__env->startSection('content'); ?>
-
 <section class="content">
     <div class="container-fluid">
       <div class="row">
@@ -21,11 +16,4 @@
       <!-- /.row -->
     </div><!-- /.container-fluid -->
   </section>
-  <!-- /.content -->
-    
-
-
-
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('admin.layout.newdashboard.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/blog/create.blade.php ENDPATH**/ ?>
+  <!-- /.content --><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/layout/newdashboard/inbox.blade.php ENDPATH**/ ?>

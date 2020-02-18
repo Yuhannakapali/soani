@@ -12,4 +12,4 @@
           </div>
         </div>
       </div><!-- /.container-fluid -->
-    </section>
+    </section><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/layout/newdashboard/breadcrums.blade.php ENDPATH**/ ?>
