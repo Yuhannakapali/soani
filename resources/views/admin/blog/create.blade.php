@@ -11,7 +11,7 @@
             method="post"
             enctype="multipart/form-data"
             action="{{ route('Blog.store') }}">
-                @include('admin.layout.newdashboard.compose')
+                @include('admin.forms.blog_form')
           </form>
         </div>
       </div>
@@ -19,4 +19,28 @@
     </div><!-- /.container-fluid -->
   </section>
   <!-- /.content -->
+@endsection
+
+@section('javascript')
+<script>
+      var msg = "{{ Session()->get('message') }}"
+     var cla = "{{ Session()->get('alert-class') }}"  
+     var condition = "{{ Session::has('message') }}"
+  $(function() {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+      if (condition) {
+        console.log(msg);
+        Toast.fire({
+          type: cla,
+          title: msg
+          
+        })
+      }  
+    });
+    </script>  
 @endsection

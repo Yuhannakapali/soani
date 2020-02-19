@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc61e2fe2ee15f21be32c0cf37e1e76b",
+    "content-hash": "dc02ccfc851ead4a9fc155dfe567c53a",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -743,16 +743,16 @@
         },
         {
             "name": "kartik-v/bootstrap-fileinput",
-            "version": "v5.0.8",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-                "reference": "5d9c09364b8bf9e7ef0238bbb84cd108199eef05"
+                "reference": "a59f46111020685b6df670706ffb6969624cc417"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/5d9c09364b8bf9e7ef0238bbb84cd108199eef05",
-                "reference": "5d9c09364b8bf9e7ef0238bbb84cd108199eef05",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/a59f46111020685b6df670706ffb6969624cc417",
+                "reference": "a59f46111020685b6df670706ffb6969624cc417",
                 "shasum": ""
             },
             "type": "library",
@@ -792,7 +792,7 @@
                 "progress",
                 "upload"
             ],
-            "time": "2019-12-13T10:21:22+00:00"
+            "time": "2020-02-12T15:26:23+00:00"
         },
         {
             "name": "laravel/framework",
@@ -5697,7 +5697,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "kartik-v/bootstrap-fileinput": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

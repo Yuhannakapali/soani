@@ -1,55 +1,91 @@
  <?php $__env->startSection('content'); ?>
 
-
-
-<div class="container">
-    <div class="row" 
-        <div>
-            <?php if(Session::has('message')): ?>   
-                <div class="alert <?php echo e(Session::get('alert-class', 'alert-info')); ?>"" role="alert">
-                    <?php echo e(Session::get('message')); ?>
-
-                  </div>
-                <?php endif; ?>
-          </div>
-    </div>
-
-
-        <div class="p-3" >
-            <a href="<?php echo e(route('Blog.create')); ?>" class="btn btn-primary pull-right"> <i class="fa fa-plus"></i> Create</a>
+        
+        <div class="btn-holder">
+            <div class="float-right">
+            <a href="<?php echo e(route('Blog.create')); ?>"><button type="submit" class="btn btn-primary "><i class="fa fa-plus"></i> Create </button></a>
+            </div>    
         </div>
-   
-<div class="container">
-    <div class="row"> 
-            <div class="col-lg-12">
-                <table class="table table-striped">
-                    <thead>
+
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Projects</h3>
+    
+              
+            </div>
+            <div class="card-body p-0">
+              <table class="table table-striped projects">
+                  <thead>
+                      <tr>
+                          <th style="width: 1%">
+                              #
+                          </th>
+                          <th style="width: 20%">
+                              Title
+                          </th>
+                          <th style="width: 30%">
+                              published at 
+                          </th>
+                          <th>
+                              Written by 
+                          </th>
+                          <th style="width: 8%" class="text-center">
+                              Status
+                          </th>
+                          <th style="width: 20%">
+                            
+                          </th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <?php if(!empty($blogs)): ?>
+                        <?php $__currentLoopData = $blogs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $blog): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Title </th>
-                            <th scope="col">Author</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php if(!empty($blogs)): ?>
-                            <?php $__currentLoopData = $blogs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $blog): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                          <td>
+                            <?php echo e($loop->index+1); ?>
 
-                            <tr>
-                                <th scope="row"><?php echo e($loop->index+1); ?></th>
-                                <td><?php echo e($blog->title); ?></td>
-                                <td><?php echo e($blog->Author); ?></td>
-                                <td>
-                                    <a
-                                        class="btn btn-info btn-xs"
-                                        style="margin-left:5px;"
-                                        href="<?php echo e(route('Blog.edit', $blog)); ?>"
-                                    >
-                                        <i class="fa fa-eye"></i>
-                                        edit
-                                    </a>
+                          </td>
+                          <td>
+                              <a >
+                                 <?php echo e($blog->title); ?> 
+                              </a>
+                              <br/>
+                             
+                          </td>
+                          <td>
+                            <small>
+                              Created at <?php echo e($blog->created_at); ?>
 
-                                    <form
+                          </small>
+                          </td>
+                          <td class="project_progress">
+                              <?php echo e($blog->Author); ?>
+
+                          </td>
+                          <td class="project-state">
+                              <span class="badge badge-success">published</span>
+                          </td>
+                          <td class="project-actions text-right">
+                              <a class="btn btn-primary btn-sm" href="<?php echo e(route('Blog.show',$blog)); ?>">
+                                  <i class="fas fa-folder">
+                                  </i>
+                                  View
+                              </a>
+                            <a class="btn btn-info btn-sm" href="<?php echo e(route('Blog.edit',$blog)); ?>">
+                                  <i class="fas fa-pencil-alt">
+                                  </i>
+                                  Edit
+                              </a>
+
+                              
+                            <a class="btn btn-sm" >
+                                      
+                              
+                               
+                                  <form
                                     method="POST" 
                                     action="<?php echo e(route('Blog.destroy',$blog)); ?>"
                                     >
@@ -57,18 +93,49 @@
 
                                         <?php echo e(method_field('DELETE')); ?>
 
-                                        <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                        <button type="submit" class="btn btn-danger btn-sm"> <i class="fas fa-trash">   </i> delete</button>
                                     </form>
-                                </td>
-                            </tr>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        <?php endif; ?>
-                    </tbody>
-                </table>
+                                  
+                              </a>
+                          </td>
+                      </tr>
+                            
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                          
+                      <?php endif; ?>
+                      
+                  </tbody>
+              </table>
             </div>
-    </div>
-</div>
-
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+    
+        </section>     
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('admin.layout.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/blog/index.blade.php ENDPATH**/ ?>
+<?php $__env->startSection('javascript'); ?>
+<script>
+      var msg = "<?php echo e(Session()->get('message')); ?>"
+     var cla = "<?php echo e(Session()->get('alert-class')); ?>"  
+     var condition = "<?php echo e(Session::has('message')); ?>"
+  $(function() {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+      if (condition) {
+        console.log(msg);
+        Toast.fire({
+          type: cla,
+          title: msg
+          
+        })
+      }  
+    });
+    </script>  
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layout.newdashboard.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/blog/index.blade.php ENDPATH**/ ?>

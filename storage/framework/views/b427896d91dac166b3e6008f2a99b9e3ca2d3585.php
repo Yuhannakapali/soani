@@ -10,5 +10,7 @@
 <link rel="stylesheet" href="<?php echo e(asset('css/adminlte.min.css')); ?>">
 <!-- summernote -->
 <link rel="stylesheet" href="<?php echo e(asset('plugins/summernote/summernote-bs4.css')); ?>">
+
+<link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
 <!-- Google Font: Source Sans Pro -->
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/layout/newdashboard/css.blade.php ENDPATH**/ ?>

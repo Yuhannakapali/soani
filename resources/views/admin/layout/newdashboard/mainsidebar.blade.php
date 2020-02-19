@@ -28,25 +28,56 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.html" class="nav-link">
+                <a href="/Blog" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
+                  <p> View All </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
+              <a href="{{route('Blog.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p> New  </p>
                 </a>
               </li>
             </ul>
           </li>
+           {{-- pages edit --}}
+           <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-pager "></i>
+              <p>
+                     Pages 
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/ourteams" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> Our team </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/clients" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Clients</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/testimonial" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Testimonial</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/portfolio" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Portfolio</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+            {{-- pages edit end --}}
           
           <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">

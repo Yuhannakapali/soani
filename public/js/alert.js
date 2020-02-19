@@ -1,8 +1,4 @@
-@if(Session::has('message'))   
-<div class="alert {{ Session::get('alert-class', 'alert-info') }}"" role="alert">
-    {{ Session::get('message') }}
-  </div>
-@endif
+
 
 $(function() {
     const Toast = Swal.mixin({
@@ -18,12 +14,12 @@ $(function() {
         title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
       })
     });
-    $('.swalDefaultInfo').click(function() {
-      Toast.fire({
-        type: 'info',
-        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
-      })
-    });
+    
+      // Toast.fire({
+      //   type: 'info',
+      //   title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      // })
+      
     $('.swalDefaultError').click(function() {
       Toast.fire({
         type: 'error',

@@ -1,69 +1,134 @@
-@extends('admin.layout.master') @section('content')
-
-{{-- alert block --}}
-
-<div class="container">
-    <div class="row" 
-        <div>
-            @if(Session::has('message'))   
-                <div class="alert {{ Session::get('alert-class', 'alert-info') }}"" role="alert">
-                    {{ Session::get('message') }}
-                  </div>
-                @endif
-          </div>
-    </div>
+@extends('admin.layout.newdashboard.master') @section('content')
 {{-- main content --}}
-
-        <div class="p-3" >
-            <a href="{{route('Blog.create')}}" class="btn btn-primary pull-right"> <i class="fa fa-plus"></i> Create</a>
+        
+        <div class="btn-holder">
+            <div class="float-right">
+            <a href="{{route('Blog.create')}}"><button type="submit" class="btn btn-primary "><i class="fa fa-plus"></i> Create </button></a>
+            </div>    
         </div>
-   
-<div class="container">
-    <div class="row"> 
-            <div class="col-lg-12">
-                <table class="table table-striped">
-                    <thead>
+
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Projects</h3>
+    
+              
+            </div>
+            <div class="card-body p-0">
+              <table class="table table-striped projects">
+                  <thead>
+                      <tr>
+                          <th style="width: 1%">
+                              #
+                          </th>
+                          <th style="width: 20%">
+                              Title
+                          </th>
+                          <th style="width: 30%">
+                              published at 
+                          </th>
+                          <th>
+                              Written by 
+                          </th>
+                          <th style="width: 8%" class="text-center">
+                              Status
+                          </th>
+                          <th style="width: 20%">
+                            
+                          </th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @if (!empty($blogs))
+                        @foreach ($blogs as $blog)
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Title </th>
-                            <th scope="col">Author</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if (!empty($blogs))
-                            @foreach ($blogs as $blog)
+                          <td>
+                            {{$loop->index+1}}
+                          </td>
+                          <td>
+                              <a >
+                                 {{$blog->title}} 
+                              </a>
+                              <br/>
+                             
+                          </td>
+                          <td>
+                            <small>
+                              Created at {{$blog->created_at}}
+                          </small>
+                          </td>
+                          <td class="project_progress">
+                              {{$blog->Author}}
+                          </td>
+                          <td class="project-state">
+                              <span class="badge badge-success">published</span>
+                          </td>
+                          <td class="project-actions text-right">
+                              <a class="btn btn-primary btn-sm" href="{{route('Blog.show',$blog)}}">
+                                  <i class="fas fa-folder">
+                                  </i>
+                                  View
+                              </a>
+                            <a class="btn btn-info btn-sm" href="{{route('Blog.edit',$blog)}}">
+                                  <i class="fas fa-pencil-alt">
+                                  </i>
+                                  Edit
+                              </a>
 
-                            <tr>
-                                <th scope="row">{{$loop->index+1}}</th>
-                                <td>{{$blog->title}}</td>
-                                <td>{{$blog->Author}}</td>
-                                <td>
-                                    <a
-                                        class="btn btn-info btn-xs"
-                                        style="margin-left:5px;"
-                                        href="{{ route('Blog.edit', $blog) }}"
-                                    >
-                                        <i class="fa fa-eye"></i>
-                                        edit
-                                    </a>
-
-                                    <form
+                              
+                            <a class="btn btn-sm" >
+                                      
+                              
+                               
+                                  <form
                                     method="POST" 
-                                    action="{{ route('Blog.destroy',$blog)}}"
+                                    action="{{route('Blog.destroy',$blog)}}"
                                     >
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
-                                        <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                        <button type="submit" class="btn btn-danger btn-sm"> <i class="fas fa-trash">   </i> delete</button>
                                     </form>
-                                </td>
-                            </tr>
-                            @endforeach
-                        @endif
-                    </tbody>
-                </table>
+                                  
+                              </a>
+                          </td>
+                      </tr>
+                            
+                        @endforeach
+                          
+                      @endif
+                      
+                  </tbody>
+              </table>
             </div>
-    </div>
-</div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+    
+        </section>     
+@endsection
 
+@section('javascript')
+<script>
+      var msg = "{{ Session()->get('message') }}"
+     var cla = "{{ Session()->get('alert-class') }}"  
+     var condition = "{{ Session::has('message') }}"
+  $(function() {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+      if (condition) {
+        console.log(msg);
+        Toast.fire({
+          type: cla,
+          title: msg
+          
+        })
+      }  
+    });
+    </script>  
 @endsection

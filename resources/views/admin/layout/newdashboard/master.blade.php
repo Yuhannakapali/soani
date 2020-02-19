@@ -33,6 +33,6 @@
 </div>
 <!-- ./wrapper -->
 @include('admin.layout.newdashboard.js')
-
+@yield('javascript')
 </body>
 </html>

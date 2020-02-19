@@ -11,7 +11,7 @@
         "php": "^7.2",
         "anhskohbo/no-captcha": "^3.1",
         "fideloper/proxy": "^4.0",
-        "kartik-v/bootstrap-fileinput": "^5.0",
+        "kartik-v/bootstrap-fileinput": "dev-master",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^1.1",

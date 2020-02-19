@@ -33,7 +33,7 @@
 </div>
 <!-- ./wrapper -->
 <?php echo $__env->make('admin.layout.newdashboard.js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
+<?php echo $__env->yieldContent('javascript'); ?>
 </body>
 </html>
 <?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/layout/newdashboard/master.blade.php ENDPATH**/ ?>

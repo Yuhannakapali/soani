@@ -50,13 +50,13 @@ class blogsController extends Controller
             $request->file->move(public_path('images/upload'), $imagename);
             $newblog->image_name = $imagename;
             $newblog->save();
-            session()->flash('message','added sucessfully');
-            Session()->flash('alert-class', 'alert-success');
+            session()->flash('message','Added sucessfully');
+            Session()->flash('alert-class', 'success');
             return redirect()->route('Blog.create');
         }
         else{
-            session()->flash('message','file not selected');
-            Session()->flash('alert-class', 'alert-danger');
+            session()->flash('message','File not selected');
+            Session()->flash('alert-class', 'error');
             return redirect()->route('Blog.create');
         }
         
@@ -106,14 +106,14 @@ class blogsController extends Controller
             $request->file->move(asset('images/upload'), $imagename);
             $blog->image_name = $imagename;
             $blog->save();
-            session()->flash('message','updated sucessfully');
-            Session()->flash('alert-class', 'alert-success');
+            session()->flash('message','Updated sucessfully');
+            Session()->flash('alert-class', 'success');
             return redirect()->route('BLog.index');
         }
         else{
             $blog->save();
-            session()->flash('message','updated sucessfully');
-            Session()->flash('alert-class', 'alert-success');
+            session()->flash('message','Updated sucessfully');
+            Session()->flash('alert-class', 'success');
             return redirect()->route('Blog.index');
         }
     }
@@ -129,14 +129,14 @@ class blogsController extends Controller
         $blog = Blog::find($id);
         if ($blog != null){
             $blog->delete();
-            Session()->flash('message','delete sucessfully');
-            Session()->flash('alert-class', 'alert-danger');
+            Session()->flash('message','Delete sucessfully');
+            Session()->flash('alert-class', 'error');
             return redirect()->route('Blog.index');
         }
         else{
             Session()->flash('message','Already deleted just reload');
-            Session()->flash('alert-class', 'alert-danger');
-            return redirect()->route('blog.index');
+            Session()->flash('alert-class', 'error');
+            return redirect()->route('Blog.index');
         }
     }
 }

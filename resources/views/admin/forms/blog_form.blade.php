@@ -1,41 +1,51 @@
+<!-- /.col -->
 <?php $member_available = isset($member) ? true :  false;?>
 {{ csrf_field() }}
-<div class="form-group">
-    <div>
-        <label for="name"> Title</label>
-    <input
-        type="text"
-        class="form-control"
-        placeholder="Enter title"
-        id="title"
-        name="title"
-        data-rule-maxlength="50"
-        data-rule-minlength="3"
-        required=""
-        value="{{$member_available ?? '' ? $member->title : old('title')}}"
-    />
+    <div class="card card-primary card-outline">
+      <div class="card-header">
+        <h3 class="card-title">Compose New Blog</h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <div class="form-group">
+          <input
+           class="form-control"
+           placeholder="Enter title"
+           id="title"
+           name="title"
+           required=""
+           value="{{$member_available ?? '' ? $member->title : old('title')}}"
+          >
+        </div>
+        <div class="form-group">
+            <textarea 
+             id="body"
+            name="body"
+            class="form-control"
+            style="height: 300px"
+            >
+              {{$member_available ?? '' ? $member->body : old('body')}}
+              
+            </textarea>
+        </div>
+        <div class="form-group">
+          <p class="help-block">Important</p>
+          <div class="btn btn-default btn-file">
+            <i class="fas fa-paperclip"></i> Title Image
+            <input type="file" name="file">
+          </div>
+          
+        </div>
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <div class="float-right">
+          <button type="button" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Draft</button>
+          <button type="submit" class="btn btn-primary "><i class="far fa-envelope"></i> Publish</button>
+        </div>
+        <button type="reset"  value= "Reset" class="btn btn-default"><i class="fas fa-times"></i> Discard</button>
+      </div>
+      <!-- /.card-footer -->
     </div>
-    <div>
-        <label for="body"> Body</label>
-        <textarea 
-        class="form-control"
-         id="body"
-         name="body"
-         rows="20"
-         >
-         {{$member_available ?? '' ? $member->body : old('body')}}
-        </textarea>
-    </div> 
-   <br>    
-    <div>
-        <label for="file">Choose a Title image</label> <br>
-        <input type="file" name="file">
-    </div>
-       
-   
-      
-    <span class="error-display">
-        <i style="color: red;"> {!! $errors->first('image_name') !!} </i>
-    </span>
-    
-</div>
+    <!-- /.card -->
+  
