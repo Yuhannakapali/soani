@@ -1,55 +1,34 @@
-@extends('admin.layout.master') 
-
+@extends('admin.layout.newdashboard.master') 
 
 @section('content')
-<div class="container">
-    <div class="row" 
-        <div>
-            @if(Session::has('message'))   
-                <div class="alert {{ Session::get('alert-class', 'alert-info') }}"" role="alert">
-                    {{ Session::get('message') }}
-                  </div>
-                @endif
-          </div>
-    </div>
-</div>
-<div class="content-wrapper">
-    <div class="content-header">  
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="d-flex justify-content-center">
-                    
-                    
-                    <div class="center" >
-                        <form
-                            class="form-validate"
-                            method="post"
-                            enctype="multipart/form-data"
-                            action="{{ route('portfolio.update',$member) }}"
-                        >
-                        {{ method_field('PATCH') }}
+<section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+         <form
+            class="form-validate"
+            method="post"
+            enctype="multipart/form-data"
+            action="{{ route('Portfolio.update',$member) }}"
+        >
+        {{ method_field('PATCH') }}
 
-                            @include('admin.forms.portfolio_form')
-                            <div class="form-group">
-                                <div class="box-footer">
-                                    <input
-                                        class="btn btn-primary pull-right"
-                                        type="submit"
-                                        value="update"
-                                    />
-                                    <input
-                                        class="btn btn-danger pull-left"
-                                        type="reset"
-                                        value="Reset"
-                                    />
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            @include('admin.forms.portfolio_form')
+        </form>
         </div>
-    </div>    
-</div>
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
 
+@endsection
+@section('javascript')
+<script>
+var condition = "{{!empty($member->type)}}"
+var type = "{{$member->type}}"
+if (condition) {
+    document.getElementById('select').value = type;
+}
+</script>
 @endsection

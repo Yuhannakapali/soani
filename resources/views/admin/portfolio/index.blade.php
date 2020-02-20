@@ -12,7 +12,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Testimonial</h3>
+              <h3 class="card-title">Portfolio</h3>
     
               
             </div>
@@ -27,7 +27,7 @@
                               Name
                           </th>
                           <th style="width: 20%">
-                                Designation
+                                Url
                           </th>
                           <th style="width: 10%">
                               Photo
@@ -35,9 +35,7 @@
                           <th>
                               Created at 
                           </th>
-                          <th style="width: 15%" class="text-center">
-                              Type
-                          </th>
+                         
                           <th style="width: 20%">
                             
                           </th>
@@ -58,7 +56,7 @@
                              
                           </td>
                           <td>
-                            {{$data->designation}}
+                            {{$data->url}}
                           
                           </td>
                           <td class="project_progress">
@@ -72,12 +70,10 @@
                           <td class="project_progress">
                               {{$data->created_at}}
                           </td>
-                          <td class="project-state">
-                              {{$data->type}}
-                          </td>
+                          
                           <td class="project-actions text-right">
                               
-                            <a class="btn btn-info btn-sm" href="{{route('ourteams.edit',$data)}}">
+                            <a class="btn btn-info btn-sm" href="{{route('Portfolio.edit',$data)}}">
                                   <i class="fas fa-pencil-alt">
                                   </i>
                                   Edit
@@ -85,7 +81,7 @@
                             <a class="btn btn-sm" >
                                   <form
                                     method="POST" 
-                                    action="{{route('ourteams.destroy',$data)}}"
+                                    action="{{route('Portfolio.destroy',$data)}}"
                                     >
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}

@@ -12,7 +12,7 @@
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Testimonial</h3>
+              <h3 class="card-title">Portfolio</h3>
     
               
             </div>
@@ -27,7 +27,7 @@
                               Name
                           </th>
                           <th style="width: 20%">
-                                Designation
+                                Url
                           </th>
                           <th style="width: 10%">
                               Photo
@@ -35,9 +35,7 @@
                           <th>
                               Created at 
                           </th>
-                          <th style="width: 15%" class="text-center">
-                              Type
-                          </th>
+                         
                           <th style="width: 20%">
                             
                           </th>
@@ -59,7 +57,7 @@
                              
                           </td>
                           <td>
-                            <?php echo e($data->designation); ?>
+                            <?php echo e($data->url); ?>
 
                           
                           </td>
@@ -75,13 +73,10 @@
                               <?php echo e($data->created_at); ?>
 
                           </td>
-                          <td class="project-state">
-                              <?php echo e($data->type); ?>
-
-                          </td>
+                          
                           <td class="project-actions text-right">
                               
-                            <a class="btn btn-info btn-sm" href="<?php echo e(route('ourteams.edit',$data)); ?>">
+                            <a class="btn btn-info btn-sm" href="<?php echo e(route('Portfolio.edit',$data)); ?>">
                                   <i class="fas fa-pencil-alt">
                                   </i>
                                   Edit
@@ -89,7 +84,7 @@
                             <a class="btn btn-sm" >
                                   <form
                                     method="POST" 
-                                    action="<?php echo e(route('ourteams.destroy',$data)); ?>"
+                                    action="<?php echo e(route('Portfolio.destroy',$data)); ?>"
                                     >
                                         <?php echo e(csrf_field()); ?>
 

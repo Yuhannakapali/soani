@@ -106,14 +106,14 @@ class portfoliosController extends Controller
                 $newproject->image_name = $imagename;
                 $newproject->save();
                 session()->flash('message','Updated sucessfully');
-                Session()->flash('alert-class', 'alert-success'); 
-                return redirect()->route('portfolio.index');
+                Session()->flash('alert-class', 'success'); 
+                return redirect()->route('Portfolio.index');
             }
             else{
                 $newproject->save();
                 session()->flash('message','Updated sucessfully');
-                Session()->flash('alert-class', 'alert-success'); 
-                return redirect()->route('portfolio.index');
+                Session()->flash('alert-class', 'success'); 
+                return redirect()->route('Portfolio.index');
             }
     }
 
@@ -126,16 +126,16 @@ class portfoliosController extends Controller
     public function destroy($id)
     {
         $portfolio = Portfolio::find($id);
-        if (!portfolio != null){
+        if ($portfolio != null){
             $portfolio->delete();
             Session()->flash('message','Deleted sucessfully');
-            Session()->flash('alert-class', 'Success');
-            return redirect()->route('portfolio.index');
+            Session()->flash('alert-class', 'success');
+            return redirect()->route('Portfolio.index');
         }
         else{
             Session()->flash('message','Already deleted just reload');
             Session()->flash('alert-class', 'error');
-            return redirect()->route('portfolio.index');
+            return redirect()->route('Portfolio.index');
         }
         
     }
