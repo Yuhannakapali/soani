@@ -14,8 +14,8 @@ class ourteamsController extends Controller
      */
     public function index()
     {
-        $ourteams  =  Ourteam::all();
-        return view('admin.ourteam.index', compact('ourteams'));
+        $datas  =  Ourteam::all();
+        return view('admin.ourteam.index', compact('datas'));
     }
 
     /**
@@ -37,46 +37,26 @@ class ourteamsController extends Controller
     public function store(Request $request)
     {
     
+        
+        
+
 
         $newteam = new Ourteam();
         $newteam->name = $request->name;
         $newteam->designation = $request->designation;
-        
-        $board = $request->checker;
-        $executive = $request->checker1;
-
-        if($board == '1'){
-                $newteam->board_of_director = 1;
-        }
-      
-        else{
-            $newteam->board_of_director = 0;
-        }
-        
-        if($executive == '1'){
-            $newteam->executive_team = 1;
-        }
-  
-        else{
-            $newteam->executive_team = 0;
-        }
-        if ($board != 1 && $executive != 1 ) {
-            session()->flash('message','no check box selected');
-            Session()->flash('alert-class', 'alert-danger');
-            return redirect()->route('ourteams.create');
-        }
+        $newteam->type = $request->select;
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
             $request->file->move(public_path('images/upload'), $imagename);
             $newteam->image_name = $imagename;
             $newteam->save();
             session()->flash('message','added sucessfully');
-            Session()->flash('alert-class', 'alert-success');
+            Session()->flash('alert-class', 'success');
             return redirect()->route('ourteams.create');
         }
         else{
             session()->flash('message','file not selected');
-            Session()->flash('alert-class', 'alert-danger');
+            Session()->flash('alert-class', 'error');
             return redirect()->route('ourteams.create');
         }
         
@@ -120,24 +100,8 @@ class ourteamsController extends Controller
         $ourteam= Ourteam::find($id);
         $ourteam->name = $request->name;
         $ourteam->designation = $request->designation;
-        $board = $request->checker;
-        $executive = $request->checker1;
-
-        if($board == '1'){
-                $ourteam->board_of_director = 1;
-        }
-      
-        else{
-            $ourteam->board_of_director = 0;
-        }
+        $ourteam->type = $request->select;
         
-        if($executive == '1'){
-            $ourteam->executive_team = 1;
-        }
-  
-        else{
-            $ourteam->executive_team = 0;
-        }
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
             $request->file->move(public_path('images/upload'), $imagename);
@@ -168,13 +132,13 @@ class ourteamsController extends Controller
         $ourteam = ourteam::find($id);
         if ($ourteam != null){
             $ourteam->delete();
-            Session()->flash('message','delete sucessfully');
-            Session()->flash('alert-class', 'alert-danger');
+            Session()->flash('message','deleted sucessfully');
+            Session()->flash('alert-class', 'success');
             return redirect()->route('ourteams.index');
         }
         else{
             Session()->flash('message','Already deleted just reload');
-            Session()->flash('alert-class', 'alert-danger');
+            Session()->flash('alert-class', 'error');
             return redirect()->route('ourteams.index');
         }
         

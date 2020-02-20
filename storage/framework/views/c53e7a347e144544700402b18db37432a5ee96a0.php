@@ -11,8 +11,8 @@
             class="form-validate"
             method="post"
             enctype="multipart/form-data"
-            action="<?php echo e(route('ourteams.store')); ?>">
-                <?php echo $__env->make('admin.forms.ourteam_form', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            action="<?php echo e(route('testimonial.store')); ?>">
+                <?php echo $__env->make('admin.forms.testimonial_form', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
           </form>
         </div>
       </div>
@@ -45,4 +45,4 @@
     });
     </script>  
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('admin.layout.newdashboard.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/ourteam/create.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layout.newdashboard.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/testimonial/create.blade.php ENDPATH**/ ?>

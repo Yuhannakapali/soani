@@ -1,68 +1,73 @@
 <?php $member_available = isset($member) ? true :  false;?>
 {{ csrf_field() }}
-<div class="form-group">
-    <div>
-        <label for="name"> Name</label>
-        <input
-            type="text"
-            class="form-control"
-            placeholder="Eg. Jhon Doe"
-            id="name"
-            name="name"
-            data-rule-maxlength="50"
-            data-rule-minlength="3"
-            required=""
-            value="{{$member_available ?? '' ? $member->name : old('name')}}"
-        />
-    </div>
-    <div>
-        <label for="Designation"> Designation</label>
-        <input
-            type="text"
-            class="form-control"
-            placeholder="Eg. CTO"
-            id="designation"
-            name="designation"
-            data-rule-maxlength="50"
-            data-rule-minlength="3"
-            required=""
-            value="{{$member_available ?? '' ? $member->designation : old('designation')}}"
-        />
-    </div>
-    <div>
-        <label for="message"> Message</label>
-        <textarea 
-        class="form-control"
-         id="message"
-         name="message"
-         rows="4"
-         required=""
-         >
-         {{$member_available ?? '' ? $member->message : old('messsage')}}
-        </textarea>
-        @error('title')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    {{-- <input
-        type="text"
-        class="form-control"
-        placeholder="Eg. mtc.com.np"
-        id="message"
-        name="message"
-        data-rule-maxlength="10"
-        data-rule-minlength="3"
-        required=""
-        value="{{$member_available ?? '' ? $member->url : old('messsage')}}"
-    /> --}}
-    </div>
-    
-    <div>
-        <label for="file">Choose a image file</label><br>
-        <input type="file" name="file">
+<div class="container-fluid">
+  <div class="row">
+    <!-- left column -->
+    <div class="col-md-12">
+      <!-- general form elements -->
+      <div class="card card-primary">
+        <div class="card-header">
+          <h3 class="card-title">Add Testimonial</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form role="form">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="name" 
+                name="name"
+                placeholder="Eg: Jhon doe" 
+                value="{{$member_available ?? '' ? $member->name : old('name')}}"
+              >
+            </div>
+            <div class="form-group">
+              <label for="url">Designation </label>
+              <input type="text" 
+                class="form-control" 
+                id="designation" 
+                name="designation"
+                required=""
+                value="{{$member_available ?? '' ? $member->designation : old('designation')}}"
+                placeholder="Eg: CTO">
+            </div>
+            <div class="form-group">
+              <label for="url">Message </label>
+              <textarea type="text" 
+                class="form-control" 
+                id="message" 
+                name="message"
+                required=""
+                placeholder="Eg: NTC.com">
+                {{$member_available ?? '' ? $member->message : old('message')}}
+                </textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputFile">File input</label>
+              <div class="input-group">
+                <div class="custom-file">
+                  <input type="file" name="file" class="custom-file-input" id="exampleInputFile">
+                  <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                </div>
+                <div class="input-group-append">
+                  <span class="input-group-text" id=""><i class="fas fa-upload"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card-body -->
 
-    </div>
-    <span class="error-display">
-        <i style="color: red;"> {!! $errors->first('image_name') !!} </i>
-    </span>
-    
-</div>
+          <div class="card-footer">
+            <div class="float-right"> 
+              <button type="submit" class="btn btn-primary "><i class="fas fa-upload"></i> create </button>
+            </div>
+            <button type="reset"  value= "Reset" class="btn btn-default"><i class="fas fa-times"></i> Discard</button>
+          </div>
+          <!-- /.card-footer -->
+        </form>
+      </div>
+      <!-- /.card -->
+      

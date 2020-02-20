@@ -39,8 +39,6 @@ class portfoliosController extends Controller
         $request->validate([
             'name' => 'required',
             'url' => 'required',
-            
-            'file' => 'required',
             ]);
     
             $newproject = new portfolio();
@@ -51,14 +49,16 @@ class portfoliosController extends Controller
                 $imagename = $request->file->getClientOriginalName();
                 $request->file->move(public_path('images/upload'), $imagename);
                 $newproject->image_name = $imagename;
+               
                 $newproject->save();
-                Session()->flash('message', 'added sucessfully'); 
-                Session()->flash('alert-class', 'alert-success');  
-                return view('admin.portfolio.create');
+                Session()->flash('message', 'Added sucessfully'); 
+                Session()->flash('alert-class', 'success');  
+                return redirect()->route('Portfolio.create');
             }
             else{
-                session()->flash('message','file not selected');
-                return view('admin.portfolio.create');
+                session()->flash('message','File not selected');
+                Session()->flash('alert-class', 'error');
+                return redirect()->route('Portfolio.create');
             }
     }
 
@@ -128,13 +128,13 @@ class portfoliosController extends Controller
         $portfolio = Portfolio::find($id);
         if (!portfolio != null){
             $portfolio->delete();
-            Session()->flash('message','delete sucessfully');
-            Session()->flash('alert-class', 'alert-danger');
+            Session()->flash('message','Deleted sucessfully');
+            Session()->flash('alert-class', 'Success');
             return redirect()->route('portfolio.index');
         }
         else{
             Session()->flash('message','Already deleted just reload');
-            Session()->flash('alert-class', 'alert-danger');
+            Session()->flash('alert-class', 'error');
             return redirect()->route('portfolio.index');
         }
         

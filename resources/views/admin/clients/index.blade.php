@@ -1,80 +1,141 @@
-@extends('admin.layout.master') @section('content')
-
-{{-- alert block --}}
-<div class="container">
-    <div class="row" 
-        <div>
-            @if(Session::has('message'))   
-                <div class="alert {{ Session::get('alert-class', 'alert-info') }}"" role="alert">
-                    {{ Session::get('message') }}
-                  </div>
-                @endif
-          </div>
-    </div>
-</div>
+@extends('admin.layout.newdashboard.master') @section('content')
 {{-- main content --}}
-<div class="container">
-    <div class="row">
-        <div class="p-3" >
-            <a href="{{route('clients.create')}}" class="btn btn-primary pull-right"> <i class="fa fa-plus"></i> Create</a>
+        
+        <div class="btn-holder">
+            <div class="float-right">
+            <a href="{{route('clients.create')}}"><button type="submit" class="btn btn-primary "><i class="fa fa-plus"></i> Create </button></a>
+            </div>    
         </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row"> 
-            <div class="col-lg-12">
-                <table class="table table-striped">
-                    <thead>
+
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Clients</h3>
+    
+              
+            </div>
+            <div class="card-body p-0">
+              <table class="table table-striped projects">
+                  <thead>
+                      <tr>
+                          <th style="width: 1%">
+                              #
+                          </th>
+                          <th style="width: 20%">
+                              Name
+                          </th>
+                          <th style="width: 30%">
+                              Url 
+                          </th>
+                          <th style="width: 10%">
+                              logo
+                          </th>
+                          <th>
+                              Created at 
+                          </th>
+                          <th style="width: 8%" class="text-center">
+                              Status
+                          </th>
+                          <th style="width: 20%">
+                            
+                          </th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @if (!empty($datas))
+                        @foreach ($datas as $data)
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">url</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if (!empty($clients))
-                            @foreach ($clients as $client)
+                          <td>
+                            {{$loop->index+1}}
+                          </td>
+                          <td>
+                              <a >
+                                 {{$data->name}} 
+                              </a>
+                              <br/>
+                             
+                          </td>
+                          <td>
+                            <small>
+                              Created at {{$data->url}}
+                          </small>
+                          </td>
+                          <td class="project_progress">
+                            <ul class="list-inline">
+                              <li class="list-inline-item">
+                              <img alt="logo" class="table-logo" src="{{asset('images/upload/'.$data->image_name)}}">
+                              </li>
+                              
+                          </ul>
+                          </td>
+                          <td class="project_progress">
+                              {{$data->created_at}}
+                          </td>
+                          <td class="project-state">
+                              <span class="badge badge-success">published</span>
+                          </td>
+                          <td class="project-actions text-right">
+                              
+                            <a class="btn btn-info btn-sm" href="{{route('clients.edit',$data)}}">
+                                  <i class="fas fa-pencil-alt">
+                                  </i>
+                                  Edit
+                              </a>
 
-                            <tr>
-                                <th scope="row">{{$loop->index+1}}</th>
-                                <td>{{$client->name}}</td>
-                                <td>{{$client->url}}</td>
-                                <td>
-                                    <a
-                                        class="btn btn-info btn-xs"
-                                        style="margin-left:5px;"
-                                        href="{{ route('clients.edit', $client) }}"
-                                    >
-                                        <i class="fa fa-eye"></i>
-                                        edit
-                                    </a>
-
-                                    <form
+                              
+                            <a class="btn btn-sm" >
+                                      
+                              
+                               
+                                  <form
                                     method="POST" 
-                                    action="{{ route('clients.destroy',$client)}}"
+                                    action="{{route('clients.destroy',$data)}}"
                                     >
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
-                                        <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                        <button type="submit" class="btn btn-danger btn-sm"> <i class="fas fa-trash">   </i> delete</button>
                                     </form>
-                                    {{-- <a
-                                        class=""
-                                        style="margin-left:5px;"
-                                        href="{{ route('ourteams.destroy', $ourteam) }}"
-                                        
-                                    >
-                                        <i class="fa fa-eye"></i>
-                                        delete
-                                    </a> --}}
-                                </td>
-                            </tr>
-                            @endforeach
-                        @endif
-                    </tbody>
-                </table>
+                                  
+                              </a>
+                          </td>
+                      </tr>
+                            
+                        @endforeach
+                          
+                      @endif
+                      
+                  </tbody>
+              </table>
             </div>
-    </div>
-</div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+    
+        </section>     
+@endsection
 
+@section('javascript')
+<script>
+      var msg = "{{ Session()->get('message') }}"
+     var cla = "{{ Session()->get('alert-class') }}"  
+     var condition = "{{ Session::has('message') }}"
+  $(function() {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+      if (condition) {
+        console.log(msg);
+        Toast.fire({
+          type: cla,
+          title: msg
+          
+        })
+      }  
+    });
+    </script>  
 @endsection

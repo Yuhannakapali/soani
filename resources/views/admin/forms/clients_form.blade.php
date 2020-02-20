@@ -1,127 +1,62 @@
 <?php $member_available = isset($member) ? true :  false;?>
 {{ csrf_field() }}
-<div class="form-group">
-    <div>
-        <label for="name"> Name</label>
-    <input
-        type="text"
-        class="form-control"
-        placeholder="Eg. NTC"
-        id="name"
-        name="name"
-        data-rule-maxlength="50"
-        data-rule-minlength="3"
-        required=""
-        value="{{$member_available ?? '' ? $member->name : old('name')}}"
-    />
-    </div>
-    <div>
-        <label for="name"> Url</label>
-    <input
-        type="text"
-        class="form-control"
-        placeholder="Eg. mtc.com.np"
-        id="url"
-        name="url"
-        data-rule-maxlength="50"
-        data-rule-minlength="3"
-        required=""
-        value="{{$member_available ?? '' ? $member->url : old('url')}}"
-    />
-    </div>
-    
-    <div>
-        <label for="file">Choose a file</label><br>
-        <input type="file" name="file">
+<div class="container-fluid">
+  <div class="row">
+    <!-- left column -->
+    <div class="col-md-12">
+      <!-- general form elements -->
+      <div class="card card-primary">
+        <div class="card-header">
+          <h3 class="card-title">Add Clients</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form role="form">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="name" 
+                name="name"
+                placeholder="Eg: NTC" 
+                value="{{$member_available ?? '' ? $member->name : old('name')}}"
+              >
+            </div>
+            <div class="form-group">
+              <label for="url">Url to clients </label>
+              <input type="text" 
+                class="form-control" 
+                id="url" 
+                name="url"
+                required=""
+                value="{{$member_available ?? '' ? $member->url : old('url')}}"
+                placeholder="Eg: NTC.com">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputFile">File input</label>
+              <div class="input-group">
+                <div class="custom-file">
+                  <input type="file" name="file" class="custom-file-input" id="exampleInputFile">
+                  <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                </div>
+                <div class="input-group-append">
+                  <span class="input-group-text" id=""><i class="fas fa-upload"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card-body -->
 
-    </div>
-       
-   
+          <div class="card-footer">
+            <div class="float-right"> 
+              <button type="submit" class="btn btn-primary "><i class="fas fa-upload"></i> create </button>
+            </div>
+            <button type="reset"  value= "Reset" class="btn btn-default"><i class="fas fa-times"></i> Discard</button>
+          </div>
+          <!-- /.card-footer -->
+        </form>
+      </div>
+      <!-- /.card -->
       
-    <span class="error-display">
-        <i style="color: red;"> {!! $errors->first('image_name') !!} </i>
-    </span>
-    
-</div>
-
-
-<section class="content">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card card-primary">
-          <div class="card-header">
-            <h3 class="card-title">General</h3>
-
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                <i class="fas fa-minus"></i></button>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="form-group">
-              <label for="inputName">Project Name</label>
-              <input type="text" id="inputName" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="inputDescription">Project Description</label>
-              <textarea id="inputDescription" class="form-control" rows="4"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="inputStatus">Status</label>
-              <select class="form-control custom-select">
-                <option selected disabled>Select one</option>
-                <option>On Hold</option>
-                <option>Canceled</option>
-                <option>Success</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="inputClientCompany">Client Company</label>
-              <input type="text" id="inputClientCompany" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="inputProjectLeader">Project Leader</label>
-              <input type="text" id="inputProjectLeader" class="form-control">
-            </div>
-          </div>
-          <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
-      </div>
-      <div class="col-md-6">
-        <div class="card card-secondary">
-          <div class="card-header">
-            <h3 class="card-title">Budget</h3>
-
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                <i class="fas fa-minus"></i></button>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="form-group">
-              <label for="inputEstimatedBudget">Estimated budget</label>
-              <input type="number" id="inputEstimatedBudget" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="inputSpentBudget">Total amount spent</label>
-              <input type="number" id="inputSpentBudget" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="inputEstimatedDuration">Estimated project duration</label>
-              <input type="number" id="inputEstimatedDuration" class="form-control">
-            </div>
-          </div>
-          <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <a href="#" class="btn btn-secondary">Cancel</a>
-        <input type="submit" value="Create new Porject" class="btn btn-success float-right">
-      </div>
-    </div>
-  </section>
-  <!-- /.content -->

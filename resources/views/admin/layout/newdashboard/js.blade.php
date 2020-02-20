@@ -18,5 +18,6 @@
   $(function () {
     //Add text editor
     $('#body').summernote()
+    $('#message').summernote()
   })
 </script>

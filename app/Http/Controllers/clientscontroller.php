@@ -14,8 +14,8 @@ class clientscontroller extends Controller
      */
     public function index()
     {
-        $clients  =  client::all();
-        return view('admin.clients.index', compact('clients'));
+        $datas  =  client::all();
+        return view('admin.clients.index', compact('datas'));
     }
 
     /**
@@ -47,12 +47,12 @@ class clientscontroller extends Controller
             $newclient->image_name = $imagename;
             $newclient->save();
             session()->flash('message','added sucessfully');
-            Session()->flash('alert-class', 'alert-success');
+            Session()->flash('alert-class', 'success');
             return redirect()->route('clients.create');
         }
         else{
             session()->flash('message','file not selected');
-            Session()->flash('alert-class', 'alert-danger');
+            Session()->flash('alert-class', 'error');
             return redirect()->route('clients.create');
         }
         
@@ -99,13 +99,13 @@ class clientscontroller extends Controller
             $clients->image_name = $imagename;
             $clients->save();
             session()->flash('message','updated sucessfully');
-            Session()->flash('alert-class', 'alert-success');
+            Session()->flash('alert-class', 'success');
             return redirect()->route('clients.index');
         }
         else{
             $clients->save();
             session()->flash('message','updated sucessfully');
-            Session()->flash('alert-class', 'alert-success');
+            Session()->flash('alert-class', 'success');
             return redirect()->route('clients.index');
         }
     }
@@ -119,15 +119,15 @@ class clientscontroller extends Controller
     public function destroy($id)
     {
         $client = client::find($id);
-        if (!client != null){
+        if ($client != null){
             $client->delete();
             Session()->flash('message','delete sucessfully');
-            Session()->flash('alert-class', 'alert-danger');
+            Session()->flash('alert-class', 'success');
             return redirect()->route('clients.index');
         }
         else{
             Session()->flash('message','Already deleted just reload');
-            Session()->flash('alert-class', 'alert-danger');
+            Session()->flash('alert-class', 'error');
             return redirect()->route('clients.index');
         }
     }

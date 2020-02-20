@@ -45,7 +45,7 @@ class testimonialsController extends Controller
             }
             else {
                 session()->flash('message','message box empty');
-                Session()->flash('alert-class', 'alert-danger');
+                Session()->flash('alert-class', 'error');
                 return redirect()->route('testimonial.create');
             }
             
@@ -56,12 +56,12 @@ class testimonialsController extends Controller
                 $newtestimonial->image_name = $imagename;
                 $newtestimonial->save();
                 session()->flash('message','added sucessfully');
-                Session()->flash('alert-class', 'alert-success');
+                Session()->flash('alert-class', 'success');
                 return redirect()->route('testimonial.create');
             }
             else{
                 session()->flash('message','file not selected');
-                Session()->flash('alert-class', 'alert-danger');
+                Session()->flash('alert-class', 'error');
                 return redirect()->route('testimonial.create');
                 
             }
@@ -116,13 +116,13 @@ class testimonialsController extends Controller
             $testimonial->image_name = $imagename;
             $testimonial->save();
             session()->flash('message','updated sucessfully');
-            Session()->flash('alert-class', 'alert-success');
+            Session()->flash('alert-class', 'success');
             return redirect()->route('testimonial.index');
         }
         else{
             $testimonial->save();
             session()->flash('message','Updated sucessfully');
-            Session()->flash('alert-class', 'alert-success');
+            Session()->flash('alert-class', 'success');
             return redirect()->route('testimonial.index');
         }
         
@@ -138,15 +138,15 @@ class testimonialsController extends Controller
     public function destroy($id)
     {
         $testimonial = Testimonial::find($id);
-        if (!testimonial != null){
+        if ($testimonial != null){
             $testimonial->delete();
             Session()->flash('message','delete sucessfully');
-            Session()->flash('alert-class', 'alert-danger');
+            Session()->flash('alert-class', 'success');
             return redirect()->route('testimonial.index');
         }
         else{
             Session()->flash('message','Already deleted just reload');
-            Session()->flash('alert-class', 'alert-danger');
+            Session()->flash('alert-class', 'success');
             return redirect()->route('testimonial.index');
         }
     }

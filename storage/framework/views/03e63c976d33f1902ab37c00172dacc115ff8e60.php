@@ -8,7 +8,7 @@
       <!-- general form elements -->
       <div class="card card-primary">
         <div class="card-header">
-          <h3 class="card-title">Add Clients</h3>
+          <h3 class="card-title">Add Testimonial</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -21,19 +21,31 @@
                 class="form-control" 
                 id="name" 
                 name="name"
-                placeholder="Eg: NTC" 
+                placeholder="Eg: Jhon doe" 
                 value="<?php echo e($member_available ?? '' ? $member->name : old('name')); ?>"
               >
             </div>
             <div class="form-group">
-              <label for="url">Url to clients </label>
+              <label for="url">Designation </label>
               <input type="text" 
                 class="form-control" 
-                id="url" 
-                name="url"
+                id="designation" 
+                name="designation"
                 required=""
-                value="<?php echo e($member_available ?? '' ? $member->url : old('url')); ?>"
+                value="<?php echo e($member_available ?? '' ? $member->designation : old('designation')); ?>"
+                placeholder="Eg: CTO">
+            </div>
+            <div class="form-group">
+              <label for="url">Message </label>
+              <textarea type="text" 
+                class="form-control" 
+                id="message" 
+                name="message"
+                required=""
                 placeholder="Eg: NTC.com">
+                <?php echo e($member_available ?? '' ? $member->message : old('message')); ?>
+
+                </textarea>
             </div>
             <div class="form-group">
               <label for="exampleInputFile">File input</label>
@@ -60,4 +72,4 @@
         </form>
       </div>
       <!-- /.card -->
-      <?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/forms/clients_form.blade.php ENDPATH**/ ?>
+      <?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/forms/testimonial_form.blade.php ENDPATH**/ ?>

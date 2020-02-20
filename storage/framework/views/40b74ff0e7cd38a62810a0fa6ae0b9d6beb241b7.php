@@ -18,5 +18,6 @@
   $(function () {
     //Add text editor
     $('#body').summernote()
+    $('#message').summernote()
   })
 </script><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/layout/newdashboard/js.blade.php ENDPATH**/ ?>

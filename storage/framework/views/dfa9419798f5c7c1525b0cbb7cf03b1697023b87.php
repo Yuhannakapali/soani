@@ -8,7 +8,7 @@
       <!-- general form elements -->
       <div class="card card-primary">
         <div class="card-header">
-          <h3 class="card-title">Add Clients</h3>
+          <h3 class="card-title">Add work</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -26,7 +26,7 @@
               >
             </div>
             <div class="form-group">
-              <label for="url">Url to clients </label>
+              <label for="url">Url </label>
               <input type="text" 
                 class="form-control" 
                 id="url" 
@@ -36,11 +36,11 @@
                 placeholder="Eg: NTC.com">
             </div>
             <div class="form-group">
-              <label for="exampleInputFile">File input</label>
+              <label for="exampleInputFile"></label>
               <div class="input-group">
                 <div class="custom-file">
                   <input type="file" name="file" class="custom-file-input" id="exampleInputFile">
-                  <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                  <label class="custom-file-label" for="exampleInputFile">Choose image</label>
                 </div>
                 <div class="input-group-append">
                   <span class="input-group-text" id=""><i class="fas fa-upload"></i></span>
@@ -60,4 +60,4 @@
         </form>
       </div>
       <!-- /.card -->
-      <?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/forms/clients_form.blade.php ENDPATH**/ ?>
+      <?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/forms/portfolio_form.blade.php ENDPATH**/ ?>

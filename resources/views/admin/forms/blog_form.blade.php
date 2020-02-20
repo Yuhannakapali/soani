@@ -29,13 +29,18 @@
             </textarea>
         </div>
         <div class="form-group">
-          <p class="help-block">Important</p>
-          <div class="btn btn-default btn-file">
-            <i class="fas fa-paperclip"></i> Title Image
-            <input type="file" name="file">
+          <label for="exampleInputFile">Choose Title Image </label>
+          <div class="input-group">
+            <div class="custom-file">
+              <input type="file" name="file" class="custom-file-input" id="exampleInputFile">
+              <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+            </div>
+            <div class="input-group-append">
+              <span class="input-group-text" id=""><i class="fas fa-upload"></i></span>
+            </div>
           </div>
-          
         </div>
+      </div>
       </div>
       <!-- /.card-body -->
       <div class="card-footer">
