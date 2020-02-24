@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('frontend.layout.breadcrums')
+@include('frontend.layout.servicesbreadcrums')
 
 @include('frontend.section.mobile')
     

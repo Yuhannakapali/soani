@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('frontend.layout.breadcrums')
+@include('frontend.layout.blogbreadcrums')
 @include('frontend.section.blogdetail')
     
 @endsection

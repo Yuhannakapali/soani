@@ -4,33 +4,6 @@
             <div class="col-lg-6 col-md-12 mt-5">
                 <div class="title-box">
                     <h2 class="title-light text-dark">
-                        <span> Web Application </span> Development in Nepal
-                    </h2>
-                </div>
-                <p class="mt-4">
-                    Soani Tech is the leading web application development
-                    company in Nepal, that offers all kinds of custom-built
-                    websites and web application services. Our excellent team of
-                    web development experts uses advanced frameworks, and proven
-                    methodologies to create well-engineered web applications
-                    ensuring that the developed solutions are future-ready and
-                    scalable. We provide small to large web design solutions
-                    from custom to different open-source platforms such as
-                    WordPress, PHP, Laravel, AngularJS and others.
-                </p>
-            </div>
-            <div class="col-lg-6 col-md-12 mt-5">
-                <img
-                    class="img-fluid top-img1 w-100"
-                    src="{{ asset('images/services/vr1.jpg') }}"
-                    alt="image"
-                />
-            </div>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-md-12 order-lg-2 order-2 mt-5 pt-5">
-                <div class="title-box">
-                    <h2 class="title-light text-dark">
                         Our<span> Web Application </span> Development in Nepal
                     </h2>
                 </div>
@@ -51,22 +24,22 @@
                     <li>Wordpress Development</li>
                 </p>
             </div>
-            <div class="col-lg-6 col-md-12 order-lg-1 order-2 mt-5 pt-5">
+            <div class="col-lg-6 col-md-12 mt-5">
                 <img
                     class="img-fluid top-img1 w-100"
-                    src="{{ asset('images/services/web.png') }}"
+                    src="{{ asset('images/services/vr1.jpg') }}"
                     alt="image"
                 />
             </div>
         </div>
         <div class="row align-items-center">
-          <div class="col-lg-6 col-md-12 mt-5">
-              <div class="title-box">
-                  <h2 class="title-light text-dark">
-                    Why Choose Soani Tech For <span> Web Application </span> Development Services?
-                  </h2>
-              </div>
-              <p class="mt-4">
+            <div class="col-lg-6 col-md-12 order-lg-2 order-2 mt-5 pt-5">
+                <div class="title-box">
+                    <h2 class="title-light text-dark">
+                        Why Choose Soani Tech For <span> Web Application </span> Development Services?
+                    </h2>
+                </div>
+                <p class="mt-4">
                 We are one of the leading web application development companies 
                 in Nepal with a team of skilled web developers who are specialized
                 in the latest development techniques and languages such as Php, Laravel,
@@ -75,15 +48,15 @@
                 With our QA and software testing services, we ensure that the web application we develop
                 meets all quality specifications and brings the business outcomes that the client wants.
                 We also constantly update and upgrade ourselves to keep pace with the changing technology landscape. 
-              </p>
-          </div>
-          <div class="col-lg-6 col-md-12 mt-5">
-              <img
-                  class="img-fluid top-img1 w-100"
-                  src="{{ asset('images/services/vr1.jpg') }}"
-                  alt="image"
-              />
-          </div>
-      </div>
+                </p>
+            </div>
+            <div class="col-lg-6 col-md-12 order-lg-1 order-2 mt-5 pt-5">
+                <img
+                    class="img-fluid top-img1 w-100"
+                    src="{{ asset('images/services/web.png') }}"
+                    alt="image"
+                />
+            </div>
+        </div>
     </div>
 </section>

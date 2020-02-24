@@ -2,12 +2,12 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 col-sm-12">
-                <h1 class="title"> <?php echo e($pagename ?? '' ?? '' ?? '' ?? '' ?? ''); ?></h1>
+                <h1 class="title"> <?php echo e($pagename ?? ''); ?></h1>
             </div>
             <div class="col-md-6 col-sm-12 text-right">
                 <ul>
                     <li class="d-inline"><a href="/">Home</a></li>
-                    <li class="d-inline active"><?php echo e($pagename ?? '' ?? '' ?? '' ?? '' ?? ''); ?></li>
+                    <li class="d-inline active"><?php echo e($pagename ?? ''); ?></li>
                 </ul>
             </div>
         </div>

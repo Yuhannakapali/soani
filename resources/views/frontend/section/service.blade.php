@@ -35,11 +35,15 @@
             </h2>
           </div>
           <p class="mt-4">
-            We provide small to large web design solutions from custom to different open source platforms such as WordPress, PHP, Laravel, Angular JS and others.
+            SoAniTech is the leading web application development company in Nepal,
+            that offers all kinds of custom-built websites and web application services.
+            Our excellent team of web development experts uses advanced frameworks, and 
+            proven methodologies to create well-engineered web applications ensuring that
+            the developed solutions are future-ready and scalable. 
+            We provide small to large web design solutions from custom to different open-source 
+            platforms such as WordPress, PHP, Laravel, AngularJS and others. 
           </p>
-          <p class="mt-4">
-            We create well-engineered web application using latest technique and technologies.
-          </p>
+          
           <div class="p-3">
             <a class="button grey mt-2" href="/Web" role="button"> Learn More</a>
           </div>
