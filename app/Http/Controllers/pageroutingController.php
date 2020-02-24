@@ -20,8 +20,8 @@ class pageroutingController extends Controller
     
     public function aboutus(){
         $datas = portfolio::all();
-        $boards = Ourteam::where('type', 'board_of_director')->get();
-        $executives = Ourteam::where('type','executive_team')->get();
+        $boards = Ourteam::where('type', 'board of director')->get();
+        $executives = Ourteam::where('type','executive team')->get();
         return view('user.aboutus' , ['pagename'=>'About us'] , compact('boards','executives','datas'));
     }
 
