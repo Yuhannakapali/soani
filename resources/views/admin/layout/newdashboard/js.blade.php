@@ -7,7 +7,6 @@
 <!-- AdminLTE App -->
 <script src="{{asset('js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset('js/demo.js')}}"></script>
 {{-- test script --}}
 <script src="{{asset('js/alert.js')}}"></script>
 <!-- Summernote -->

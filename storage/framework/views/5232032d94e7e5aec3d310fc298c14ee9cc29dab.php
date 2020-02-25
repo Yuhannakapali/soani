@@ -36,7 +36,7 @@
                   <li>
                     <i class="fas fa-envelope"></i>
                     <p>
-                      Soanitech.com.np
+                      SoAniTech.com.np
                     </p>
                   </li>
                   <li>

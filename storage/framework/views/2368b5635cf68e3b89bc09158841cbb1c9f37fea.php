@@ -1,75 +1,78 @@
 <div class="main-content">
     <section class="feedback">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div
-            class="col-lg-8 col-md-12 col-sm-12 text-center position-relative"
-          >
-            <div class="counter">
-              <div class="title-box">
-                <h2 class="title text-dark">
-                  
-                    <span>Feedback</span>
-                </h2>
-                <p class="mt-4">
-                  Some feedback from our costumers 
-                </p>
-              </div>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div
+                    class="col-lg-8 col-md-12 col-sm-12 text-center position-relative"
+                >
+                    <div class="counter">
+                        <div class="title-box">
+                            <h2 class="title text-dark">
+                                <span>Feedback</span>
+                            </h2>
+                            <p class="mt-4">
+                                Some feedback from our costumers
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div
-          id="carouselExampleFade"
-          class="carousel slide carousel-fade"
-          data-ride="carousel"
-        >
-          <div class="carousel-inner">
+            <div
+                id="carouselExampleFade"
+                class="carousel slide carousel-fade"
+                data-ride="carousel"
+            >
+                <div class="carousel-inner">
+                    <?php $__currentLoopData = $testimonials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div
+                        class="carousel-item <?php echo e($key == 0 ? 'active' : ''); ?> feedback-box"
+                    >
+                        <div class="row mt-5 align-items-center">
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <h5 class="title text-dark">
+                                    <i>
+                                        <?php echo $testimonial->message; ?>
 
-            <?php $__currentLoopData = $testimonials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="carousel-item <?php echo e($key==0 ? 'active': ''); ?> feedback-box">
-              <div class="row mt-5 align-items-center">
-                  <div class="col-lg-6 col-md-12 col-sm-12">
-                      <h5 class="title text-dark">
-                          <i>
-                             <?php echo e($testimonial->message); ?>
+                                    </i>
+                                </h5>
+                                <div class="name mt-5 ml-5">
+                                    <h4 class="sub-title">
+                                        <?php echo e($testimonial->name); ?>
 
-                          </i>
-                      </h5>
-                      <div class="name mt-5 ml-5">
-                      <h4 class="sub-title"><?php echo e($testimonial->name); ?></h4>
-                        <p><?php echo e($testimonial->designation); ?></p>
+                                    </h4>
+                                    <p><?php echo e($testimonial->designation); ?></p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <img
+                                    class="img-fluid"
+                                    src="<?php echo e(asset('images/upload/'.$testimonial->image_name)); ?>"
+                                    alt="image"
+                                />
+                            </div>
+                        </div>
                       </div>
-                  </div>
-                  <div class="col-lg-6 col-md-12 col-sm-12">
-                      <img
-                          class="img-fluid"
-                          src="<?php echo e(asset('images/upload/'.$testimonial->image_name)); ?>"
-                          alt="image"
-                      />
-                  </div>
-              </div>
-          </div>                
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            
-          </div>
-          <a
-            class="carousel-control-prev"
-            href="#carouselExampleFade"
-            role="button"
-            data-slide="prev"
-          >
-            <i class="fas fa-arrow-left"></i>
-          </a>
-          <a
-            class="carousel-control-next"
-            href="#carouselExampleFade"
-            role="button"
-            data-slide="next"
-          >
-            <i class="fas fa-arrow-right"></i>
-          </a>
+                    </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+                <a
+                    class="carousel-control-prev"
+                    href="#carouselExampleFade"
+                    role="button"
+                    data-slide="prev"
+                >
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <a
+                    class="carousel-control-next"
+                    href="#carouselExampleFade"
+                    role="button"
+                    data-slide="next"
+                >
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
-      </div>
     </section>
-  </div>
+</div>
 <?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/frontend/section/feedback.blade.php ENDPATH**/ ?>

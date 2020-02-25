@@ -1,3 +1,4 @@
+
 <section>
     <div class="iq-blogdetailbox">
       <div class="container">
@@ -19,7 +20,8 @@
                         <a href="#"><i class="fab fa-twitter"></i></a>
                       </li>
                       <li>
-                        <a href="https://www.facebook.com/sharer/sharer.php?"><i class="fab fa-facebook"></i></a>
+             
+                        +
                       </li>
                       <li>
                         <a href="#"><i class="fab fa-google"></i></a>

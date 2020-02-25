@@ -1,5 +1,7 @@
 @extends('frontend.layout.master')
-		
+		@section('title')
+			<title>SoAniTech | Home SoAniTech </title>
+		@endsection			
 
 		@section('content')
 		@include('frontend.section.slider')

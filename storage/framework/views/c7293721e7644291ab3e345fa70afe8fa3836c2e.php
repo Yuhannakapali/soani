@@ -1,5 +1,5 @@
 <?php $__env->startSection('title'); ?>
-    <title>Soanitech | About SoAniTech </title>
+    <title>SoAniTech | About SoAniTech </title>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>

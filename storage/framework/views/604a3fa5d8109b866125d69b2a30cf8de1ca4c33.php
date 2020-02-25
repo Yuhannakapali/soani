@@ -1,4 +1,6 @@
-		
+		<?php $__env->startSection('title'); ?>
+			<title>SoAniTech | Home SoAniTech </title>
+		<?php $__env->stopSection(); ?>			
 
 		<?php $__env->startSection('content'); ?>
 		<?php echo $__env->make('frontend.section.slider', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

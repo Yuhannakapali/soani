@@ -55,7 +55,8 @@
       </div>
     </footer>
 
-    <div id="body">
+
+    {{-- <div id="body">
       <div id="chat-circle" class="btn btn-raised">
         <i class="ion-chatbubble-working"></i>
       </div>
@@ -81,7 +82,7 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> --}}
 
     <div id="cookie_div" class="align-items-center">
       We use cookies to offer you a better website experience. To find out more about the cookies we use, see our Privacy Policy. By continuing to use this site, you consent to our use of cookies.

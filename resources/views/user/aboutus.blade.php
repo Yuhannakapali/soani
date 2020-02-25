@@ -1,7 +1,7 @@
 @extends('frontend.layout.master')
 
 @section('title')
-    <title>Soanitech | About SoAniTech </title>
+    <title>SoAniTech | About SoAniTech </title>
 @endsection
 
 @section('content')

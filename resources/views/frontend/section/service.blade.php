@@ -22,7 +22,7 @@
         <div class="col-lg-6 col-md-12 mt-5">
           <img
             class="img-fluid top-img1 w-100"
-            src="images/services/vr.png"
+            src="{{asset('images/services/Vr.png')}}"
             alt="image"
           />
         </div>
@@ -51,7 +51,7 @@
         <div class="col-lg-6 col-md-12 order-lg-1 order-2 mt-5 pt-5">
           <img
             class="img-fluid top-img1 w-100"
-            src="images/services/web.png"
+            src="{{asset('images/services/web.png')}}"
             alt="image"
           />
         </div>
@@ -76,7 +76,7 @@
         <div class="col-lg-6 col-md-12 mt-5 pt-5">
           <img
             class="img-fluid top-img1 w-100"
-            src="images/services/Seo.png"
+            src="{{asset('images/services/seo.png')}}"
             alt="image"
           />
         </div>
@@ -103,7 +103,7 @@
         >
           <img
             class="img-fluid top-img1 w-100"
-            src="images/services/mobile.png"
+            src="{{asset('images/services/mobile.png')}}"
             alt="image"
           />
         </div>

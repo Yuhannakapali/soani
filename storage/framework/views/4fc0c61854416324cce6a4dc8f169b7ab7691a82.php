@@ -55,33 +55,8 @@
       </div>
     </footer>
 
-    <div id="body">
-      <div id="chat-circle" class="btn btn-raised">
-        <i class="ion-chatbubble-working"></i>
-      </div>
-      <div class="chat-box">
-        <div class="chat-box-header">
-          <h5 class="title">ChatBot</h5>
-          <span class="chat-box-toggle"><i class="ion-close-round"></i></span>
-        </div>
-        <div class="chat-box-body">
-          <div class="chat-box-overlay"></div>
-          <div class="chat-logs"></div>
-        </div>
-        <div class="chat-input">
-          <form>
-            <input
-              type="text"
-              id="chat-input"
-              placeholder="Send a message..."
-            />
-            <button type="submit" class="chat-submit" id="chat-submit">
-              <i class="ion-ios-paperplane"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
+
+    
 
     <div id="cookie_div" class="align-items-center">
       We use cookies to offer you a better website experience. To find out more about the cookies we use, see our Privacy Policy. By continuing to use this site, you consent to our use of cookies.
