@@ -64,7 +64,7 @@ class pageroutingController extends Controller
     }
     public function test(){
         
-        return view('admin.layout.newdashboard.master', );
+        return view('admin.layout.newdashboard.master' );
     }
 
    
