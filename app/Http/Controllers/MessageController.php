@@ -8,7 +8,7 @@ use Mail;
 use App\Mail\contact;
 
 
-class MessageController extends Controller
+class messageController extends Controller
 {
     public function create(){
         return view('user.contact', ['pagename'=>'Contact us']);
@@ -39,7 +39,7 @@ class MessageController extends Controller
 
         return view('user.contact', ['pagename'=>'Contact us']);
 
-        
+
     }
     
 }   
