@@ -15,7 +15,21 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-     
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <?php echo e(Auth::user()->name); ?>
+
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <div href="#" class="dropdown-item">
+              <h6> <?php echo e(Auth::user()->email); ?></h6>
+          </div>
+          <div class="dropdown-divider"></div>
+          <a href="/logout" class="dropdown-item dropdown-footer">logout</a>
+        </div>
+      </li>
+      
+      
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
           <i class="fas fa-th-large"></i>

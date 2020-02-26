@@ -56,13 +56,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/clients" class="nav-link">
+                <a href="/Portfolio" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Portfolio</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/testimonial" class="nav-link">
+                <a href="/ourteams" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Our team</p>
                 </a>

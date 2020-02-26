@@ -1,3 +1,3 @@
-@extends('admin.layout.master')
+@extends('admin.layout.newdashboard.master')
 
 

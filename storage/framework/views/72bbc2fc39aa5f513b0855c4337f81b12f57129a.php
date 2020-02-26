@@ -1,2 +1,0 @@
-<a href="<?php echo e($href); ?>" target="_blank" rel="noopener"><span class="share-link-prefix"><?php echo e(trans($blog->transKey('sharing.link_prefix'))); ?></span><span class="share-link-service"><?php echo $service_name; ?></span></a>
-<?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/vendor/blog/blog/partials/socialSharingLink.blade.php ENDPATH**/ ?>

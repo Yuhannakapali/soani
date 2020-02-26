@@ -17,7 +17,6 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <?php echo $__env->make('admin.layout.newdashboard.breadcrums', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <!-- Main content -->
     <?php echo $__env->yieldContent('content'); ?> 

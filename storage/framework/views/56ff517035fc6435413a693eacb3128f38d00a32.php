@@ -1,1 +1,0 @@
-<?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/layout/newdashboard/compose.blade.php ENDPATH**/ ?>

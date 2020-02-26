@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog;
+use Auth;
 
 class blogsController extends Controller
 {
@@ -39,7 +40,7 @@ class blogsController extends Controller
         $newblog = new Blog();
         $newblog->title = $request->title;
         $newblog->body = $request->body;
-        $newblog->Author = "Admin";
+        $newblog->Author = Auth::user()->name;
         $newblog->tags = "test tags";
         
 
