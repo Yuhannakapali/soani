@@ -39,6 +39,7 @@ class MessageController extends Controller
 
         return view('user.contact', ['pagename'=>'Contact us']);
 
+        
     }
     
 }   
