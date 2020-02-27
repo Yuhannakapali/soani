@@ -1,9 +1,12 @@
+
+
+
 <div class="main-content">
     <section class="feedback">
         <div class="container">
             <div class="row justify-content-md-center">
                 <div
-                    class="col-lg-8 col-md-12 col-sm-12 text-center position-relative"
+                    class="col-lg-8 col-md-12 col-sm-12 text-center "
                 >
                     <div class="counter">
                         <div class="title-box">
