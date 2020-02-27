@@ -4,7 +4,7 @@
 		@endsection			
 
 		@section('content')
-		{{-- @include('frontend.section.slider') --}}
+		@include('frontend.section.slider')
 		@include('frontend.section.aboutsoanitech')
 		@include('frontend.section.services&ourteam')
 		@include('frontend.section.maps')
