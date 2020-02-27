@@ -4,8 +4,8 @@
           <div class="row">
             <div class="col-lg-5 col-md-12 col-sm-12">
               <div
-                id="carouselExampleSlidesOnly"
-                class="carousel slide"
+                id="carouselSlidesOnly"
+                class="carouselslide"
                 data-ride="carousel"
               >
                 <div class="carousel-inner">

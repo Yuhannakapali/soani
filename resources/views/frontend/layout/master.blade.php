@@ -20,7 +20,6 @@
           version          : 'v6.0'
         });
       };
-
       (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
@@ -28,11 +27,13 @@
       js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-
     <!-- Your customer chat code -->
     <div class="fb-customerchat"
       attribution=setup_tool
-      page_id="724102681288664">
+      page_id="320541588301342"
+      theme_color="#0F0B53"
+      logged_in_greeting="Hi! How can we help you?"
+      logged_out_greeting="Hi! How can we help you?">
     </div>
     {{-- loading loader  --}}
     {{-- <div id="loading">
