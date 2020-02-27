@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div
-                id="carouselExampleFade"
+                id="carouselFade"
                 class="carousel slide carousel-fade"
                 data-ride="carousel"
             >
@@ -58,7 +58,7 @@
                 <div>
                     <a
                     class="carousel-control-prev"
-                    href="#carouselExampleFade"
+                    href="#carouselFade"
                     role="button"
                     data-slide="prev"
                 >
@@ -66,7 +66,7 @@
                 </a>
                 <a
                     class="carousel-control-next"
-                    href="#carouselExampleFade"
+                    href="#carouselFade"
                     role="button"
                     data-slide="next"
                 >
