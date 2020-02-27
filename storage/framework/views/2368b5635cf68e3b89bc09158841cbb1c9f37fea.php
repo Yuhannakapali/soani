@@ -1,9 +1,12 @@
+
+
+
 <div class="main-content">
     <section class="feedback">
         <div class="container">
             <div class="row justify-content-md-center">
                 <div
-                    class="col-lg-8 col-md-12 col-sm-12 text-center position-relative"
+                    class="col-lg-8 col-md-12 col-sm-12 text-center "
                 >
                     <div class="counter">
                         <div class="title-box">
@@ -18,46 +21,47 @@
                 </div>
             </div>
             <div
-                id="carouselExampleFade"
+                id="carouselFade"
                 class="carousel slide carousel-fade"
                 data-ride="carousel"
             >
                 <div class="carousel-inner">
-                    @foreach ($testimonials as $key=>$testimonial)
+                    <?php $__currentLoopData = $testimonials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=>$testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div
-                        class="carousel-item {{
-                            $key == 0 ? 'active' : ''
-                        }} feedback-box"
+                        class="carousel-item <?php echo e($key == 0 ? 'active' : ''); ?> feedback-box"
                     >
                         <div class="row mt-5 align-items-center">
                             <div class="col-lg-6 col-md-12 col-sm-12">
                                 <h5 class="title text-dark">
                                     <i>
-                                        {!!$testimonial->message!!}
+                                        <?php echo $testimonial->message; ?>
+
                                     </i>
                                 </h5>
                                 <div class="name mt-5 ml-5">
                                     <h4 class="sub-title">
-                                        {{$testimonial->name}}
+                                        <?php echo e($testimonial->name); ?>
+
                                     </h4>
-                                    <p>{{$testimonial->designation}}</p>
+                                    <p><?php echo e($testimonial->designation); ?></p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-12">
                                 <img
                                     class="img-fluid"
-                                    src="{{asset('images/upload/'.$testimonial->image_name)}}"
+                                    src="<?php echo e(asset('images/upload/'.$testimonial->image_name)); ?>"
                                     alt="image"
                                 />
                             </div>
                         </div>
                       </div>
                     </div>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
-                <a
+                
+                    <a
                     class="carousel-control-prev"
-                    href="#carouselExampleFade"
+                    href="#carouselFade"
                     role="button"
                     data-slide="prev"
                 >
@@ -65,13 +69,15 @@
                 </a>
                 <a
                     class="carousel-control-next"
-                    href="#carouselExampleFade"
+                    href="#carouselFade"
                     role="button"
                     data-slide="next"
                 >
                     <i class="fas fa-arrow-right"></i>
                 </a>
+                
             </div>
         </div>
     </section>
 </div>
+<?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/frontend/section/feedback.blade.php ENDPATH**/ ?>

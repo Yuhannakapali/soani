@@ -13,6 +13,7 @@ class pageroutingController extends Controller
     public function homepage(){
         $clients = Client::all();
         $testimonials=Testimonial::all();
+        dd($clients);
         return view('user.index',compact('clients','testimonials'));
     }
 
@@ -22,6 +23,7 @@ class pageroutingController extends Controller
         $datas = portfolio::all();
         $boards = Ourteam::where('type', 'board of director')->get();
         $executives = Ourteam::where('type','executive team')->get();
+        dd($datas);
         return view('user.aboutus' , ['pagename'=>'About us'] , compact('boards','executives','datas'));
     }
 
