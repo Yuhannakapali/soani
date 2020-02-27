@@ -55,22 +55,6 @@
                     </div>
                     @endforeach
                 </div>
-                <a
-                    class="carousel-control-prev"
-                    href="#carouselExampleFade"
-                    role="button"
-                    data-slide="prev"
-                >
-                    <i class="fas fa-arrow-left"></i>
-                </a>
-                <a
-                    class="carousel-control-next"
-                    href="#carouselExampleFade"
-                    role="button"
-                    data-slide="next"
-                >
-                    <i class="fas fa-arrow-right"></i>
-                </a>
             </div>
         </div>
     </section>
