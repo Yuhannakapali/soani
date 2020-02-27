@@ -1,12 +1,9 @@
-
-
-
 <div class="main-content">
     <section class="feedback">
         <div class="container">
             <div class="row justify-content-md-center">
                 <div
-                    class="col-lg-8 col-md-12 col-sm-12 text-center "
+                    class="col-lg-8 col-md-12 col-sm-12 text-center position-relative"
                 >
                     <div class="counter">
                         <div class="title-box">
@@ -21,7 +18,7 @@
                 </div>
             </div>
             <div
-                id="carouselFade"
+                id="carouselExampleFade"
                 class="carousel slide carousel-fade"
                 data-ride="carousel"
             >
@@ -58,10 +55,9 @@
                     </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
-                
-                    <a
+                <a
                     class="carousel-control-prev"
-                    href="#carouselFade"
+                    href="#carouselExampleFade"
                     role="button"
                     data-slide="prev"
                 >
@@ -69,13 +65,12 @@
                 </a>
                 <a
                     class="carousel-control-next"
-                    href="#carouselFade"
+                    href="#carouselExampleFade"
                     role="button"
                     data-slide="next"
                 >
                     <i class="fas fa-arrow-right"></i>
                 </a>
-                
             </div>
         </div>
     </section>
