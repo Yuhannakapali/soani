@@ -65,7 +65,7 @@ Route::resource('Portfolio', 'portfoliosController')->middleware('auth');
 //clients
 Route::resource('clients', 'clientsController')->middleware('auth');
 //contact us message 
-Route::resource('message', 'messageController');
+Route::resource('message', 'messageController')->middleware('auth');
 
 Route::resource('Blog', 'blogsController')->middleware('auth');
 
