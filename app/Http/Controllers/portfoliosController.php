@@ -7,6 +7,7 @@ use App\Portfolio;
 
 class portfoliosController extends Controller
 {
+    protected $dir = 'images/upload';
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +48,7 @@ class portfoliosController extends Controller
            
             if ($request->hasfile('file')) {
                 $imagename = $request->file->getClientOriginalName();
-                $request->file->move(public_path('images/upload'), $imagename);
+                $request->file->move($this->dir, $imagename);
                 $newproject->image_name = $imagename;
                
                 $newproject->save();
@@ -102,7 +103,7 @@ class portfoliosController extends Controller
            
             if ($request->hasfile('file')) {
                 $imagename = $request->file->getClientOriginalName();
-                $request->file->move(public_path('images/upload'), $imagename);
+                $request->file->move($this->dir, $imagename);
                 $newproject->image_name = $imagename;
                 $newproject->save();
                 session()->flash('message','Updated sucessfully');

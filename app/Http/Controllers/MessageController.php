@@ -8,7 +8,7 @@ use Mail;
 use App\Mail\contact;
 
 
-class messageController extends Controller
+class MessageController extends Controller
 {
     public function create(){
         return view('user.contact', ['pagename'=>'Contact us']);
@@ -18,7 +18,7 @@ class messageController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email ',
-            'message'=>'required', 
+            'message'=>'required',
 
         ]);
         $mail = new Message();
@@ -39,23 +39,6 @@ class messageController extends Controller
 
         return view('user.contact', ['pagename'=>'Contact us']);
 
-
-    }
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $member  =  ourteam::find($id);
-        return view('admin.ourteam.show',compact('member'));
-    }
-    public function index()
-    {
-        $datas  =  message::all();
-        return redirect()->route('home', compact('datas'));
     }
     
 }   

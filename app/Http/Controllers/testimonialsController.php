@@ -7,6 +7,8 @@ use App\Testimonial;
 
 class testimonialsController extends Controller
 {
+    
+    protected $dir ='images/upload';
     /**
      * Display a listing of the resource.
      *
@@ -52,7 +54,7 @@ class testimonialsController extends Controller
     
             if ($request->hasfile('file')) {
                 $imagename = $request->file->getClientOriginalName();
-                $request->file->move(public_path('images/upload'), $imagename);
+                $request->file->move($this->dir, $imagename);
                 $newtestimonial->image_name = $imagename;
                 $newtestimonial->save();
                 session()->flash('message','added sucessfully');
@@ -112,7 +114,7 @@ class testimonialsController extends Controller
        
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
-            $request->file->move(public_path('images/upload'), $imagename);
+            $request->file->move($this->dir, $imagename);
             $testimonial->image_name = $imagename;
             $testimonial->save();
             session()->flash('message','updated sucessfully');

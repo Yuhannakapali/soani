@@ -36,6 +36,7 @@ class pageroutingController extends Controller
         return view('user.services.Web', ['pagename'=>'Web']);
     }
     public function Seo(){
+        $clients = Client::all();
         return view('user.services.Seo', ['pagename'=>'Seo'],compact('clients'));
     }
     public function Mobile(){

@@ -22,7 +22,7 @@
       data-items-mobile="2"
       data-items-mobile-sm="1"
     >
-    
+    <?php if(!empty($clients)): ?>
         <?php $__currentLoopData = $clients; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $client): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="item">
           <div class="clients-box text-center">
@@ -39,7 +39,7 @@
           </div>
         </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    
+    <?php endif; ?>
       
       
     </div>

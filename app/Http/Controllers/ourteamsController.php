@@ -5,8 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ourteam;
 
+
+
 class ourteamsController extends Controller
-{
+{   
+    
+    
+    
+    protected $dir = 'images/upload';
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +53,7 @@ class ourteamsController extends Controller
         $newteam->type = $request->select;
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
-            $request->file->move(public_path('images/upload'), $imagename);
+            $request->file->move( $this->dir ,$imagename);
             $newteam->image_name = $imagename;
             $newteam->save();
             session()->flash('message','added sucessfully');
@@ -104,7 +110,7 @@ class ourteamsController extends Controller
         
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
-            $request->file->move(public_path('images/upload'), $imagename);
+            $request->file->move($this->dir, $imagename);
             $ourteam->image_name = $imagename;
             $ourteam->save();
             session()->flash('message','Updated sucessfully');

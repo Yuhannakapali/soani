@@ -6,7 +6,8 @@ use App\Client;
 use Illuminate\Http\Request;
 
 class clientscontroller extends Controller
-{
+{   
+    protected $dir ='images/upload';
     /**
      * Display a listing of the resource.
      *
@@ -43,7 +44,7 @@ class clientscontroller extends Controller
         
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
-            $request->file->move(asset('images/upload'), $imagename);
+            $request->file->move($this->dir, $imagename);
             $newclient->image_name = $imagename;
             $newclient->save();
             session()->flash('message','added sucessfully');
@@ -95,7 +96,7 @@ class clientscontroller extends Controller
         $clients->name = $request->name;
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
-            $request->file->move(asset('images/upload'), $imagename);
+            $request->file->move($this->dir, $imagename);
             $clients->image_name = $imagename;
             $clients->save();
             session()->flash('message','updated sucessfully');

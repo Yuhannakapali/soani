@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog;
-use Auth;
 
 class blogsController extends Controller
-{
+{   
+    protected $dir= 'images/upload';
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +40,7 @@ class blogsController extends Controller
         $newblog = new Blog();
         $newblog->title = $request->title;
         $newblog->body = $request->body;
-        $newblog->Author = Auth::user()->name;
+        $newblog->Author = "Admin";
         $newblog->tags = "test tags";
         
 
@@ -48,7 +48,7 @@ class blogsController extends Controller
         
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
-            $request->file->move(public_path('images/upload'), $imagename);
+            $request->file->move($this->dir, $imagename);
             $newblog->image_name = $imagename;
             $newblog->save();
             session()->flash('message','Added sucessfully');
@@ -104,7 +104,7 @@ class blogsController extends Controller
 
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
-            $request->file->move(asset('images/upload'), $imagename);
+            $request->file->move($this->dir, $imagename);
             $blog->image_name = $imagename;
             $blog->save();
             session()->flash('message','Updated sucessfully');
