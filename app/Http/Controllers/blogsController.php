@@ -47,9 +47,11 @@ class blogsController extends Controller
         
         
         if ($request->hasfile('file')) {
-            $imagename = $request->file->getClientOriginalName();
-            $request->file->move($this->dir, $imagename);
-            $newblog->image_name = $imagename;
+            $image = $request->file('file');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = $this->dir;
+            $image->move($destinationPath, $name);
+            $newblog->image_name = $name;
             $newblog->save();
             session()->flash('message','Added sucessfully');
             Session()->flash('alert-class', 'success');
@@ -103,15 +105,18 @@ class blogsController extends Controller
         $blog->tags = "test tags";
 
         if ($request->hasfile('file')) {
-            $imagename = $request->file->getClientOriginalName();
-            $request->file->move($this->dir, $imagename);
-            $blog->image_name = $imagename;
+            $image = $request->file('file');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = $this->dir;
+            $image->move($destinationPath, $name);
+            $blog->image_name = $name;
             $blog->save();
             session()->flash('message','Updated sucessfully');
             Session()->flash('alert-class', 'success');
             return redirect()->route('BLog.index');
         }
         else{
+            
             $blog->save();
             session()->flash('message','Updated sucessfully');
             Session()->flash('alert-class', 'success');

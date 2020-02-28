@@ -53,9 +53,11 @@ class testimonialsController extends Controller
             
     
             if ($request->hasfile('file')) {
-                $imagename = $request->file->getClientOriginalName();
-                $request->file->move($this->dir, $imagename);
-                $newtestimonial->image_name = $imagename;
+                $image = $request->file('file');
+                $name = time().'.'.$image->getClientOriginalExtension();
+                $destinationPath = $this->dir;
+                $image->move($destinationPath, $name);
+                $newtestimonial->image_name = $name;
                 $newtestimonial->save();
                 session()->flash('message','added sucessfully');
                 Session()->flash('alert-class', 'success');
@@ -113,9 +115,11 @@ class testimonialsController extends Controller
         
        
         if ($request->hasfile('file')) {
-            $imagename = $request->file->getClientOriginalName();
-            $request->file->move($this->dir, $imagename);
-            $testimonial->image_name = $imagename;
+            $image = $request->file('file');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = $this->dir;
+            $image->move($destinationPath, $name);
+            $testimonial->image_name = $name;
             $testimonial->save();
             session()->flash('message','updated sucessfully');
             Session()->flash('alert-class', 'success');

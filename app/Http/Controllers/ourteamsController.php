@@ -52,9 +52,11 @@ class ourteamsController extends Controller
         $newteam->designation = $request->designation;
         $newteam->type = $request->select;
         if ($request->hasfile('file')) {
-            $imagename = $request->file->getClientOriginalName();
-            $request->file->move( $this->dir ,$imagename);
-            $newteam->image_name = $imagename;
+            $image = $request->file('file');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = $this->dir;
+            $image->move($destinationPath, $name);
+            $newteam->image_name = $name;
             $newteam->save();
             session()->flash('message','added sucessfully');
             Session()->flash('alert-class', 'success');
@@ -109,9 +111,11 @@ class ourteamsController extends Controller
         $ourteam->type = $request->select;
         
         if ($request->hasfile('file')) {
-            $imagename = $request->file->getClientOriginalName();
-            $request->file->move($this->dir, $imagename);
-            $ourteam->image_name = $imagename;
+            $image = $request->file('file');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = $this->dir;
+            $image->move($destinationPath, $name);
+            $ourteam->image_name = $name;
             $ourteam->save();
             session()->flash('message','Updated sucessfully');
             Session()->flash('alert-class', 'alert-success'); 

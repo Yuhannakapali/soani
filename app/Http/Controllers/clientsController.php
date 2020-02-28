@@ -99,9 +99,11 @@ class clientscontroller extends Controller
         $clients= client::find($id);
         $clients->name = $request->name;
         if ($request->hasfile('file')) {
-            $imagename = $request->file->getClientOriginalName();
-            $request->file->move($this->dir, $imagename);
-            $clients->image_name = $imagename;
+            $image = $request->file('file');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = $this->dir;
+            $image->move($destinationPath, $name);
+            $clients->image_name = $name;
             $clients->save();
             session()->flash('message','updated sucessfully');
             Session()->flash('alert-class', 'success');

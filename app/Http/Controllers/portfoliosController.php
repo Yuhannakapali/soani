@@ -47,8 +47,10 @@ class portfoliosController extends Controller
             $newproject->url = $request->url;
            
             if ($request->hasfile('file')) {
-                $imagename = $request->file->getClientOriginalName();
-                $request->file->move($this->dir, $imagename);
+                $image = $request->file('file');
+                $name = time().'.'.$image->getClientOriginalExtension();
+                $destinationPath = $this->dir;
+                $image->move($destinationPath, $name);
                 $newproject->image_name = $imagename;
                
                 $newproject->save();
@@ -102,9 +104,11 @@ class portfoliosController extends Controller
             $newproject->url = $request->url;
            
             if ($request->hasfile('file')) {
-                $imagename = $request->file->getClientOriginalName();
-                $request->file->move($this->dir, $imagename);
-                $newproject->image_name = $imagename;
+                $image = $request->file('file');
+                $name = time().'.'.$image->getClientOriginalExtension();
+                $destinationPath = $this->dir;
+                $image->move($destinationPath, $name);
+                $newproject->image_name = $name;
                 $newproject->save();
                 session()->flash('message','Updated sucessfully');
                 Session()->flash('alert-class', 'success'); 
