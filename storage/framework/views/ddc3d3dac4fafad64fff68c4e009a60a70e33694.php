@@ -9,9 +9,9 @@
     <script src="<?php echo e(asset('js/circle.js')); ?>"></script>
     <script src="<?php echo e(asset('js/chatbot.js')); ?>"></script>
     <script src="<?php echo e(asset('js/main.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/custom.js')); ?>"></script>
     
-    
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=752505078293726&autoLogAppEvents=1"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=752505078293726&autoLogAppEvents=1"></script>
 
 <script>
 (function(d, s, id) {
