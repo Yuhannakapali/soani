@@ -1,3 +1,4 @@
 {
-    "phpstormFormatter.ideBinPath": "C:\\\\Program Files\\\\JetBrains\\\\PhpStorm 2019.3.2"
+    "phpstormFormatter.ideBinPath": "C:\\\\Program Files\\\\JetBrains\\\\PhpStorm 2019.3.2",
+    "git.ignoreLimitWarning": true
 }
