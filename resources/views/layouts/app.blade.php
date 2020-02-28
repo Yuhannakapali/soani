@@ -21,7 +21,7 @@
 
 </body>
 </html>
-
+{{-- test this a tes  --}}
 
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
