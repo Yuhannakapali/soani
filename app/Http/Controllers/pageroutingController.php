@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Ourteam;
+use app\Ourteam;
 use App\Client;
 use App\Testimonial;
 use App\Portfolio;
