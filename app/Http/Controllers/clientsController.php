@@ -43,7 +43,7 @@ class clientscontroller extends Controller
         
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
-            $request->file->move(public_path('images/upload'), $imagename);
+            $request->file->move(asset('images/upload'), $imagename);
             $newclient->image_name = $imagename;
             $newclient->save();
             session()->flash('message','added sucessfully');
@@ -95,7 +95,7 @@ class clientscontroller extends Controller
         $clients->name = $request->name;
         if ($request->hasfile('file')) {
             $imagename = $request->file->getClientOriginalName();
-            $request->file->move(public_path('images/upload'), $imagename);
+            $request->file->move(asset('images/upload'), $imagename);
             $clients->image_name = $imagename;
             $clients->save();
             session()->flash('message','updated sucessfully');
