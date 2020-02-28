@@ -43,9 +43,13 @@ class clientscontroller extends Controller
 
         
         if ($request->hasfile('file')) {
-            $imagename = $request->file->getClientOriginalName();
-            $request->file->move($this->dir, $imagename);
-            $newclient->image_name = $imagename;
+           
+
+            $image = $request->file('file');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = $this->dir;
+            $image->move($destinationPath, $name);
+            $newclient->image_name = $name;
             $newclient->save();
             session()->flash('message','added sucessfully');
             Session()->flash('alert-class', 'success');
