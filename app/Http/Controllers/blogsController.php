@@ -36,11 +36,12 @@ class blogsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $Author = Auth::user()->name;
         $newblog = new Blog();
         $newblog->title = $request->title;
         $newblog->body = $request->body;
-        $blog->Author = Auth::user()->name;
+        $blog->Author = $Author;
         $newblog->tags = "test tags";
         
 
