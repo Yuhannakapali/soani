@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog;
-
+use Auth;
 class blogsController extends Controller
 {   
     protected $dir= 'images/upload';
@@ -101,7 +101,7 @@ class blogsController extends Controller
         $blog= Blog::find($id);
         $blog->title = $request->title;
         $blog->body = $request->body;
-        $blog->Author = "Admin";
+        $blog->Author = Auth::user()->name;
         $blog->tags = "test tags";
 
         if ($request->hasfile('file')) {
