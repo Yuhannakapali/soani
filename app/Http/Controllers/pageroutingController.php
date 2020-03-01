@@ -12,14 +12,14 @@ class pageroutingController extends Controller
 {
     public function homepage(){
         $clients = Client::all();
-        $testimonials = Testimonial::all();
+        $testimonials=Testimonial::all();
         return view('user.index',compact('clients','testimonials'));
     }
 
     
     
     public function aboutus(){
-        $datas = Portfolio::all();
+        $datas = portfolio::all();
         $boards = Ourteam::where('type', 'board of director')->get();
         $executives = Ourteam::where('type','executive team')->get();
         return view('user.aboutus' , ['pagename'=>'About us'] , compact('boards','executives','datas'));
@@ -51,7 +51,7 @@ class pageroutingController extends Controller
     }
     
     public function portfolio(){
-        $datas = Portfolio::all();
+        $datas = portfolio::all();
         return view('user.portfolio', ['pagename'=>'Portfolio'], compact('datas'));
     }
     public function blog(){
@@ -67,7 +67,20 @@ class pageroutingController extends Controller
         return view('admin.layout.newdashboard.master' );
     }
 
-   
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $title
+     * @return \Illuminate\Http\Response
+     */
+    public function showblog($title)
+    {
+        $datas = Blog::where('title', $title)->get();
+
+        return view ('user.blogdetail', compact('datas'));
+    }
+
 
    
 }

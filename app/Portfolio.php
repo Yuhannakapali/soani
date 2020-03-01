@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Portfolio extends Model
 {
-    public $table = portfolios;
+    public $table = "portfolios";
 
     protected $fillable = [
         'name',

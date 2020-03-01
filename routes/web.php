@@ -40,7 +40,11 @@ Route::get('/portfolio', 'pageroutingController@portfolio');
 
 Route::get('/blog', 'pageroutingController@blog');
 
-Route::get('/blog/detail', 'pageroutingController@blogdetail');
+Route::get('/blog/{id}', [
+    'uses'=>'pageroutingController@showblog',
+    'as' => 'view.blog'
+
+]);
 Route::get('/test', 'pageroutingController@test');
 
 

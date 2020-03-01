@@ -8,3 +8,5 @@
 <script src="{{asset('./js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
 <script src="{{asset('./js/tinymce.js')}}"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.1/js/fileinput.min.js"></script>
+<script src="{{asset('./js/fileinput.js')}}"></script>

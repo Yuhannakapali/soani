@@ -11,7 +11,7 @@
                   <div class="col-sm-6 iq-shadow">
                     <div class="content">
                       <h5 class="mb-2">
-                        <a href="{{ route('Blog.show', $data) }}">
+                        <a href="{{ route('view.blog', $data->title) }}">
                             {{$data->title}}
                         </a>
                       </h5>

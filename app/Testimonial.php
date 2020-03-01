@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Testimonial extends Model
 {
-    public $table = testimonials;
+    public $table = "testimonials";
 
     protected $fillable = [
         'name',

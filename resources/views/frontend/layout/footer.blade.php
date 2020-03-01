@@ -40,8 +40,9 @@
                 </a>
               </li>
               <li>
-                <a href="" target="_blank">
-                  <i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/SoAniTech" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
               </li>
             </ul>
           </div>
@@ -55,7 +56,7 @@
       </div>
     </footer>
 
-
+    {{-- custom chat box but used fb messenger so  still adding it in code base  --}}
     {{-- <div id="body">
       <div id="chat-circle" class="btn btn-raised">
         <i class="ion-chatbubble-working"></i>
