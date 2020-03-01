@@ -19,10 +19,10 @@
                       <li><span>By:</span> <a href="#">{{$data->Author}}</a></li>
                         <li>{{$data->updated_at}}</li>
                       </ul>
-                      {{-- <p class="mt-4">
+                      <p class="mt-4">
                         {!! ucfirst(substr($data->body,0,100)) !!}
                         {{strlen($data->body)>100 ? '...' : ''}}
-                      </p> --}}
+                      </p>
                       
                       {{-- <ul class="iq-tag mt-4">
                         <li><a href="#">Design</a></li>
