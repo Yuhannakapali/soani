@@ -20,8 +20,8 @@
                         <li>{{$data->updated_at}}</li>
                       </ul>
                       <p class="mt-4">
-                        {!! ucfirst(substr($data->body,0,100)) !!}
-                        {{strlen($data->body)>100 ? '...' : ''}}
+                        {!! ucfirst(substr($data->body,0,20)) !!}
+                        {{strlen($data->body)>20 ? '...' : ''}}
                       </p>
                       
                       {{-- <ul class="iq-tag mt-4">
