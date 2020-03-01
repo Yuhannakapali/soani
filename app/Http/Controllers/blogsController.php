@@ -74,8 +74,8 @@ class blogsController extends Controller
      */
     public function show($id)
     {
-        $data = Blog::find($id);
-        return view ('user.blogdetail', compact('data'));
+        $datas = Blog::where('id',$id)->get();
+        return view ('user.blogdetail', compact('datas'));
     }
 
     /**
