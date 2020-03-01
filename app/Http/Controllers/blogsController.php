@@ -41,7 +41,7 @@ class blogsController extends Controller
         $newblog = new Blog();
         $newblog->title = $request->title;
         $newblog->body = $request->body;
-        $blog->Author = $Author;
+        $newblog->Author = $Author;
         $newblog->tags = "test tags";
         
 
