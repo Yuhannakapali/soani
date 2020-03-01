@@ -15,17 +15,19 @@
               <div class="iq-blog-entry">
                 <div class="row">
                   <div class="col-sm-2 text-center">
-                  {{-- <span class="date"><small>{{$data->updated_at}}</small></span> --}}
+                  <span class="date"><small>{{$data->updated_at}}</small></span>
                     <ul class="media-box mt-4 d-inline-block">
                       <li>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" 
+                        class="twitter-share-button" data-show-count="false">Tweet</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </a>
                       </li>
                       <li>
-             
-                        +
-                      </li>
-                      <li>
-                        <a href="#"><i class="fab fa-google"></i></a>
+                        <div class="fb-share-button" 
+                        data-href="{{'https://yuhannakapali.com.np/blog/'.$data->title}}" 
+                        data-layout="button">
+                      </div>
                       </li>
                     </ul>
                   </div>
