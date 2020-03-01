@@ -24,10 +24,10 @@
                         {{strlen($data->body)>100 ? '...' : ''}}
                       </p> --}}
                       
-                      <ul class="iq-tag mt-4">
+                      {{-- <ul class="iq-tag mt-4">
                         <li><a href="#">Design</a></li>
                         <li><a href="#">Style</a></li>
-                      </ul>
+                      </ul> --}}
                     </div>
                   </div>
                   <div class="col-sm-6">
