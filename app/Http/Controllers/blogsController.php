@@ -40,7 +40,7 @@ class blogsController extends Controller
         $newblog = new Blog();
         $newblog->title = $request->title;
         $newblog->body = $request->body;
-        $newblog->Author = "Admin";
+        $blog->Author = Auth::user()->name;
         $newblog->tags = "test tags";
         
 
@@ -101,7 +101,8 @@ class blogsController extends Controller
         $blog= Blog::find($id);
         $blog->title = $request->title;
         $blog->body = $request->body;
-        $blog->Author = Auth::user()->name;
+        
+
         $blog->tags = "test tags";
 
         if ($request->hasfile('file')) {

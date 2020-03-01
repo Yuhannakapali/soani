@@ -77,7 +77,6 @@ class pageroutingController extends Controller
     public function showblog($title)
     {
         $datas = Blog::where('title', $title)->get();
-
         return view ('user.blogdetail', compact('datas'));
     }
 
