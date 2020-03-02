@@ -90,7 +90,7 @@
           </li>
           <li class="nav-header">Contact Us</li>
           <li class="nav-item">
-            <a href="/Portfolio" class="nav-link">
+            <a href="/message" class="nav-link">
               <i class="nav-icon far fa-comment-dots"></i>
               <p>
                  Message 

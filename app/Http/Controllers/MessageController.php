@@ -41,5 +41,10 @@ class MessageController extends Controller
 
     }
     
+    public function index()
+    {
+        $datas  =  Message::all();
+        return view('admin.message.index', compact('datas'));
+    }
 }   
 

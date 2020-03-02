@@ -17,9 +17,9 @@ Route::get('/aboutus', 'pageroutingController@aboutus');
 
 Route::get('/services', 'pageroutingController@services');
 
-Route::get('/contact', 'MessageController@create');
+Route::get('/contact', 'messageController@create');
 Route::post('/contact', [
-    'uses'=>'MessageController@store',
+    'uses'=>'messageController@store',
     'as' => 'contact.store'
 ]);
 
