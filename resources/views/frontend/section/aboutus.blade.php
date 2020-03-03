@@ -92,7 +92,7 @@
                     <div class="row justify-content-md-center">
                         @include('frontend.section.portfoliolist')
                         <div class="p-3">
-                            <a class="button grey mt-2" href="/Portfolio" role="button"> View all </a>
+                            <a class="button grey mt-2" href="/portfolio" role="button"> View all </a>
                           </div>
                     </div>
                     
@@ -114,7 +114,7 @@
                         <div class="row justify-content-md-center mt-5">
                                 <div class="col-lg-8 col-md-12 text-center">
                                     <div class="title-box">
-                                        <h3 class="title text-dark"><span>Board of Director</span></h3>
+                                        <h3 class="title text-dark"><span>Board of Directors</span></h3>
                                      
                                     </div>
                                 </div>

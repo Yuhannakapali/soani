@@ -19,6 +19,8 @@ class BlogTable extends Migration
             $table->longText('body');
             $table->string('image_name');
             $table->string('Author');
+            $table->bigInteger('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade');
             $table->string('tags');
             $table->timestamps();
         });

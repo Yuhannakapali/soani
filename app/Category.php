@@ -11,7 +11,8 @@ class Category extends Model
     protected $fillable = [
         'name'
     ];
-    public function blog(){
-        return $this->belongsTo('App\Blog');
+    public function blogs(){
+        
+        return $this->hasMany('App\Blog');
     }
 }

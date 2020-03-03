@@ -35,7 +35,7 @@
                   <li>
                     <i class="fas fa-envelope"></i>
                     <p>
-                      SoAniTech.com.np
+                      Info@soanitech.com
                     </p>
                   </li>
                   <li>

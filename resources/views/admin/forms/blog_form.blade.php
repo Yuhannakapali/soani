@@ -22,8 +22,10 @@
              id="body"
             name="body"
             class="form-control"
-            style="height: 300px"
             >
+               sample Blog Format 
+
+                        
               {{$member_available ?? '' ? $member->body : old('body')}}
               
             </textarea>
@@ -45,7 +47,7 @@
       <!-- /.card-body -->
       <div class="card-footer">
         <div class="float-right">
-          <button type="button" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Draft</button>
+          {{-- <button type="button" disabled class="btn btn-default"><i class="fas fa-pencil-alt"></i> Draft</button> --}}
           <button type="submit" class="btn btn-primary "><i class="far fa-envelope"></i> Publish</button>
         </div>
         <button type="reset"  value= "Reset" class="btn btn-default"><i class="fas fa-times"></i> Discard</button>

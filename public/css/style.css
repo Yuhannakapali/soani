@@ -11,3 +11,7 @@
 .user-dp {
   height: 30px;
 }
+
+#body{
+  height: 50% !important; 
+}

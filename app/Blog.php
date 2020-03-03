@@ -16,6 +16,7 @@ class Blog extends Model
         'category_id',   
     ];
     public function category(){
-        return $this->hasOne('App\Category');
+        
+        return $this->belongsTo('App\Category');
     }
 }
