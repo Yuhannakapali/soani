@@ -70,8 +70,10 @@ Route::resource('Portfolio', 'portfoliosController')->middleware('auth');
 Route::resource('clients', 'clientsController')->middleware('auth');
 //contact us message 
 Route::resource('message', 'messageController')->middleware('auth');
-
+//Blog
 Route::resource('Blog', 'blogsController')->middleware('auth');
+//Category
+Route::resource('Category', 'categoryController')->middleware('auth');
 
 Auth::routes();
 //logout

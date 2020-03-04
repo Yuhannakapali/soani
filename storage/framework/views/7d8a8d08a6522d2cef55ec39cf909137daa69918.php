@@ -1,7 +1,7 @@
-@extends('admin.layout.newdashboard.master') 
+ 
 
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
@@ -31,8 +31,8 @@
               class="form-validate"
               method="post"
               enctype="multipart/form-data"
-              action="{{route('Blog.store')}}">
-                  @include('admin.forms.blog_form')
+              action="<?php echo e(route('Blog.store')); ?>">
+                  <?php echo $__env->make('admin.forms.blog_form', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </form>
               </div>
             <div class="card-footer">
@@ -52,8 +52,8 @@
           <form
           class="form-validate"
           method="post" 
-          action="{{route('Category.store')}}"> 
-                @include('admin.forms.category_form')
+          action="<?php echo e(route('Category.store')); ?>"> 
+                <?php echo $__env->make('admin.forms.category_form', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
           </form>
         </div>
         
@@ -61,13 +61,13 @@
     </div><!-- /.container-fluid -->
   </section>
   <!-- /.content -->
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('javascript')
+<?php $__env->startSection('javascript'); ?>
 <script>
-      var msg = "{{ Session()->get('message') }}"
-     var cla = "{{ Session()->get('alert-class') }}"  
-     var condition = "{{ Session::has('message') }}"
+      var msg = "<?php echo e(Session()->get('message')); ?>"
+     var cla = "<?php echo e(Session()->get('alert-class')); ?>"  
+     var condition = "<?php echo e(Session::has('message')); ?>"
   $(function() {
       const Toast = Swal.mixin({
         toast: true,
@@ -85,4 +85,5 @@
       }  
     });
     </script>  
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layout.newdashboard.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/blog/create.blade.php ENDPATH**/ ?>

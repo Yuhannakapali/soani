@@ -9,13 +9,12 @@
           <div
             class="col-lg-9 col-md-12 col-sm-12 order-lg-1 order-2 re-space"
           >
-            @if (!empty($datas))
-            @foreach ($datas as $data)
+            @if (!empty($data))
             <div class="iq-blogbox">
               <div class="iq-blog-entry">
                 <div class="row">
                   <div class="col-sm-2 text-center">
-                  <span class="date"><small>{{$data->updated_at}}</small></span>
+                  <span class="date"><small></small></span>
                     <ul class="media-box mt-4 d-inline-block">
                       <li>
                         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" 
@@ -70,8 +69,6 @@
                 </div>
               </div>
             </div>
-            @endforeach
-                
             @endif
 
           </div>

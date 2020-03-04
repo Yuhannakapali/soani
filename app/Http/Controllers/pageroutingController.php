@@ -71,13 +71,13 @@ class pageroutingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $title
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function showblog($title)
+    public function showblog($id)
     {
-        $datas = Blog::where('title', $title)->get();
-        return view ('user.blogdetail', compact('datas'));
+        $data = Blog::find($id);
+        return view ('user.blogdetail', compact('data'));
     }
 
 

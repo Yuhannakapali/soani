@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
 
 class categoryController extends Controller
 {
@@ -13,7 +14,8 @@ class categoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        return redirect()->route('Blog.create', compact('categories'));
     }
 
     /**
