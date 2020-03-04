@@ -23,7 +23,6 @@
             name="body"
             class="form-control"
             >
-               sample Blog Format 
 
                         
               {{$member_available ?? '' ? $member->body : old('body')}}

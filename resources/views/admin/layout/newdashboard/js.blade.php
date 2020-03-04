@@ -9,14 +9,20 @@
 <!-- AdminLTE for demo purposes -->
 {{-- test script --}}
 <script src="{{asset('js/alert.js')}}"></script>
+{{-- tiny mce --}}
+<script src="{{asset('./js/tinymce/js/tinymce/tinymce.min.js')}}"></script>
+<script src="{{asset('./js/tinymce.js')}}"></script>
 <!-- Summernote -->
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
+
+
 <!-- Page Script -->
+
 
 <script type="text/javascript" >
   $(function () {
     //Add text editor
-    $('#body').summernote()
+   
     $('#message').summernote()
   })
 </script>
