@@ -33,14 +33,14 @@ class pageroutingController extends Controller
         return view('user.services.ARVR', ['pagename'=>'AR\VR']);
     }
     public function Web(){
-        return view('user.services.Web', ['pagename'=>'Web']);
+        return view('user.services.web', ['pagename'=>'Web']);
     }
     public function Seo(){
         $clients = Client::all();
-        return view('user.services.Seo', ['pagename'=>'Seo'],compact('clients'));
+        return view('user.services.seo', ['pagename'=>'Seo'],compact('clients'));
     }
     public function Mobile(){
-        return view('user.services.Mobile', ['pagename'=>'Mobile']);
+        return view('user.services.mobile', ['pagename'=>'Mobile']);
     }
     public function privacy(){
         return view('user.privacy', ['pagename'=>'privacy']);
