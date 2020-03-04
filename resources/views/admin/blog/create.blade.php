@@ -18,17 +18,18 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row ">
-            <div class="col-md-9">
-                <form
-                    class="form-validate"
-                    method="post"
-                    enctype="multipart/form-data"
-                    action="{{ route('Blog.store') }}"
-                >
-                    @include('admin.forms.blog_form')
-                </form>
-            </div>
-            <!-- /.col -->
+          <div class="col-md-9">
+            <form
+              class="form-validate"
+              method="post" 
+              action="Blog.store"
+            >
+              @include('admin.forms.blog_form')
+            </form>
+              
+          </div>
+          <!-- /.col -->
+            
 
             <div class="col-3">
                 <form
