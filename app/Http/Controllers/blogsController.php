@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog;
-use App\category;
+use App\Category;
 
 use Illuminate\Support\Facades\Auth;
 class blogsController extends Controller
