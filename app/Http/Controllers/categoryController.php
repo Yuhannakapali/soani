@@ -25,7 +25,8 @@ class categoryController extends Controller
      */
     public function create()
     {
-        //
+       
+        
     }
 
     /**
@@ -35,8 +36,23 @@ class categoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        
+    {    
+        $rules = [
+            'name' => 'required|unique:categories',
+        ];
+    
+        $customMessages = [
+            'required' => 'The :attribute field is required.',
+            'unique' => 'there is already a category with this name',
+        ];
+    
+        $this->validate($request, $rules, $customMessages);
+        $newCategory= new Category();
+        $newCategory->name= $request->name;
+        $newCategory->save();
+        session()->flash('message','New category added ');
+        Session()->flash('alert-class', 'success');
+        return redirect()->route('Blog.create');
     }
 
     /**

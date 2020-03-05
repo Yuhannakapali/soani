@@ -22,16 +22,22 @@
             <form
               class="form-validate"
               method="post" 
-              action="Blog.store"
+              action="{{route('Blog.store')}}"
             >
               @include('admin.forms.blog_form')
             </form>
-              
           </div>
           <!-- /.col -->
-            
-
             <div class="col-3">
+                @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                 <form
                     class="form-validate"
                     method="post"
@@ -48,9 +54,11 @@
 <!-- /.content -->
 @endsection @section('javascript')
 <script>
+    var error = "{{$errors->any() == true}}"
     var msg = "{{ Session()->get('message') }}";
     var cla = "{{ Session()->get('alert-class') }}";
     var condition = "{{ Session::has('message') }}";
+    
     $(function() {
         const Toast = Swal.mixin({
             toast: true,
@@ -59,12 +67,12 @@
             timer: 3000
         });
         if (condition) {
-            console.log(msg);
             Toast.fire({
                 type: cla,
                 title: msg
             });
         }
+        
     });
 </script>
 @endsection

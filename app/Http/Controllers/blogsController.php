@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog;
+use App\category;
+
 use Illuminate\Support\Facades\Auth;
 class blogsController extends Controller
 {   
@@ -25,8 +27,9 @@ class blogsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('admin.blog.create');  
+    {   
+        $categories = Category::all();
+        return view('admin.blog.create',compact('categories'));  
     }
 
     /**
@@ -43,11 +46,7 @@ class blogsController extends Controller
         $newblog->body = $request->body;
         $newblog->Author = $Author;
         $newblog->tags = "test tags";
-        $newblog->category_id = 1;
-
-        
-
-        
+        $newblog->category_id = $request->category;
         
         if ($request->hasfile('file')) {
             $image = $request->file('file');

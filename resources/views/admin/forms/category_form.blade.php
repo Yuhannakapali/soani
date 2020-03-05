@@ -20,8 +20,8 @@
                 class="form-control" 
                 id="name" 
                 name="name"
+                required
                 placeholder="Eg: Entertainment" 
-                value="{{$member_available ?? '' ? $member->name : old('name')}}"
               >
             </div>
             
