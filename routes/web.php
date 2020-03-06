@@ -45,7 +45,10 @@ Route::get('/blog/{id}', [
     'as' => 'view.blog'
 
 ]);
-Route::get('/test', 'pageroutingController@test');
+Route::get('/category/{id}', [
+    'uses' => 'pageroutingController@showblogbyCategory',
+    'as'=> 'find.blogbycategory'
+    ]);
 
 
 

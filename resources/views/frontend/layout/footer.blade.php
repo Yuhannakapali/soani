@@ -19,12 +19,7 @@
           </div>
           <div class="col-lg-6 col-md-4 col-sm-12 text-center text-uppercase">
             <ul class="copyright">
-              <li class="d-inline ml-4 mr-4">
-                <a href="/privacy">privacy policy</a>
-              </li>
-              <li class="d-inline ml-4 mr-4">
-                <a href="/contact">Contact Us</a>
-              </li>
+              
             </ul>
           </div>
           <div class="col-lg-3 col-md-4 col-sm-12 text-right r-mt3">

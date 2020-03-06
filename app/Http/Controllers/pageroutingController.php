@@ -5,6 +5,7 @@ use App\Ourteam;
 use App\Client;
 use App\Testimonial;
 use App\Portfolio;
+use App\Category;
 use App\Blog;
 use Illuminate\Http\Request;
 
@@ -75,9 +76,15 @@ class pageroutingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function showblog($id)
-    {
+    {   
+        $categories = Category::all();
         $data = Blog::find($id);
-        return view ('user.blogdetail', compact('data'));
+        return view ('user.blogdetail', compact('data','categories'));
+    }
+    public function showblogbyCategory($id)
+    {   
+        $datas = Blog::where('category_id', $id)->get();
+        return view ('user.blog', compact('datas'));
     }
 
 

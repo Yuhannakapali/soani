@@ -97,6 +97,17 @@ class categoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        if ($category != null){
+            $category->delete();
+            Session()->flash('message','delete sucessfully');
+            Session()->flash('alert-class', 'success');
+            return redirect()->route('Blog.create');
+        }
+        else{
+            Session()->flash('message','Already deleted just reload');
+            Session()->flash('alert-class', 'error');
+            return redirect()->route('Blog.create');
+        }
     }
 }

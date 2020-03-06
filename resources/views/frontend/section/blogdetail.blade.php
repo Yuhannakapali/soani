@@ -4,7 +4,14 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-12 col-sm-12 order-lg-2 order-2">
-            
+            <div class="iq-sidebar-widget wow fadeInUp" data-wow-duration="1.0s">
+              <h5>Category</h5>
+              <ul class="iq-tag list-inline mt-3">
+                  @foreach ($categories as $category)
+                    <li class="mt-2"><a href="{{ route('find.blogbycategory', $category->id) }}">{{$category->name}}</a></li>
+                  @endforeach 
+              </ul>
+           </div>
           </div>
           <div
             class="col-lg-9 col-md-12 col-sm-12 order-lg-1 order-2 re-space"
