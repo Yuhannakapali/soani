@@ -104,9 +104,7 @@ class blogsController extends Controller
         $blog->title = $request->title;
         $blog->body = $request->body;
         $blog->category_id = $request->category;
-
         $blog->tags = "test tags";
-
         if ($request->hasfile('file')) {
             $image = $request->file('file');
             $name = time().'.'.$image->getClientOriginalExtension();
@@ -116,7 +114,7 @@ class blogsController extends Controller
             $blog->save();
             session()->flash('message','Updated sucessfully');
             Session()->flash('alert-class', 'success');
-            return redirect()->route('BLog.index');
+            return redirect()->route('Blog.index');
         }
         else{
             
