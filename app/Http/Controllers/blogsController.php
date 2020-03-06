@@ -47,12 +47,11 @@ class blogsController extends Controller
         $newblog->Author = $Author;
         $newblog->tags = "test tags";
         $newblog->category_id = $request->category;
-        dd($request->all());
         if ($request->hasfile('file')) {
             $image = $request->file('file');
             $name = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = $this->dir;
-            $image->move(public_path('/images/upload'), $name);
+            $image->move($destinationPath, $name);
             $newblog->image_name = $name;
             $newblog->save();
             session()->flash('message','Added sucessfully');
@@ -75,8 +74,8 @@ class blogsController extends Controller
      */
     public function show($id)
     {
-        $datas = Blog::where('id',$id)->get();
-        return view ('user.blogdetail', compact('datas'));
+        $data = Blog::find($id);
+        return view ('user.blogdetail', compact('data'));
     }
 
     /**
@@ -86,9 +85,10 @@ class blogsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
+        $categories = Category::all();
         $member = Blog::find($id);
-        return view ('admin.blog.edit', compact('member'));
+        return view ('admin.blog.edit', compact('member','categories'));
     }
 
     /**
@@ -103,7 +103,7 @@ class blogsController extends Controller
         $blog= Blog::find($id);
         $blog->title = $request->title;
         $blog->body = $request->body;
-        
+        $blog->category_id = $request->category;
 
         $blog->tags = "test tags";
 
