@@ -47,12 +47,12 @@ class blogsController extends Controller
         $newblog->Author = $Author;
         $newblog->tags = "test tags";
         $newblog->category_id = $request->category;
-        
+        dd($request->all());
         if ($request->hasfile('file')) {
             $image = $request->file('file');
             $name = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = $this->dir;
-            $image->move($destinationPath, $name);
+            $image->move(public_path('/images/upload'), $name);
             $newblog->image_name = $name;
             $newblog->save();
             session()->flash('message','Added sucessfully');

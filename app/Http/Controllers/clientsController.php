@@ -41,10 +41,8 @@ class clientscontroller extends Controller
         $newclient->name = $request->name;
         $newclient->url = $request->url;
 
-        
+        dd($request->all());
         if ($request->hasfile('file')) {
-           
-
             $image = $request->file('file');
             $name = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = $this->dir;
