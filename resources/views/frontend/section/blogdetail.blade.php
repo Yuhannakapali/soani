@@ -14,7 +14,7 @@
               <div class="iq-blog-entry">
                 <div class="row">
                   <div class="col-sm-2 text-center">
-                  <span class="date"><small>{{$data->created_at}}</small></span>
+                  <span class="date"><small>{!! ucfirst(substr($data->created_at,0,10)) !!}</small></span>
                     <ul class="media-box mt-4 d-inline-block">
                       <li>
                         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" 

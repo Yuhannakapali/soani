@@ -12,12 +12,12 @@
                     <div class="content">
                       <h5 class="mb-2">
                         <a href="{{ route('view.blog', $data->id) }}">
-                          {!! ucfirst(substr($data->title,0,10)) !!}
+                          {!! ucfirst(substr($data->title,0,15)) !!}
                         </a>
                       </h5>
                       <ul>
                       <li><span>By:</span> <a href="#">{{$data->Author}}</a></li>
-                        <li>{{$data->updated_at}}</li>
+                        <li> {!! ucfirst(substr($data->updated_at,0,10)) !!}</li>
                       </ul>
                       
                       
