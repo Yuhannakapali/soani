@@ -14,7 +14,7 @@
               <div class="iq-blog-entry">
                 <div class="row">
                   <div class="col-sm-2 text-center">
-                  <span class="date"><small></small></span>
+                  <span class="date"><small>{{$data->created_at}}</small></span>
                     <ul class="media-box mt-4 d-inline-block">
                       <li>
                         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" 
@@ -40,13 +40,14 @@
                       />
                     </div>
                     <div class="iq-blog-detail mt-5">
-                      {{-- <div
+                      
+                      <div
                         class="iq-entry-tag wow fadeInUp"
                         data-wow-duration="1.0s"
                       >
-                        <span> fashion</span>
-                        <span> style</span>
-                      </div> --}}
+                    <span> {{$data->category->name}}</span>
+                        
+                      </div>
                       <div
                         class="iq-entry-title wow fadeInUp"
                         data-wow-duration="1.0s"

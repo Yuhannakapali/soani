@@ -34,3 +34,16 @@
     </div>     
 </section>
 @endsection
+
+@section('javascript')
+<script>
+var condition = "{{!empty($member->category->name)}}"
+var type = "{{$member->category->id}}"
+window.onload = function(){
+  if (condition) {
+    document.getElementById('select').value = type;
+}
+}
+
+</script>
+@endsection

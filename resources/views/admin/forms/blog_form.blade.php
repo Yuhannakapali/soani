@@ -39,13 +39,11 @@
           </div>
         <div class="form-group">
           <label for="inputStatus">category</label>
-          <select name= "category" class="form-control custom-select">
-            <option selected disabled>Select one</option>
+          <select id="select" name= "category" class="form-control custom-select">
+            <option  disabled>select one</option>
             @foreach ($categories as $category)
-          <option value="{{$category->id}}">{{$category->name}}</option>    
-            @endforeach
-            
-            
+             <option value="{{$category->id}}">{{$category->name}}</option>    
+            @endforeach            
           </select>
         </div>
     </div>

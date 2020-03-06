@@ -11,8 +11,8 @@
                   <div class="col-sm-6 iq-shadow">
                     <div class="content">
                       <h5 class="mb-2">
-                        <a href="{{ route('view.blog', $data->title) }}">
-                            {{$data->title}}
+                        <a href="{{ route('view.blog', $data->id) }}">
+                          {!! ucfirst(substr($data->title,0,10)) !!}
                         </a>
                       </h5>
                       <ul>
@@ -21,10 +21,10 @@
                       </ul>
                       
                       
-                      {{-- <ul class="iq-tag mt-4">
-                        <li><a href="#">Design</a></li>
-                        <li><a href="#">Style</a></li>
-                      </ul> --}}
+                      <ul class="iq-tag mt-4">
+                      <li><a href="#">{{$data->category->name}}</a></li>
+                        
+                      </ul>
                     </div>
                   </div>
                   <div class="col-sm-6">

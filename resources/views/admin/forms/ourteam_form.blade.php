@@ -39,7 +39,7 @@
                 <select id="select"  name="select" class="form-control custom-select">
                   <option selected disabled>Select one</option>
                   <option> Board Of Director</option>
-                  <option selected> Executive Team</option>
+                  <option> Executive Team</option>
                 </select>
               </div>
             <div class="form-group">

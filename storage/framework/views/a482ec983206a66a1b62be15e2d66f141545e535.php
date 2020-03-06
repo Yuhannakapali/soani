@@ -1,7 +1,7 @@
-@extends('admin.layout.newdashboard.master') 
+ 
 
-@section('content')
-{{-- main content --}}
+<?php $__env->startSection('content'); ?>
+
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
@@ -20,7 +20,7 @@
 <section>
     <div class="btn-holder">
         <div class="float-right">
-            <a href="{{ route('Blog.create') }}"
+            <a href="<?php echo e(route('Blog.create')); ?>"
                 ><button type="submit" class="btn btn-primary ">
                     <i class="fa fa-plus"></i> Create
                 </button></a
@@ -60,26 +60,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if (!empty($blogs)) 
-                    @foreach ($blogs as $blog)
+                    <?php if(!empty($blogs)): ?> 
+                    <?php $__currentLoopData = $blogs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $blog): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
                         <td>
-                            {{$loop->index+1}}
+                            <?php echo e($loop->index+1); ?>
+
                         </td>
                         <td>
                             <a>
-                                {{$blog->title}}
+                                <?php echo e($blog->title); ?>
+
                             </a>
                             <br />
                         </td>
                         <td>
-                            {{$blog->category->name}}
+                            <?php echo e($blog->category->name); ?>
+
                         </td>    
                         <td>
-                            <small>  {{$blog->created_at}} </small>
+                            <small>  <?php echo e($blog->created_at); ?> </small>
                         </td>
                         <td class="project_progress">
-                            {{$blog->Author}}
+                            <?php echo e($blog->Author); ?>
+
                         </td>
                         <td class="project-state">
                             <span class="badge badge-success">published</span>
@@ -87,14 +91,14 @@
                         <td class="project-actions text-right">
                             <a
                                 class="btn btn-primary btn-sm"
-                                href="{{ route('Blog.show', $blog) }}"
+                                href="<?php echo e(route('Blog.show', $blog)); ?>"
                             >
                                 <i class="fas fa-folder"> </i>
                                 View
                             </a>
                             <a
                                 class="btn btn-info btn-sm"
-                                href="{{ route('Blog.edit', $blog) }}"
+                                href="<?php echo e(route('Blog.edit', $blog)); ?>"
                             >
                                 <i class="fas fa-pencil-alt"> </i>
                                 Edit
@@ -103,10 +107,12 @@
                             <a class="btn btn-sm">
                                 <form
                                     method="POST"
-                                    action="{{ route('Blog.destroy', $blog) }}"
+                                    action="<?php echo e(route('Blog.destroy', $blog)); ?>"
                                 >
-                                    {{ csrf_field() }}
-                                    {{ method_field("DELETE") }}
+                                    <?php echo e(csrf_field()); ?>
+
+                                    <?php echo e(method_field("DELETE")); ?>
+
                                     <button
                                         type="submit"
                                         class="btn btn-danger btn-sm"
@@ -118,7 +124,7 @@
                         </td>
                     </tr>
 
-                    @endforeach @endif
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> <?php endif; ?>
                 </tbody>
             </table>
         </div>
@@ -126,11 +132,11 @@
     </div>
     <!-- /.card -->
 </section>
-@endsection @section('javascript')
+<?php $__env->stopSection(); ?> <?php $__env->startSection('javascript'); ?>
 <script>
-    var msg = "{{ Session()->get('message') }}";
-    var cla = "{{ Session()->get('alert-class') }}";
-    var condition = "{{ Session::has('message') }}";
+    var msg = "<?php echo e(Session()->get('message')); ?>";
+    var cla = "<?php echo e(Session()->get('alert-class')); ?>";
+    var condition = "<?php echo e(Session::has('message')); ?>";
     $(function() {
         const Toast = Swal.mixin({
             toast: true,
@@ -147,4 +153,6 @@
         }
     });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layout.newdashboard.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kuro_neko\Documents\repo\soani\resources\views/admin/blog/index.blade.php ENDPATH**/ ?>
