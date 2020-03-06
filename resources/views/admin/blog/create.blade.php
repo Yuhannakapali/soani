@@ -22,6 +22,7 @@
             <form
               class="form-validate"
               method="post" 
+              enctype="multipart/form-data"
               action="{{route('Blog.store')}}"
             >
               @include('admin.forms.blog_form')
