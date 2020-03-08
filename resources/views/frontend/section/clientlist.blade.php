@@ -26,7 +26,7 @@
         @foreach ($clients as $client)
         <div class="item">
           <div class="clients-box text-center">
-            <a href="{{'https://'.$client->url}} target="_blank""
+            <a href="{{'https://'.$client->url}}" target="_blank""
               ><img
                 class="img-fluid"
                 
