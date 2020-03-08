@@ -72,24 +72,12 @@
                                   <td>
                                       {{$loop->index+1}}
                                   </td>
-                                  <td>
+                                  <td >
                                       {{$category->name}}
                                   </td>    
                                   
-                                  <td class="project-actions text-right">
-                                    <a class="btn btn-sm">
-                                    <form
-                                              method="POST"
-                                              action="{{ route('Category.update', $category) }}"
-                                          >
-                                              {{ csrf_field() }}
-                                              
-                                              <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#editcategory">
-                                                <i class="fas fa-pencil-alt"> </i>
-                                                  Edit
-                                            </button>
-                                          </form>  
-                                    </a>      
+                                  <td class="project-actions text-right" style="width: 70%">
+                                    
                                     {{-- <a
                                           class="btn btn-info btn-sm"
                                           href="{{ route('Blog.edit', $category) }}"
@@ -125,46 +113,13 @@
                     <!-- /.card-body -->
             </div>
         </div>
-        <div class="modal fade" id="editcategory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  
-                  <h4 class="modal-title" id="myModalLabel">Edit category</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <?php $category_available = isset($member) ? true :  false;?>
-                    <div>
-                        <div class="card-body">
-                            <div class="form-group">
-                              <label for="name">Name</label>
-                              <input 
-                                type="text" 
-                                class="form-control" 
-                                id="name" 
-                                name="name"
-                                required
-                                placeholder="Eg: Entertainment" 
-                                value="{{$category_available ?? '' ? $category->title : old('title')}}"
-                              >
-                            </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        <!-- /.row -->
+      
     </div>
     <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
 @endsection @section('javascript')
 <script>
-    var error = "{{$errors->any() == true}}"
     var msg = "{{ Session()->get('message') }}";
     var cla = "{{ Session()->get('alert-class') }}";
     var condition = "{{ Session::has('message') }}";

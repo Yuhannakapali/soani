@@ -51,7 +51,7 @@ class portfoliosController extends Controller
                 $name = time().'.'.$image->getClientOriginalExtension();
                 $destinationPath = $this->dir;
                 $image->move($destinationPath, $name);
-                $newproject->image_name = $imagename;
+                $newproject->image_name = $name;
                
                 $newproject->save();
                 Session()->flash('message', 'Added sucessfully'); 
