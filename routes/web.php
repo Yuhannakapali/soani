@@ -11,11 +11,20 @@
 |
 */
 
-Route::get('/', 'pageroutingController@homepage');
+Route::get('/', [
+    'uses'=>'pageroutingController@homepage',
+    'as'=> 'userhomepage'
+    ]);
 
-Route::get('/aboutus', 'pageroutingController@aboutus');
+Route::get('/aboutus', [
+    'uses'=>'pageroutingController@aboutus',
+    'as'=>'user.aboutus'
+    ]);
 
-Route::get('/services', 'pageroutingController@services');
+Route::get('/services', [
+    'uses'=>'pageroutingController@services',
+    'as'=>'user.services'
+]);
 
 Route::get('/contact', 'messageController@create');
 Route::post('/contact', [
@@ -23,22 +32,36 @@ Route::post('/contact', [
     'as' => 'contact.store'
 ]);
 
+Route::get('/ARVR', [
+    'uses'=> 'pageroutingController@ARVR',
+    'as' => 'user.ARVR'
+]);
 
-Route::get('/admin', 'pageroutingController@admin');
+Route::get('/WEB', [
+    'uses' => 'pageroutingController@Web',
+    'as' => 'user.WEB'
+]);
 
-Route::get('/ARVR', 'pageroutingController@ARVR');
+Route::get('/SEO', [
+    'uses' => 'pageroutingController@Seo',
+    'as' => 'user.SEO'
+]);
 
-Route::get('/WEB', 'pageroutingController@Web');
+Route::get('/MOBILE', [
+    'uses' => 'pageroutingController@Mobile',
+    'as' => 'user.MOBILE'
+]);
 
-Route::get('/SEO', 'pageroutingController@Seo');
 
-Route::get('/MOBILE', 'pageroutingController@Mobile');
+Route::get('/portfolio', [
+    'uses' => 'pageroutingController@portfolio',
+    'as' => 'user.portfolio'
+]);
 
-Route::get('/privacy', 'pageroutingController@privacy');
-
-Route::get('/portfolio', 'pageroutingController@portfolio');
-
-Route::get('/blog', 'pageroutingController@blog');
+Route::get('/blog', [
+    'uses' => 'pageroutingController@blog',
+    'as' => 'user.blog'
+]);
 
 Route::get('/blog/{id}', [
     'uses'=>'pageroutingController@showblog',
@@ -50,14 +73,6 @@ Route::get('/category/{id}', [
     'as'=> 'find.blogbycategory'
     ]);
 
-
-
-
-
-//homepage 
-
-//TODOS
-Route::resource('todos', 'TodoController');
 //post
 Route::resource('posts', 'postsController');
 //ourteam
