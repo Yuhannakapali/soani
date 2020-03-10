@@ -84,7 +84,13 @@ class pageroutingController extends Controller
     public function showblogbyCategory($id)
     {   
         $datas = Blog::where('category_id', $id)->get();
-        return view ('user.blog', compact('datas'));
+        if ($datas->isEmpty()) {
+            return view('user.404');
+        } else {
+            return view ('user.blog', compact('datas'));   
+        }
+        
+       
     }
 
 

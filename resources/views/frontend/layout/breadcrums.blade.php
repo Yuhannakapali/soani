@@ -6,7 +6,7 @@
             </div>
             <div class="col-md-6 col-sm-12 text-right">
                 <ul>
-                    <li class="d-inline"><a href="/">Home</a></li>
+                <li class="d-inline"><a href="{{'/'}}">{{$root ?? '' }}</a></li>
                     <li class="d-inline active">{{$pagename ?? ''}}</li>
                 </ul>
             </div>

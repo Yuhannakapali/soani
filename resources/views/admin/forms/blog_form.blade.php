@@ -26,16 +26,8 @@
             >
         </div>
         <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <div class="input-group">
-              <div class="custom-file">
-                <input type="file" name="file" class="custom-file-input" id="exampleInputFile"   accept="image/*" />
-                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-              </div>
-              <div class="input-group-append">
-                <span class="input-group-text" id=""><i class="fas fa-upload"></i></span>
-              </div>
-            </div>
+            <label for="file">File input</label>
+            <input id="file" class="file" name="file" type="file">
           </div>
         <div class="form-group">
           <label for="inputStatus">category</label>

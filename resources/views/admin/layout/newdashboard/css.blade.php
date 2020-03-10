@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <!-- Theme style -->
 <link rel="stylesheet" href="{{asset('css/adminlte.min.css')}}">
+
+<link rel="stylesheet" href="{{asset('./css/fileinput.min.css')}}">
 <!-- summernote -->
 <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.css')}}">
 {{-- custom css --}}
