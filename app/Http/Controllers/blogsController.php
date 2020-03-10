@@ -73,9 +73,9 @@ class blogsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    {   $categories = Category::all();
         $data = Blog::find($id);
-        return view ('user.blogdetail', compact('data'));
+        return view ('user.blogdetail', compact('data','categories'));
     }
 
     /**

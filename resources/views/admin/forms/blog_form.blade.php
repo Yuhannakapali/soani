@@ -29,7 +29,7 @@
             <label for="exampleInputFile">File input</label>
             <div class="input-group">
               <div class="custom-file">
-                <input type="file" name="file" class="custom-file-input" id="exampleInputFile">
+                <input type="file" name="file" class="custom-file-input" id="exampleInputFile"   accept="image/*" />
                 <label class="custom-file-label" for="exampleInputFile">Choose file</label>
               </div>
               <div class="input-group-append">
@@ -54,7 +54,7 @@
                 <i class="fas fa-pencil-alt"></i> Draft
             </button>
             <button type="submit" class="btn btn-primary">
-                <i class="far fa-envelope"></i> Send
+              <i class="fas fa-plus"></i> Create
             </button>
         </div>
         <button type="reset" class="btn btn-default">

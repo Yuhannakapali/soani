@@ -23,7 +23,7 @@
            {{-- pages edit --}} 
            <li class="nav-header">Homepage</li>
            <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-pager "></i>
               <p>
                      Pages 
@@ -47,7 +47,7 @@
           </li>
            <li class="nav-header">About us</li>
            <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-pager "></i>
               <p>
                      Pages 
