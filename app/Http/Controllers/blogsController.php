@@ -39,7 +39,14 @@ class blogsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {   $request->validate([
+        'title' => 'required|unique:blogs|max:100|min:3',
+        'body' => 'required|min:3',
+        'tags' => 'nullable|min:3',
+        'file'=>'required|mimes:jpeg,png,gif,jpg|max:2048'
+        ]);
+
+
         $Author = Auth::user()->name;
         $newblog = new Blog();
         $newblog->title = $request->title;
@@ -47,22 +54,17 @@ class blogsController extends Controller
         $newblog->Author = $Author;
         $newblog->tags = "test tags";
         $newblog->category_id = $request->category;
-        if ($request->hasfile('file')) {
-            $image = $request->file('file');
-            $name = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = $this->dir;
-            $image->move($destinationPath, $name);
-            $newblog->image_name = $name;
-            $newblog->save();
-            session()->flash('message','Added sucessfully');
-            Session()->flash('alert-class', 'success');
-            return redirect()->route('Blog.create');
-        }
-        else{
-            session()->flash('message','File not selected');
-            Session()->flash('alert-class', 'error');
-            return redirect()->route('Blog.create');
-        }
+        
+        $image = $request->file('file');
+        $name = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = $this->dir;
+        $image->move($destinationPath, $name);
+        $newblog->image_name = $name;
+        $newblog->save();
+        session()->flash('message','Added sucessfully');
+        Session()->flash('alert-class', 'success');
+        return redirect()->route('Blog.create');
+
         
     }
 
@@ -99,7 +101,13 @@ class blogsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
+        $request->validate([
+            'title' => 'max:100|min:3',
+            'body' => 'min:3',
+            'tags' => 'nullable|min:3',
+            'file'=>'mimes:jpeg,png,gif,jpg|max:2048'
+            ]);
         $blog= Blog::find($id);
         $blog->title = $request->title;
         $blog->body = $request->body;

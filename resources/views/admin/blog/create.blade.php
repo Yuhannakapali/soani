@@ -17,6 +17,15 @@
 </section>
 <section class="content">
     <div class="container-fluid">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <div class="row ">
           <div class="col-md-9">
             <form
@@ -30,15 +39,6 @@
           </div>
           <!-- /.col -->
             <div class="col-3">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
                 <form
                     class="form-validate"
                     method="post"

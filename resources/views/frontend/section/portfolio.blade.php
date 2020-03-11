@@ -19,6 +19,13 @@
             <a href="{{'https://'.$data->url}}"><img class="img-fluid" src="{{asset('images/upload/'.$data->image_name)}}"
                 alt="{{$data->name}}" data-toggle="tooltip" title="{{$data->name}}"> </a>
             </div>
+            <div class="mt-3 text-center">
+                <h5 class="title">{{$data->name}}</h5>
+                
+            </div>
+            {{-- <div class="text-center">
+                <h5 class="title">{{$data->name}}</h5>
+            </div> --}}
         </div>
         @endforeach
         

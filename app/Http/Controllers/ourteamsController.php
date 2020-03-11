@@ -43,30 +43,26 @@ class ourteamsController extends Controller
     public function store(Request $request)
     {
     
+        $request->validate([
+        'name' => 'required|max:100|min:3',
+        'designation' => 'required|max:100|min:3',
+        'file'=>'required|mimes:jpeg,png,gif,jpg|max:2048'
+        ]);
         
-        
-
-
         $newteam = new Ourteam();
         $newteam->name = $request->name;
         $newteam->designation = $request->designation;
         $newteam->type = $request->select;
-        if ($request->hasfile('file')) {
-            $image = $request->file('file');
-            $name = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = $this->dir;
-            $image->move($destinationPath, $name);
-            $newteam->image_name = $name;
-            $newteam->save();
-            session()->flash('message','added sucessfully');
-            Session()->flash('alert-class', 'success');
-            return redirect()->route('ourteams.create');
-        }
-        else{
-            session()->flash('message','file not selected');
-            Session()->flash('alert-class', 'error');
-            return redirect()->route('ourteams.create');
-        }
+        $image = $request->file('file');
+        $name = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = $this->dir;
+        $image->move($destinationPath, $name);
+        $newteam->image_name = $name;
+        $newteam->save();
+        session()->flash('message','added sucessfully');
+        Session()->flash('alert-class', 'success');
+        return redirect()->route('ourteams.create');
+    
         
         
 
@@ -104,11 +100,17 @@ class ourteamsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        $ourteam= Ourteam::find($id);
-        $ourteam->name = $request->name;
-        $ourteam->designation = $request->designation;
-        $ourteam->type = $request->select;
+    {   
+        $request->validate([
+            'name' => 'required|max:100|min:3',
+            'designation' => 'required|max:100|min:3',
+            'file'=>'mimes:jpeg,png,gif,jpg|max:2048'
+            ]);
+            
+            $ourteam= Ourteam::find($id);
+            $ourteam->name = $request->name;
+            $ourteam->designation = $request->designation;
+            $ourteam->type = $request->select;
         
         if ($request->hasfile('file')) {
             $image = $request->file('file');

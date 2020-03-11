@@ -20,6 +20,8 @@
                 class="form-control" 
                 id="name" 
                 name="name"
+                min="3"
+                max="20"
                 required
                 placeholder="Eg: Entertainment" 
               >

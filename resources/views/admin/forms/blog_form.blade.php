@@ -13,6 +13,8 @@
                 placeholder="Enter title"
                 id="title"
                 name="title"
+                min="3"
+                maxlength="50"
                 required=""
                 value="{{$member_available ?? '' ? $member->title : old('title')}}"
             />
@@ -21,13 +23,12 @@
         <div class="form-group">
             <textarea id="body" name="body" class="form-control">
                    
-         {{$member_available ?? '' ? $member->body : old('body')}}
-       </textarea
-            >
+            {{$member_available ?? '' ? $member->body : old('body')}}
+            </textarea>
         </div>
         <div class="form-group">
-            <label for="file">File input</label>
-            <input id="file" class="file" name="file" type="file">
+            <label for="file">Title Images</label>
+            <input id="file" class="file" name="file" type="file" accept="image/*">
           </div>
         <div class="form-group">
           <label for="inputStatus">category</label>

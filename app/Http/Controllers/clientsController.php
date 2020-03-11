@@ -36,26 +36,26 @@ class clientscontroller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $request->validate([
+            'name' => 'required|unique:clients|max:50|min:3',
+            'url' => 'required|min:3',
+            'file'=>'required|mimes:jpeg,png,gif,jpg|max:2048'
+            ]);
         $newclient = new client();
         $newclient->name = $request->name;
         $newclient->url = $request->url;
-        if ($request->hasfile('file')) {
-            $image = $request->file('file');
-            $name = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = $this->dir;
-            $image->move($destinationPath, $name);
-            $newclient->image_name = $name;
-            $newclient->save();
-            session()->flash('message','added sucessfully');
-            Session()->flash('alert-class', 'success');
-            return redirect()->route('clients.create');
-        }
-        else{
-            session()->flash('message','file not selected');
-            Session()->flash('alert-class', 'error');
-            return redirect()->route('clients.create');
-        }
+        $image = $request->file('file');
+        $name = time().'.'.$image->getClientOriginalExtension();
+        $destinationPath = $this->dir;
+        $image->move($destinationPath, $name);
+        $newclient->image_name = $name;
+        $newclient->save();
+        session()->flash('message','added sucessfully');
+        Session()->flash('alert-class', 'success');
+        return redirect()->route('clients.create');
+    
+        
         
     }
 
@@ -91,9 +91,15 @@ class clientscontroller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
+        $request->validate([
+            'name' => 'required|max:50|min:3',
+            'url' => 'required',
+            'file'=>'mimes:jpeg,png,gif,jpg|max:2048'
+            ]);
         $clients= client::find($id);
         $clients->name = $request->name;
+        $clients->url = $request->url;
         if ($request->hasfile('file')) {
             $image = $request->file('file');
             $name = time().'.'.$image->getClientOriginalExtension();

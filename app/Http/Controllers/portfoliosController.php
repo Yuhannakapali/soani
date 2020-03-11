@@ -38,8 +38,9 @@ class portfoliosController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|max:100|min:3',
             'url' => 'required',
+            'file'=>'required|mimes:jpeg,png,gif,jpg|max:2048'
             ]);
     
             $newproject = new portfolio();
@@ -96,8 +97,11 @@ class portfoliosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-       
+    {   $request->validate([
+            'name' => 'required|max:100|min:3',
+             'url'=> 'required',
+            'file'=>'mimes:jpeg,png,gif,jpg|max:2048'
+            ]);
     
             $newproject = portfolio::find($id);
             $newproject->name = $request->name;

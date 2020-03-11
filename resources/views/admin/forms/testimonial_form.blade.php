@@ -19,7 +19,10 @@
                 type="text" 
                 class="form-control" 
                 id="name" 
+                min="3"
+                maxlength="50"
                 name="name"
+                required
                 placeholder="Eg: Jhon doe" 
                 value="{{$member_available ?? '' ? $member->name : old('name')}}"
               >
@@ -29,8 +32,10 @@
               <input type="text" 
                 class="form-control" 
                 id="designation" 
+                min="3"
+                maxlength="50"
                 name="designation"
-                required=""
+                required
                 value="{{$member_available ?? '' ? $member->designation : old('designation')}}"
                 placeholder="Eg: CTO">
             </div>
@@ -40,22 +45,14 @@
                 class="form-control" 
                 id="message" 
                 name="message"
-                required=""
-                placeholder="Eg: NTC.com">
+                required
+                placeholder="Eg: https://NTC.com">
                 {{$member_available ?? '' ? $member->message : old('message')}}
                 </textarea>
             </div>
             <div class="form-group">
-              <label for="exampleInputFile">File input</label>
-              <div class="input-group">
-                <div class="custom-file">
-                  <input type="file" name="file" class="custom-file-input" id="exampleInputFile">
-                  <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                </div>
-                <div class="input-group-append">
-                  <span class="input-group-text" id=""><i class="fas fa-upload"></i></span>
-                </div>
-              </div>
+              <label for="file">File input</label>
+              <input type="file" name="file" class="file" id="file">
             </div>
           </div>
           <!-- /.card-body -->

@@ -70,7 +70,7 @@
                             <br />
                         </td>
                         <td>
-                            <small> Created at {{$data->url}} </small>
+                            <small> {{$data->url}} </small>
                         </td>
                         <td class="project_progress">
                             <ul class="list-inline">

@@ -19,6 +19,8 @@
                 type="text" 
                 class="form-control" 
                 id="name" 
+                min="3"
+                maxlength="30"
                 name="name"
                 placeholder="Eg: NTC" 
                 value="{{$member_available ?? '' ? $member->name : old('name')}}"
@@ -26,25 +28,18 @@
             </div>
             <div class="form-group">
               <label for="url">Url to clients </label>
-              <input type="text" 
+              <input type="url" 
                 class="form-control" 
                 id="url" 
                 name="url"
                 required=""
                 value="{{$member_available ?? '' ? $member->url : old('url')}}"
-                placeholder="Eg: NTC.com">
+                placeholder="Eg: https://NTC.com">
             </div>
             <div class="form-group">
-              <label for="exampleInputFile">File input</label>
-              <div class="input-group">
-                <div class="custom-file">
-                  <input type="file" name="file" class="custom-file-input" id="exampleInputFile">
-                  <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                </div>
-                <div class="input-group-append">
-                  <span class="input-group-text" id=""><i class="fas fa-upload"></i></span>
-                </div>
-              </div>
+              <label for="File">File input</label>
+              <input type="file" name="file" class="file" id="file">
+                
             </div>
           </div>
           <!-- /.card-body -->

@@ -36,20 +36,18 @@ class testimonialsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {       $request->valiade([
+                'name' => 'required|min:3|max:50',
+                'designation' => 'required|min:3|max:50',
+                'message'=>'required',
+                'file'=> 'required|mimes:jpeg,gif,png,jpg|max:2048'
+            ]);
         
             $newtestimonial = new Testimonial();
             $newtestimonial->name = $request->name;
             $newtestimonial->designation = $request->designation;
-
-            if (!empty($request->message)) {
-                $newtestimonial->message = $request->message;
-            }
-            else {
-                session()->flash('message','message box empty');
-                Session()->flash('alert-class', 'error');
-                return redirect()->route('testimonial.create');
-            }
+            $newtestimonial->message = $request->message;
+          
             
     
             if ($request->hasfile('file')) {
@@ -107,7 +105,12 @@ class testimonialsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {    $request->validate([
+        'name' => 'reuired|min:3|max:50',
+        'designation' => 'required|min:3|max:50',
+        'message'=>'required',
+        'file'=> 'mimes:jpeg,gif,png,jpg|max:2048'
+        ]);
         $testimonial= Testimonial::find($id);
         $testimonial->name = $request->name;
         $testimonial->designation = $request->designation;
