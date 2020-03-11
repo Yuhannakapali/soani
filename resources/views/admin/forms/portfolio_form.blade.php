@@ -36,7 +36,7 @@
                 maxlength="50"
                 required=""
                 value="{{$member_available ?? '' ? $member->url : old('url')}}"
-                placeholder="Eg: https://NTC.com">
+                placeholder="Eg: https://ntc.com">
             </div>
             <div class="form-group">
               <label for="exampleInputFile"></label>

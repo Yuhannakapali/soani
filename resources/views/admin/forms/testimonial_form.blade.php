@@ -46,7 +46,7 @@
                 id="message" 
                 name="message"
                 required
-                placeholder="Eg: https://NTC.com">
+                placeholder="Eg: https://ntc.com">
                 {{$member_available ?? '' ? $member->message : old('message')}}
                 </textarea>
             </div>

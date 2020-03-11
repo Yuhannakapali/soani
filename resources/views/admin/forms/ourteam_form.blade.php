@@ -37,7 +37,7 @@
                 maxlength="50"
                 required
                 value="{{$member_available ?? '' ? $member->designation : old('designation')}}"
-                placeholder="Eg: https://NTC.com">
+                placeholder="Eg: https://ntc.com">
             </div>
             <div class="form-group">
                 <label for="select">Type </label>
