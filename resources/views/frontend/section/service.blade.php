@@ -16,7 +16,7 @@
             develop native application.
           </p>
           <div class="p-3">
-            <a class="button grey mt-2" href="/ARVR" role="button"> Learn More</a>
+            <a class="button grey mt-2" href="{{url('/services/ARVR')}}" role="button"> Learn More</a>
           </div>
         </div>
         <div class="col-lg-6 col-md-12 mt-5">
@@ -45,7 +45,7 @@
           </p>
           
           <div class="p-3">
-            <a class="button grey mt-2" href="/WEB" role="button"> Learn More</a>
+            <a class="button grey mt-2" href="{{url('/services/WEB')}}" role="button"> Learn More</a>
           </div>
         </div>
         <div class="col-lg-6 col-md-12 order-lg-1 order-2 mt-5 pt-5">
@@ -70,7 +70,7 @@
             We provide full range of service to define, develop, produce, distribute and support software projects.
           </p>
           <div class="p-3">
-            <a class="button grey mt-2" href="/SEO" role="button"> Learn More</a>
+            <a class="button grey mt-2" href="{{url('/services/SEO')}}" role="button"> Learn More</a>
           </div>
         </div>
         <div class="col-lg-6 col-md-12 mt-5 pt-5">
@@ -95,7 +95,7 @@
             amazing solutions for the mobile applications, internet broadcasting, i-learning systems and DVDs.
           </p>
           <div class="p-3">
-            <a class="button grey mt-2" href="/MOBILE" role="button"> Learn More</a>
+            <a class="button grey mt-2" href="{{url('/services/MOBILE')}}" role="button"> Learn More</a>
           </div>
         </div>
         <div

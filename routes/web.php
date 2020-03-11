@@ -32,22 +32,22 @@ Route::post('/contact', [
     'as' => 'contact.store'
 ]);
 
-Route::get('/ARVR', [
+Route::get('/services/ARVR', [
     'uses'=> 'pageroutingController@ARVR',
     'as' => 'user.ARVR'
 ]);
 
-Route::get('/WEB', [
+Route::get('/services/WEB', [
     'uses' => 'pageroutingController@Web',
     'as' => 'user.WEB'
 ]);
 
-Route::get('/SEO', [
+Route::get('/services/SEO', [
     'uses' => 'pageroutingController@Seo',
     'as' => 'user.SEO'
 ]);
 
-Route::get('/MOBILE', [
+Route::get('/services/MOBILE', [
     'uses' => 'pageroutingController@Mobile',
     'as' => 'user.MOBILE'
 ]);

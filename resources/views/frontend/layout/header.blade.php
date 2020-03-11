@@ -20,23 +20,23 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link " href="/">Home</a>
+                  <li class="nav-item ">
+                    <a class="nav-link {{  Request::is('/') ? 'active' : '' }}" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " href="/aboutus">About Us</a>
+                    <a class="nav-link {{  Request::is('aboutus') ? 'active' : '' }} " href="/aboutus">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/services">Services</a>
+                    <a class="nav-link {{  Request::is('services*') ? 'active' : '' }}" href="{{url('/services')}}">Services</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/portfolio">Portfolio</a>
+                    <a class="nav-link {{  Request::is('portfolio') ? 'active' : '' }}" href="/portfolio">Portfolio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/blog">Blog</a>
+                    <a class="nav-link {{  Request::is('blog') ? 'active' : '' }}" href="/blog">Blog</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
+                    <a class="nav-link {{  Request::is('contact') ? 'active' : '' }}" href="/contact">Contact</a>
                   </li>
                 </ul>
               </div>
