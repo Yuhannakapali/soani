@@ -106,7 +106,7 @@ class testimonialsController extends Controller
      */
     public function update(Request $request, $id)
     {    $request->validate([
-        'name' => 'reuired|min:3|max:50',
+        'name' => 'required|min:3|max:50',
         'designation' => 'required|min:3|max:50',
         'message'=>'required',
         'file'=> 'mimes:jpeg,gif,png,jpg|max:2048'
