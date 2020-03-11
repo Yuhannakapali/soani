@@ -36,7 +36,7 @@ class testimonialsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {       $request->valiade([
+    {       $request->validate([
                 'name' => 'required|min:3|max:50',
                 'designation' => 'required|min:3|max:50',
                 'message'=>'required',
