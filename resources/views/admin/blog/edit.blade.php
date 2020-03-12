@@ -17,7 +17,7 @@
 <section>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12  ">
+            <div class="col-sm-9  ">
               @if ($errors->any())
               <div class="alert alert-danger">
                   <ul>
@@ -39,6 +39,80 @@
                     
                 </form>
             </div>
+            <div class="col-3">
+              <form
+                  class="form-validate"
+                  method="post"
+                  action="{{ route('Category.store') }}"
+              >
+                  @include('admin.forms.category_form')
+              </form>
+          </div>
+          
+          <div class="row">
+              <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Category List </h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body p-0">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th style="width: 10px">#</th>
+                          <th>Name</th>
+                          
+                          <th style="width: 70%"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            @foreach ($categories as $category)
+                           
+                            <tr>
+                                <td>
+                                    {{$loop->index+1}}
+                                </td>
+                                <td >
+                                    {{$category->name}}
+                                </td>    
+                                
+                                <td class="project-actions text-right" style="width: 70%">
+                                  
+                                  {{-- <a
+                                        class="btn btn-info btn-sm"
+                                        href="{{ route('Blog.edit', $category) }}"
+                                    >
+                                        <i class="fas fa-pencil-alt"> </i>
+                                        Edit
+                                    </a> --}}
+        
+                                    <a class="btn btn-sm">
+                                        <form
+                                            method="POST"
+                                            action="{{ route('Category.destroy', $category) }}"
+                                        >
+                                            {{ csrf_field() }}
+                                            {{ method_field("DELETE") }}
+                                            <button
+                                                type="submit"
+                                                class="btn btn-danger btn-sm"
+                                            >
+                                                <i class="fas fa-trash"> </i> delete
+                                            </button>
+                                        </form>
+                                    </a>
+                                </td>
+                            </tr>
+        
+                            @endforeach  
+                          
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+          </div>
         </div>
     </div>     
 </section>
