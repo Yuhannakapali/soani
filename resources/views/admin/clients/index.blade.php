@@ -98,7 +98,7 @@
                                 Edit
                             </a>
 
-                            <a class="btn btn-sm">
+                            <a class="btn btn-sm" onclick="return confirm('Are you sure?')">
                                 <form
                                     method="POST"
                                     action="{{
