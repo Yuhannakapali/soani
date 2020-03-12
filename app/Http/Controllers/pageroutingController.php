@@ -80,8 +80,6 @@ class pageroutingController extends Controller
     {   
         $categories = Category::all();
         $data = Blog::find($id);
-        dd($data);
-        
         return view ('user.blogdetail', compact('data','categories'));
     }
     public function showblogbyCategory($id)
