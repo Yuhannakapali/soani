@@ -47,7 +47,7 @@
 
           <div class="card-footer">
             <div class="float-right"> 
-              <button type="submit" class="btn btn-primary "><i class="fas fa-upload"></i> create </button>
+              <button type="submit" class="btn btn-primary "><i class="fas fa-upload"></i> {{  Request::is('Portfolio/create') ? 'Create' : ' Update' }} </button>
             </div>
             <button type="reset"  value= "Reset" class="btn btn-default"><i class="fas fa-times"></i> Discard</button>
           </div>

@@ -47,7 +47,7 @@
                 <i class="fas fa-pencil-alt"></i> Draft
             </button>
             <button type="submit" class="btn btn-primary">
-              <i class="fas fa-plus"></i> Create
+              <i class="fas fa-plus"></i> {{  Request::is('Blog/create') ? 'Create' : ' Update' }}
             </button>
         </div>
         <button type="reset" class="btn btn-default">

@@ -23,7 +23,7 @@
                 maxlength="50"
                 name="name"
                 required
-                placeholder="Eg: NTC" 
+                placeholder="Eg: Jhon Doe" 
                 value="{{$member_available ?? '' ? $member->name : old('name')}}"
               >
             </div>
@@ -37,7 +37,7 @@
                 maxlength="50"
                 required
                 value="{{$member_available ?? '' ? $member->designation : old('designation')}}"
-                placeholder="Eg: https://ntc.com">
+                placeholder="Eg: Programmer ">
             </div>
             <div class="form-group">
                 <label for="select">Type </label>
@@ -56,7 +56,7 @@
 
           <div class="card-footer">
             <div class="float-right"> 
-              <button type="submit" class="btn btn-primary "><i class="fas fa-upload"></i> create </button>
+              <button type="submit" class="btn btn-primary "><i class="fas fa-upload"></i> {{  Request::is('ourteams/create') ? 'Create' : ' Update' }}  </button>
             </div>
             <button type="reset"  value= "Reset" class="btn btn-default"><i class="fas fa-times"></i> Discard</button>
           </div>
