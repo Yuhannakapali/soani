@@ -93,7 +93,7 @@ Route::resource('Blog', 'blogsController')->middleware('auth');
 //Category
 Route::resource('Category', 'categoryController')->middleware('auth');
 
-Auth::routes(['register'=> false ]);
+Auth::routes(['register'=> true ]);
 //logout
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
