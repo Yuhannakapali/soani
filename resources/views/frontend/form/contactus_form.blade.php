@@ -78,13 +78,13 @@
             Send Message
         </button>
     </div>--}}
-    <input type="hidden" name="action" value="sendEmail" />
+    {{-- <input type="hidden" name="action" value="sendEmail" />
     <div class="section-field iq-mt-20">
         <div
             class="g-recaptcha"
             data-sitekey="6LcS8OAUAAAAAFLFJftorDPhMdG-fAdc-R9cWIOQ"
         ></div>
-    </div>
+    </div> --}}
     <button
         id="submit"
         name="submit"
