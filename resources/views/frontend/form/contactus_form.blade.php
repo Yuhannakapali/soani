@@ -49,7 +49,7 @@
             rows="5"
         ></textarea>
     </div>
-    <div class="col-md-12">
+    {{-- <div class="col-md-12">
         <div
             class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}"
         >
@@ -77,7 +77,7 @@
         >
             Send Message
         </button>
-    </div>
+    </div>--}}
     <input type="hidden" name="action" value="sendEmail" />
     <div class="section-field iq-mt-20">
         <div

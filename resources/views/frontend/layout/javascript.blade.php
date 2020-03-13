@@ -11,8 +11,14 @@
     <script src="{{asset('js/custom.js')}}"></script>
     
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=752505078293726&autoLogAppEvents=1"></script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LcS8OAUAAAAAFLFJftorDPhMdG-fAdc-R9cWIOQ"></script>
 <script>
+grecaptcha.ready(function() {
+    grecaptcha.execute('6LcS8OAUAAAAAFLFJftorDPhMdG-fAdc-R9cWIOQ', {action: '/contactus'}).then(function(token) {
+       ...
+    });
+});
+</script>
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
