@@ -53,6 +53,7 @@
             <div class="form-group">
               <label for="file">File input</label>
               <input type="file" name="file" class="file" id="file">
+              
             </div>
           </div>
           <!-- /.card-body -->
