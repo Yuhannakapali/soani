@@ -49,7 +49,7 @@
             rows="5"
         ></textarea>
     </div>
-    {{-- <div class="col-md-12">
+    <div class="col-md-12">
         <div
             class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}"
         >
@@ -65,7 +65,7 @@
                 @endif
             </div>
         </div>
-    </div> --}}
+    </div>
     <div class="col-md-12">
         <button
             
