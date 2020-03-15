@@ -15,30 +15,57 @@ class MessageController extends Controller
     }
    
     public function store(Request $request){
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email ',
-            'message'=>'required',
-
-        ]);
-        $mail = new Message();
-        $mail->name = $request->name;
-        $mail->phone = $request->phone;
-        $mail->email = $request->email;
-        $mail->message = $request->message;
-        $mail->save();
-
-        $details = [
-            'name' => $request->name,
-            'phone' => $request->phone,
-            'email' => $request->email,
-            'message' => $request->message,
+        
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $remoteip = $_SERVER['REMOTE_ADDR'];
+        $data = [
+        'secret' => config('services.recaptcha.secret'),
+        'response' => $request->get('recaptcha'),
+        'remoteip' => $remoteip
         ];
-
-        Mail::send(new contact($details));
-
-        return view('user.contact', ['pagename'=>'Contact us']);
-
+        $options = [
+            'http' => [
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method' => 'POST',
+            'content' => http_build_query($data)
+            ]
+        ];
+        $context = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        $resultJson = json_decode($result);
+        if ($resultJson->success != true) {
+            return back()->withErrors(['captcha' => 'ReCaptcha Error']);
+        }
+        if ($resultJson->score >= 0.3) {
+            
+            $request->validate([
+                    'name' => 'required',
+                    'email' => 'required|email ',
+                    'message'=>'required',
+        
+                ]);
+                $mail = new Message();
+                $mail->name = $request->name;
+                $mail->phone = $request->phone;
+                $mail->email = $request->email;
+                $mail->message = $request->message;
+                $mail->save();
+        
+                $details = [
+                    'name' => $request->name,
+                    'phone' => $request->phone,
+                    'email' => $request->email,
+                    'message' => $request->message,
+                ];
+        
+                Mail::send(new contact($details));
+        
+                
+            return back()->with('message', 'Thanks for your message!');
+        } 
+        else {
+            return back()->withErrors(['captcha' => 'ReCaptcha Error']);
+        }
     }
     
     public function index()
