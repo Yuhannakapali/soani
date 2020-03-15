@@ -13,11 +13,7 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=752505078293726&autoLogAppEvents=1"></script>
 <script src="https://www.google.com/recaptcha/api.js?render=6LcS8OAUAAAAAFLFJftorDPhMdG-fAdc-R9cWIOQ"></script>
 <script>
-grecaptcha.ready(function() {
-    grecaptcha.execute('{{env('NOCAPTCHA_SITEKEY')}}', {action: 'contact'}).then(function(token) {
-      document,getElementById("token").value = token;
-    });
-});
+
 
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -26,4 +22,12 @@ grecaptcha.ready(function() {
   js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script>
+  grecaptcha.ready(function() {
+    grecaptcha.execute('{{env('NOCAPTCHA_SITEKEY')}}', {action: 'contact'}).then(function(token) {
+      document,getElementById("token").value = token;
+    });
+});
 </script>
