@@ -16,6 +16,8 @@ class MessageController extends Controller
    
     public function store(Request $request){
         
+       
+        return "i am here" ;
         $url = 'https://www.google.com/recaptcha/api/siteverify';
         $remoteip = $_SERVER['REMOTE_ADDR'];
         $data = [
@@ -33,8 +35,9 @@ class MessageController extends Controller
         $context = stream_context_create($options);
         $result = file_get_contents($url, false, $context);
         $resultJson = json_decode($result);
+        dd($resultJson);
         if ($resultJson->success != true) {
-            return back()->withErrors(['captcha' => 'ReCaptcha Error']);
+            return here ;
         }
         if ($resultJson->score >= 0.3) {
             
