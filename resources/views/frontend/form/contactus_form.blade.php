@@ -49,7 +49,7 @@
             rows="5"
         ></textarea>
     </div>
-    
+    <input type="hidden" name="token" id="token">
     <button
         id="submit"
         name="submit"
