@@ -16,12 +16,10 @@ class MessageController extends Controller
    
     public function store(Request $request){
         
-       
-        return "i am here" ;
         $url = 'https://www.google.com/recaptcha/api/siteverify';
         $remoteip = $_SERVER['REMOTE_ADDR'];
         $data = [
-        'secret' => config('services.recaptcha.secret'),
+        'secret' => env('CAPTCHA_SECRET'),
         'response' => $request->get('token'),
         'remoteip' => $remoteip
         ];
