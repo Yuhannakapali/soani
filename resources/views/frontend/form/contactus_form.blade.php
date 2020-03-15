@@ -49,41 +49,7 @@
             rows="5"
         ></textarea>
     </div>
-    {{-- <div class="col-md-12">
-        <div
-            class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}"
-        >
-            <label class="col-md-4 control-label">Captcha</label>
-            <div class="col-md-6 pull-center">
-                {!! app('captcha')->display() !!} 
-                @if($errors->has('g-recaptcha-response'))
-                <span class="help-block">
-                    <strong
-                        >{{ $errors->first('g-recaptcha-response') }}</strong
-                    >
-                </span>
-                @endif
-            </div>
-        </div>
-    </div>
-    <div class="col-md-12">
-        <button
-            
     
-            type="submit"
-            value="Create"
-            class="button pull-right wow fadeInUp mt-3"
-            data-wow-duration="1.0s"
-        >
-            Send Message
-        </button>
-    </div>--}}
-    <input type="hidden" name="token" id="token" />
-    <div class="section-field iq-mt-20">
-        <div class="g-recaptcha"
-            data-sitekey="{{env('CAPTCHA_SITEKEY')}}"
-        ></div>
-    </div>
     <button
         id="submit"
         name="submit"
