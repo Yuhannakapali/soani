@@ -21,7 +21,7 @@
 }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<script src="https://www.google.com/recaptcha/api.js?render={{ env('CAPTCHA_SITEKEY') }}"></script>
+<script src="https://www.google.com/recaptcha/api.js?render={{env('CAPTCHA_SITEKEY')}}"></script>
 <script>
          grecaptcha.ready(function() {
              grecaptcha.execute('{{ env('CAPTCHA_SITEKEY')}}', {action: 'contact'}).then(function(token) {

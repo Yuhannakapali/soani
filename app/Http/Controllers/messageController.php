@@ -38,7 +38,7 @@ class MessageController extends Controller
         Mail::send(new contact($details));
 
         
-    return back()->with('message', 'Thanks for your message!');
+        return "here";
 
         // $url = 'https://www.google.com/recaptcha/api/siteverify';
         // $remoteip = $_SERVER['REMOTE_ADDR'];
