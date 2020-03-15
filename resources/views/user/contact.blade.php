@@ -6,3 +6,7 @@
         @include('frontend.layout.breadcrums')
          @include('frontend.section.contactus')       
     @endsection
+    
+    @section('javascript')
+        
+    @endsection

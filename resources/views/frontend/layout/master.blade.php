@@ -47,5 +47,6 @@
       @yield('content')      
     @include('frontend.layout.footer')  
     @include('frontend.layout.javascript')
+      @yield('javascript')
   </body>
 </html>
