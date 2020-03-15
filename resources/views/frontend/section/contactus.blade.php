@@ -2,6 +2,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
+          @if($errors->any())
+              {{ implode('', $errors->all('<div>:message</div>')) }}
+          @endif
           <div class="contact-box">
             <h3>Get in Touch</h3>
             <form 
