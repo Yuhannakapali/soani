@@ -80,9 +80,8 @@
     </div>--}}
     <input type="hidden" name="token" id="token" />
     <div class="section-field iq-mt-20">
-        <div
-            class="g-recaptcha"
-            data-sitekey=""
+        <div class="g-recaptcha"
+            data-sitekey="{{env('CAPTCHA_SITEKEY')}}"
         ></div>
     </div>
     <button
