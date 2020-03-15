@@ -20,7 +20,7 @@ class MessageController extends Controller
         $remoteip = $_SERVER['REMOTE_ADDR'];
         $data = [
         'secret' => config('services.recaptcha.secret'),
-        'response' => $request->get('recaptcha'),
+        'response' => $request->get('token'),
         'remoteip' => $remoteip
         ];
         $options = [
