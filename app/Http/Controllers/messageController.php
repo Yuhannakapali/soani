@@ -33,11 +33,11 @@ class MessageController extends Controller
         $context = stream_context_create($options);
         $result = file_get_contents($url, false, $context);
         $resultJson = json_decode($result);
-        dd($resultJson);
+        
         if ($resultJson->success != true) {
-            return here ;
+            return back()->withErrors(['captcha' => 'go away bot ']);
         }
-        if ($resultJson->score >= 0.3) {
+        elseif ($resultJson->score >= 0.3) {
             
             $request->validate([
                     'name' => 'required',
