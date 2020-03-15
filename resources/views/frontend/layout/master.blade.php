@@ -32,7 +32,7 @@
     <!-- Your customer chat code -->
     <div class="fb-customerchat"
       attribution=setup_tool
-      page_id="320541588301342"
+      page_id="{{env('page_id')}}"
       theme_color="#0F0B53"
       logged_in_greeting="Hi! How can we help you?"
       logged_out_greeting="Hi! How can we help you?">
